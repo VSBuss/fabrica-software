@@ -1,3 +1,6 @@
+#Faça um algoritmo que o usuário possa digitar o seu nome e a sua idade.
+#Utilizando uma tabela, verifique em qual item se enquadra a idade da pessoa e escreva em qual faixa etária a pessoa se encontra:​
+
 nome = input("Digite o seu nome: \n")
 idade = int(input("Digite a sua idade: \n"))
 

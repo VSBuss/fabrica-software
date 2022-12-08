@@ -1,4 +1,6 @@
-#p m g = 10 12 15
+#25 - Uma fábrica de camisetas produz os tamanhos pequeno, médio e grande, cada uma sendo vendida respectivamente por R$10,00, R$12,00 e R$15,00.
+#Faça um algoritmo em que o usuário forneça a quantidade de camisetas pequenas, médias e grandes referentes a uma venda.
+#O algoritmo deverá informar qual o valor total da compra.​
 
 p = int(input("Informe a quantidade de camisetas pequenas: "))
 m = int(input("Informe a quantidade de camisetas médias: "))
