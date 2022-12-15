@@ -1,4 +1,4 @@
-#Exercício de repetição pra dormir
+#Exercício de repetição para dormir
 
 contador = 0
 nome = "Thiago"
