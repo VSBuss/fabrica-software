@@ -4,10 +4,10 @@
 #positivo ou negativo;​
 #inteiro ou decimal.​
 
+resultado = 0
 print("Digite dois números:")
 num1 = float(input(""))
 num2 = float(input(""))
-resultado = 0
 print(f"Escolhe uma operação para realizar entre os números {num1} e {num2} respectivamente: ")
 text = input("Soma, subtração, divisão ou multiplicação? ")
 text = text.upper()
@@ -34,7 +34,9 @@ if resultado >= 0:
 else:
     print("O número é negativo.")
 
-if type(resultado) == int:
+
+if (resultado == round(resultado)):   #← Mesmo resultado da linha abaixo
+#if int(resultado) == resultado:
     print("O número é inteiro.")
 else:
     print("O número é decimal.")
