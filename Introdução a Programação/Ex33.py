@@ -35,8 +35,8 @@ else:
     print("O número é negativo.")
 
 
-if (resultado == round(resultado)):   #← Mesmo resultado da linha abaixo
-#if int(resultado) == resultado:
+#if (resultado == round(resultado)):   #← Mesmo resultado da linha abaixo
+if int(resultado) == resultado:
     print("O número é inteiro.")
 else:
     print("O número é decimal.")

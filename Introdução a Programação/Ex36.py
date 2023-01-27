@@ -12,7 +12,7 @@
 from re import match
 x = 1
 while x > 0: #desafio professora
-    print("Escolha um sanduíche: \n"
+    print("\nEscolha um sanduíche: \n"
     "100 - Cachorro Quente\n"
     "101 - Ovo Simples\n"
     "102 - Bauru com Ovo\n"
@@ -45,7 +45,7 @@ while x > 0: #desafio professora
         case '203':
             valortotal = valorlanche + 4.7
 
-    print(f"O valor total a pagar é de R${valortotal}")
+    print(f"\nO valor total a pagar é de R${valortotal}")
 
     print("Deseja fazer um novo pedido?")
 

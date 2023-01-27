@@ -7,4 +7,5 @@ x = num
 while i >= 1:
     x = x*i
     i = i - 1
+x = x / num
 print(f"O resultado do fatorial de {num} é {x}.")

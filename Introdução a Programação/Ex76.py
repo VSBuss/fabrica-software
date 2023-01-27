@@ -14,4 +14,4 @@ while A<B:
     A = A * 1.03
     B = B * 1.015
     x += 1
-print(f"Será necessário aproximadamente {x} anos para que a população de A ultrapasse B.") 
+print(f"Será necessário aproximadamente {x} anos para que a população de A ultrapasse B.\n") 

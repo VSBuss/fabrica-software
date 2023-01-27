@@ -9,6 +9,6 @@ sexo = sexo.upper()
 estcivil = estcivil.upper()
 if sexo == 'F' and (estcivil == 'CASADO' or estcivil == 'CASADA'):
     aprovada = int(input("Está casada há quantos anos? "))
-    print("Oi rsrs ( ͡~ ͜ʖ ͡°)")
+    print("Oi 😳 rsrs 😘")
 else:
-    print("Legal ¯\_(ツ)_/¯")
+    print("Legal 👍")

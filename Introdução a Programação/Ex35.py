@@ -66,5 +66,5 @@ f"código/////descrição\n"
 f"{itemcod}   {tipo} {qnt}KG\n"
 f"Método de pagamento: {metodopg}\n"
 f"Desconto: {desc}\n"
-f"Total a pagar: {ptotal}\n"
+f"Total a pagar: {ptotal:.2f}\n"
 f"---------------------------------------\n")
