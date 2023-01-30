@@ -18,7 +18,7 @@ Para finalizar o conjunto de votos tem-se o valor zero.'''
 print("==========   TU ACREDITA NA DEMOCRACIA? KKKKKKKKKKKKK    ==========")
 soma1 = soma2 = soma3 = soma4 = soma5 = soma6 = 0
 while True:
-    candidato = int(input("1 - José/ 2 - João/ 3 - Joel/ 4 - Jean/ 5 - Nulo/ 6 - Em branco\n"))
+    candidato = int(input("1 - José / 2 - João / 3 - Joel / 4 - Jean / 5 - Nulo / 6 - Em branco\n"))
     if candidato == 0:
         break
     if candidato == 1:
@@ -33,7 +33,7 @@ while True:
         soma5 += 1
     if candidato == 6:
         soma6 += 1
-print(f"José recebeu {soma1} voto(s). João recebeu {soma2} voto(s).\nJoel recebeu {soma3} voto(s).\nJean recebeu {soma4} voto(s)."
-f"\nO total de votos nulos foi de {soma5}.\nO total de votos em branco foi de {soma5}."
+print(f"José recebeu {soma1} voto(s).\nJoão recebeu {soma2} voto(s).\nJoel recebeu {soma3} voto(s).\nJean recebeu {soma4} voto(s)."
+f"\nO total de votos nulos foi de {soma5}.\nO total de votos em branco foi de {soma6}."
 f"\nA percentagem de votos nulos sobre o total de votos é de {100*soma5/(soma1+soma2+soma3+soma4)}"
 f"\nA percentagem de votos em branco sobre o total de votos é de {100*soma6/(soma1+soma2+soma3+soma4)}")

@@ -7,5 +7,4 @@
 pao = int(input("Digite a quantidade de pães vendidos: "))
 broa = int(input("Digite a quantidade de broas vendidas: "))
 totalvenda = pao + broa * 3.5
-
 print(f"O total arrecadado foi de R${totalvenda} e o total a ser guardado na poupança é de R${totalvenda*0.1}.")

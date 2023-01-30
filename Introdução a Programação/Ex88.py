@@ -9,8 +9,8 @@ print("Insira 20 números inteiros: ")
 for i in range (20):
     vetor.append(int(input()))
     x = int(vetor[i])
-    if vetor[i] % 2 == 0:
-        par.append(vetor[i])
+    if x % 2 == 0:
+        par.append(x)
     else:
         impar.append(x)
 print("Vetor original: ", vetor)

@@ -6,7 +6,7 @@ qnt = 0
 print("Digite 10 letras: ")
 for i in range(10):
     x = input()
-    if not x.isalpha():
+    if not x.isalpha(): #A função "isalpha serve para testar se a variavel atrelada a ela é uma letra ou não. Caso seja retorna True."
         print("Você não digitou uma letra. ")
         continue
     else:
@@ -18,5 +18,3 @@ print("As consoantes são:")
 for i in range(10):
     if letras[i] == 'a' or letras[i] == 'e' or letras[i] == 'i' or letras[i] == 'o' or letras[i] == 'u':
         print(letras[i])
-    else:
-        continue

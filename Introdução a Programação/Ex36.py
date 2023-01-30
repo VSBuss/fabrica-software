@@ -51,9 +51,10 @@ while x > 0: #desafio professora
 
     cond = input("[S/N]")
     cond = cond.upper()
-    match(cond):
-        case 'S':
-            x = x
-        case 'N':
-            x -= 1
+    if cond == 'S':
+        x = x
+    elif cond == 'N':
+        x -= 1
+    else:
+        print("Valor inválido.")
     valortotal = 0

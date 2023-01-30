@@ -49,10 +49,8 @@ while True:
     for x in range(5):
         print(f"{posic[x]} Salto: {saltos[x]} m")
 
-    print(f'''Melhor salto: {maior} m
-    Pior salto: {menor} m
-    Média dos demais saltos: {soma}
-    \nResultado final:
-    {nome}: {soma}m
-
-    ''')
+    print(f"Melhor salto: {maior} m"
+    "Pior salto: {menor} m"
+    "Média dos demais saltos: {soma}"
+    "\nResultado final:"
+    "{nome}: {soma}m")
