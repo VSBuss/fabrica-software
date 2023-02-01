@@ -2,19 +2,19 @@
 
 letras = []
 x = ''
-qnt = 0
+qnt = i = 0
 print("Digite 10 letras: ")
-for i in range(10):
+while i < 10:
     x = input()
     if not x.isalpha(): #A função "isalpha serve para testar se a variavel atrelada a ela é uma letra ou não. Caso seja retorna True."
         print("Você não digitou uma letra. ")
-        continue
     else:
         letras.append(x)
+        i += 1
     if x == 'a' or x == 'e' or x == 'i' or x == 'o' or x == 'u':
         qnt += 1
-print(f"Existem {qnt} consoante(s).")
+print(f"Existem {10-qnt} consoante(s).")
 print("As consoantes são:")
 for i in range(10):
-    if letras[i] == 'a' or letras[i] == 'e' or letras[i] == 'i' or letras[i] == 'o' or letras[i] == 'u':
+    if not letras[i] in 'aeiou':
         print(letras[i])
