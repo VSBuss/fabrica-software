@@ -14,15 +14,20 @@ $900 - $999
 $1000 em diante
 Desafio: Crie uma fórmula para chegar na posição da lista a partir do salário, sem fazer vários ifs aninhados.
 '''
-a = b = c = d = e = f = g = h = i = 0
-lista = [a, b, c, d, e, f, g, h, i]
+import math
+
+lista = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 while True:
-    vendas = float(input("Informe o valor das vendas brutas do vendedor: R$")) #800    -  9% = 72
-    for x in range (9):
-        if 200 + 100*x < 200 + vendas*0.09 <= 299 + 100*x:
-            lista[x] += 1
-        if vendas >= 200 + 100*x:
-            lista[x] += 1
+    vendas = float(input("Informe o valor das vendas brutas do vendedor: R$"))
     if vendas == 0:
         break
+    vendas = vendas*0.09 + 200
+    vendas = round(vendas, 2) #Arredonda o valor decimal para duas casas
+    if vendas >= 1000:
+        lista[8] += 1
+    for x in range(8):
+        if 200 + 100*x <= vendas <= 299 + 100*x:
+            lista[x] += 1
+        else:
+            continue
 print(lista)
