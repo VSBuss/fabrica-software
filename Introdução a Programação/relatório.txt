@@ -1,0 +1,15 @@
+
+CME Inc.               Uso do espaço em disco pelos usuários
+------------------------------------------------------------------------
+Nr.  Usuário        Espaço utilizado     % do uso
+
+1   alexandre        434,99 MB             12,66%
+2   anderson        1187,99 MB             34,59%
+3   antonio          117,73 MB              3,43%
+4   carlos            87,03 MB              2,53%
+5   cesar              0,94 MB              0,03%
+6   rosemary         752,88 MB             21,92%
+7   vitor            853,33 MB             24,84%
+
+Espaço total ocupado: 3434,91 MB
+Espaço médio ocupado: 490,70 MB

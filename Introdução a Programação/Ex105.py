@@ -27,9 +27,9 @@ Espaço total ocupado: 2581,57 MB
 Espaço médio ocupado: 430,26 MB
 
 O arquivo de entrada deve ser lido uma única vez, e os dados armazenados em memória,
-caso sejam necessários, de forma a agilizar a execução do programa. A conversão da espaço ocupado em disco,
+caso sejam necessários, de forma a agilizar a execução do programa. A conversão do espaço ocupado em disco,
 de bytes para megabytes deverá ser feita através de uma função separada, que será chamada pelo programa principal.
-O cálculo do percentual de uso também deverá ser feito através de uma função, que será chamada pelo programa principal.ios
+O cálculo do percentual de uso também deverá ser feito através de uma função, que será chamada pelo programa principal.
 
 '''
 lista = []
@@ -58,31 +58,41 @@ for x in range(len(lista)):
 for x in range(len(lista)):
     lista[x] = int(lista[x])/1048576
 
+
 mediamb = sum(lista)/len(lista)
 mediamb = str(mediamb)
+
+#Transforma o valore de 'mediamb' com vírgula ao invés de ponto
 for x in range(len(mediamb)):
     num = ''
     num = mediamb[x]
     if num == ".":
         mediamb = mediamb[:x] + "," + mediamb[x+1:x+3]
-        break
+        break                                         #Sem esse break o código não funciona
 
 totalmb = str(sum(lista))
 
+#Transforma o valore de 'totalmb' com vírgula ao invés de ponto
 for x in range(len(totalmb)):
     num = ''
     num = totalmb[x]
     if num == ".":
         totalmb = totalmb[:x] + "," + totalmb[x+1:x+3]
         break
+
+#calcula os valores da porcentagem de uso no disco e os adiciona na variavel 'porce'
 for x in range(len(lista)):
     porce.append(lista[x]*100/sum(lista))
+
+#Transforma os valores de 'lista' com vírgula ao invés de ponto
 for x in range(len(lista)):
     num = ''
     num = str(lista[x])
     for y in range(len(num)):
         if num[y] == ".":
             lista[x] = num[:y] + "," + num[y+1:y+3]
+
+
 for x in range(len(lista)):
     num = ''
     num = lista[x]
@@ -100,11 +110,31 @@ for x in range(len(porce)):
         num = " "*(5-len(num)) + num
     porce[x] = num
 
-print("\nCME Inc.               Uso do espaço em disco pelos usuários\n"
+#Transforma os valores de 'porce' com vírgula ao invés de ponto
+for x in range(len(porce)):
+    num = ''
+    num = str(porce[x])
+    for y in range(len(num)):
+        if num[y] == ".":
+            porce[x] = num[:y] + "," + num[y+1:y+3]
+
+arquivo = open("relatório.txt", "w")
+arquivo.write("\nCME Inc.               Uso do espaço em disco pelos usuários\n"
+"------------------------------------------------------------------------\n"
+"Nr.  Usuário        Espaço utilizado     % do uso\n\n"
+)
+for x in range(len(nomes)):
+    arquivo.write(f"{x+1}   {nomes[x]} {lista[x]} MB             {porce[x]}%\n")
+arquivo.write(f"\nEspaço total ocupado: {totalmb} MB\n")
+arquivo.write(f"Espaço médio ocupado: {mediamb} MB\n")
+arquivo.close()
+
+
+'''print("\nCME Inc.               Uso do espaço em disco pelos usuários\n"
 "------------------------------------------------------------------------\n"
 "Nr.  Usuário        Espaço utilizado     % do uso\n"
 )
 for x in range(len(nomes)):
     print(f"{x+1}   {nomes[x]} {lista[x]} MB             {porce[x]}%")
 print(f"\nEspaço total ocupado: {totalmb} MB")
-print(f"Espaço médio ocupado: {mediamb} MB\n")
+print(f"Espaço médio ocupado: {mediamb} MB\n")'''
