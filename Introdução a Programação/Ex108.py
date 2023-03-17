@@ -45,7 +45,7 @@ while True:
         case _:
             print("Voto inválido.")
 
-print("Resultado dos votos respectivamente:"
+print("Resultado dos votos respectivamente:\n"
 f"1- Windows Server         {votos[0]}\n"
 f"2- Unix                   {votos[1]}\n"
 f"3- Linux                  {votos[2]}\n"

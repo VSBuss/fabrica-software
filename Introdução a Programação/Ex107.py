@@ -53,4 +53,4 @@ print("\nRelatório Final")
 for x in range(len(carlista)):
     y = float(carsumo[x])
     #print(f"{x+1} - {carlista[x]}" + " "*(11-len(carlista[x])), f"{y} -  {1000/y:.2f} litros - R$ {1000/y*2.25:.2f}")
-    print(f'{x+1} - {carlista[x]:<11} - {y:^6} - {1000/y:^11.2f} litros - R$ {1000/y*2.25:.2f}')
+    print(f'{x+1} - {carlista[x]:<11} - {y:^6} - {1000/y:^11.2f} litros - R$ {1000/y*2.25:.2f}')   #Colega me ajudou a deixar o print mais organizado.
