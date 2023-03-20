@@ -1,5 +1,7 @@
-from Ex111 import *
-class Program:
+#Ex111 uso de classes
+
+from Ex111 import * # Importa tudo relacionado ao arquivo Ex111 (O asterisco que define que importará tudo)
+class Ex112:
     if __name__ == "__main__":
         pessoa1 = Pessoa()
         pessoa2 = Pessoa()
@@ -12,6 +14,6 @@ class Program:
         pessoa2.idade = int(input("Idade da pessoa 2: "))
 
         if(pessoa1.idade > pessoa2.idade):
-            print(f" Pessoas mais velha: {pessoa1.nome}")
+            print(f"Pessoa mais velha: {pessoa1.nome}")
         else:
-            print(f" Pessoas mais velha: {pessoa2.nome}")
+            print(f"Pessoa mais velha: {pessoa2.nome}")
