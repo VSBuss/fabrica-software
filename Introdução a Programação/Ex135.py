@@ -57,9 +57,9 @@ class Pessoa():
             exibir = exibir + ' e oito anos.'
         if idade == 9:
             exibir = exibir + ' e nove anos.'
-        return print(exibir)
+        return print(f"Idade: {exibir}")
 
 p1 = Pessoa('Roberto', x, 185)
-print(p1.nome)
+print(f"Nome: {p1.nome}")
 p1.exibirIdadeExtenso()
-print(f"{p1.altura} centímetros de altura.")
+print(f"Altura: {p1.altura} centímetros.")

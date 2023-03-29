@@ -12,15 +12,15 @@ DIAGONAL = 5.00
 import math
 
 class Retangulo:
-    def __init__(self, largura, altura):
-        self.largura = 0
-        self.altura = 0
+    def __init__(self):
+        self.largura = float(input("Largura do retângulo: "))
+        self.altura = float(input("Altura do retângulo: "))
     
     def area(self):
-        print(f"Valor da área: {self.altura * self.largura}")
+        print(f"Valor da área: {self.largura * self.altura:.2f}")
     
     def perimetro(self):
-        print(f"Valor do perímetro: {self.largura * 2 + self.altura * 2}")
+        print(f"Valor do perímetro: {self.largura * 2 + self.altura * 2:.2f}")
 
     def diagonal(self):
-        print(f"Valor da diagonal: {math.sqrt(self.largura**2 + self.altura**2)}")
+        print(f"Valor da diagonal: {math.sqrt(self.largura**2 + self.altura**2):.2f}")

@@ -13,3 +13,17 @@ Dados atualizados: Joao Silva, $ 5600.00
 
 #Uso de classes
 
+class Funcionario:
+    def __init__(self):
+        self.nome = input("Nome: ")
+        self.salariobruto = float(input("Salário bruto: "))
+        self.imposto = float(input("Imposto: "))
+        pass
+
+    def mostrar_dados(self):
+        print(f"Funcionário: {self.nome}, $ {self.salariobruto-self.imposto:.2f}")
+    
+    def aumentar_salário(self):
+        porc = float(input("Digite a porcentagem para aumentar o salário: "))
+        self.salariobruto = self.salariobruto * (1 + porc/100)
+        print(f"Dados atualizados: {self.nome}, $ {self.salariobruto-self.imposto:.2f}")

@@ -8,11 +8,11 @@ class Calculadora:
         self.num2 = float(input("Informe o 2° número: "))
     
     def soma(self):
-        return print(self.num1 + self.num2)
+        return print(f"Soma: {self.num1 + self.num2}")
     def subt(self):
-        return print(self.num1 - self.num2)
+        return print(f"Subtração: {self.num1 - self.num2}")
     def mult(self):
-        return print(self.num1 * self.num2)
+        return print(f"Multiplicação: {self.num1 * self.num2}")
     def divi(self):
         return print(self.num1 / self.num2)
 
