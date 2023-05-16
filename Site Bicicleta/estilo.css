@@ -1,0 +1,352 @@
+:root{
+    --cor-titulo: rgb(255, 255, 255);
+    --cor-texto: black;
+    --cor-menu: #949494;
+    --cor-fundo-menu: lightskyblue;
+    --cor-hover: rgb(69, 177, 240);
+}
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+#logo{
+    width: 60px;
+}
+nav{
+    background-color: lightskyblue;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 8px 5px rgb(70, 200, 255);
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: right;
+    padding: 5px 100px 2px 50px;
+}
+
+nav ul li{
+    text-align: center;
+    padding-right: 100px;
+    
+}
+nav ul li a{
+    display: inline-block;
+    flex-direction: row;
+    padding: 10px;
+    width: 100%;
+    color: rgb(16, 16, 98);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul li a:hover{
+    
+    color: rgba(1, 29, 54, 0.372);
+}
+h1{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#produtos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(127, 191, 255)
+}
+
+#produtos #item1 #Bike{
+    padding: 5px;
+    width: 250px;
+    height: 200px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#item1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    background-color: rgb(189, 57, 189);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 400px;
+}
+
+#produtos #item2 #Bike{
+    padding: 5px;
+    width: 250px;
+    height: 200px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#item2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    background-color: rgb(112, 185, 182);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 400px;
+}
+
+#produtos #item3 #Bike{
+    padding: 5px;
+    width: 250px;
+    height: 200px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#item3{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    background-color: rgb(38, 40, 184);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 400px;
+}
+
+#produtos #item4 #Bike{
+    padding: 5px;
+    width: 250px;
+    height: 200px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#item4{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    background-color: rgb(38, 184, 116);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    width: 400px;
+}
+
+#titulo-card{
+    color: ghostwhite;
+    font-size: 20px;
+    padding: 5px;
+}
+
+#texto-info{
+    color: rgb(237, 255, 255);
+    font-size: small;
+    padding: 5px;
+}
+
+#btn-comprar{
+    background-color: gold;
+    color: rgb(255, 0, 247);
+    padding: 5px;
+    border-radius: 8px;
+    border-width: 3px;
+    border-color: rgb(13, 112, 0);
+    width: 40%;
+    font-size: medium;
+    cursor: pointer;
+    margin: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+
+.tela-login ul, li{
+    margin: 0px;
+    list-style-type: none;
+}
+
+.tela-login input, button{
+    outline: none !important;
+    border: none;
+}
+
+.tela-login button:hover{
+    cursor: pointer;
+}
+
+.tela-login .texto1{
+    font-size: 15px;
+    color: var(--cor-texto);
+    line-height: 1.5px;
+    margin-right: 2%;
+}
+
+.tela-login .texto2{
+    font-size: 15px;
+    color: var(--cor-titulo);
+}
+
+.tela-login .margin-bottom-35{
+    margin-bottom: 35px;
+}
+
+.tela-login .margin-top-35{
+    margin-top: 35px;
+}   
+.tela-login .margin-bottom-8{
+    margin-bottom: 8px;
+}
+.tela-login .margin-top-8{
+    margin-top: 8px;
+}
+
+.tela-login .container{
+    margin: 0px;
+    width: 100%;
+}
+
+.tela-login .container-login{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-left: 15%;
+    padding-right: 5%;
+}
+#img-login{
+    width: 70%;
+}
+
+.tela-login .wrap-login{
+    background-color: var(--cor-fundo-menu);
+    width: 350px;
+    height: 400px;
+    margin-right: 40%;
+    box-shadow: 0 10px 8px rgb(70, 200, 255);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.tela-login .login-form{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    align-self: center;
+}
+
+.tela-login .login-form-title{
+    display: block;
+    font-size: 28px;
+    color: var(--cor-titulo);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.tela-login .wrap-input{
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid;
+}
+.tela-login .input-form{
+    font-size: 18px;
+    color: var(--cor-texto);
+    display: block;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    margin-left: 60px;
+}
+.tela-login .focus-input-form{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.tela-login .focus-input-form::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    background-color: black;
+    height: 2px;
+    width: 0;
+    left: 0;
+    transition: all 0.4s;
+}
+
+.tela-login .focus-input-form::after{
+    font-size: 18px;
+    color: var(--cor-texto);
+    line-height: 1.2;
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 13px;
+    left: 0px;
+    padding-left: 5px;
+    transition: all 0.4s;
+}
+.tela-login .input-form:focus+.focus-input-form::after{
+    top: -20px;
+    font-size: 15px;
+}
+.tela-login .container-login-form-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.tela-login .login-form-btn{
+    font-size: 16px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    width: 70%;
+    height: 30px;
+    border-radius: 5px;
+    transition: all 0.4s;
+    background-color: var(--cor-menu);
+    color: aliceblue;
+}
+.tela-login .login-form-btn:hover{
+    background-color: var(--cor-hover);
+}
+.tela-login .login-utils{
+    margin-top: 20px;
+    width: 70%;
+    justify-content: center;
+    margin: auto;
+}

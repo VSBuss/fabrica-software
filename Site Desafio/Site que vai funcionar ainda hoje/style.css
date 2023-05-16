@@ -1,0 +1,290 @@
+:root{
+  --cor-fundo: rgb(129, 44, 168);
+  --cor-fundo-menu: rgb(0, 0, 0);
+}
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav{
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: -30px;
+  bottom: 0;
+  height: 100%;
+  background: var(--cor-fundo-menu);
+  width: 95px;
+  overflow-x: hidden;
+  transition: width 0.2s linear;
+}
+#logorodaroxa{
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease;
+  margin: 10px;
+}
+#logorodaroxa img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+#logorodaroxa span{
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding-left: 15px;
+  top: 4px;
+}
+nav a{
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  display: table;
+  width: 300px;
+  padding: 10px;
+}
+.fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+}
+.nav-item{
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+a:hover{
+  background: rgb(225, 0, 255);
+}
+nav:hover{
+  width: 280px;
+  transition: all 0.5s ease;
+}
+.aboutustext{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.60);
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: azure;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  left: 30%;
+}
+body{
+  background-image: url(img/ppc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: inherit;
+  height: 100%;
+  margin: 0;
+}
+.home{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.home .logogrande{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  margin-top: 15%;
+  margin-left: 40%;
+}
+nav ul ul{
+  background-color: rgb(40, 40, 40);
+  padding-left: 10px;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+}
+nav ul li:hover>ul{
+  padding: 12px 16px;
+  display: block;
+}
+.active{
+  background-color: rgb(225, 0, 255);
+  color: rgb(0, 0, 0);
+}
+
+li, span {
+  margin: 20px;
+  list-style-type: none;
+}
+
+
+/* TELA LOGIN AQUI Ó */
+.divlogin{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  position: fixed;
+  left: 30%;
+  top: 30%;
+  height: 200px;
+}
+
+#loginForm{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid transparent;
+  background-color: gray;
+  width: 350px;
+  height: 250px;
+  padding: 30px;
+  margin: auto;
+  font-style: normal;
+}
+
+#loginForm p{
+  padding-top: 30px;
+  padding: 5px; 
+  background-color: red;
+
+}
+
+.loginImg img{
+  margin: auto;
+  height: 250px;
+  width: 200px;
+}
+
+
+
+
+
+*TELA PRODUTOS AQUI Ó
+.principal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.principal .cards{
+  width: 100%;
+  padding-top: 450px;
+  padding-left: 350px;
+  display: flex;
+  margin: auto;
+}
+.produtos article.card{
+  width: 350px;
+  height: 400px;
+  transform: translate(-50%, -50%) translateZ(0);
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  margin: auto;
+}
+.produtos article.card .thumb1{
+  width: auto;
+  height: 310px;
+  background: url(img/race-suit.jpg) no-repeat center;
+  background-size: cover;
+  border-radius: 3px;
+}
+.produtos article.card .thumb2{
+  width: auto;
+  height: 310px;
+  background: url(img/R-GLOVES.png) no-repeat center;
+  background-size: cover;
+  border-radius: 3px;
+}
+.produtos article.card .thumb3{
+  width: auto;
+  height: 310px;
+  background: url(img/SparcoShoes.jpg) no-repeat center;
+  background-size: cover;
+  border-radius: 3px;
+}
+.produtos article.card .infos{
+  width: auto;
+  height: 350px;
+  padding: 14px 24px;
+  background: var(--cor-fundo);
+  transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+.produtos article.card .infos .title{
+  position: relative;
+  margin: 5px 0;
+  color: whitesmoke; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+.produtos article.card .infos .icon{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background: url(img/BRicon.png) no-repeat top right;
+  background-size: 100% auto;
+  display: inline-block;
+}
+.produtos article.card .infos .brand, article.card .infos .stock{
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: 1.5px;
+  color: rgb(255, 255, 255);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.produtos article.card .infos .stock{
+  display: inline-block;
+  margin-bottom: 12px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(56, 131, 79, 0.2);
+  opacity: 0;
+  transition: 0.5s 0.25s cubic-bezier(0.17,0.67, 0.5, 1.03);
+}
+.produtos article.card .infos .txt{
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.2;
+  font-size: 0.85rem;
+  color: rgb(228, 228, 228);
+  opacity: 0;
+  transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1,03);
+}
+.produtos article.card .infos .details{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 10px 5;
+  padding: 20px 24px;
+  letter-spacing: 2px;
+  color: whitesmoke;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+.produtos article.card:hover .infos{
+  transform: translateY(-260px);
+}
+.produtos article.card:hover .infos .stock, .produtos article.card:hover .infos .txt,
+.produtos article.card:hover .infos .details{
+  opacity: 1;
+}
+.produtos .principal .titulo{
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 3px;
+}

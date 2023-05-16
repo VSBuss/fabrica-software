@@ -31,16 +31,14 @@ root = Tk()
 root.geometry("800x600")
 root.resizable(0,0)
 root.configure(bg="#002436")
+'''Título do programa'''
 root.title("Programa de Python Simples")
-
-
-
-
-#Modificações feitas por mim
+limitador = 3
 import random
+import time
+
 senhacofre = [random.randint(1,5), random.randint(1,5), random.randint(1,5)]
 jogador = [0,0,0]
-acerto = 0
 num = ''
 
 def tentativa():
@@ -49,142 +47,113 @@ def tentativa():
     else:
         False
 
-def modificar_senha():
+def testar_senha():
+    texto_teste = texto_caixa.get()
+    jogador[0] = int(texto_teste[0])
+    jogador[1] = int(texto_teste[1])
+    jogador[2] = int(texto_teste[2])
     acerto = 0
     if senhacofre[0] == jogador[0]:
         acerto = acerto + 1
-    elif senhacofre[1] == jogador[1]:
+    if senhacofre[1] == jogador[1]:
         acerto = acerto + 1
-    elif senhacofre[2] == jogador[2]:
+    if senhacofre[2] == jogador[2]:
         acerto = acerto + 1
-    vertexto.set(acerto)
+    qntacertos.set(acerto)
+    tentativateste.set(texto_teste)
+    if acerto == 3:
+        time.sleep(3)
+        top = Toplevel()
+        top.title("VOCÊ GANHOU!")
+        top.geometry("400x300")
+        '''Foto caso vença'''
+        figura = PhotoImage(file=r"C:\Users\fabrica.aluno2\Pictures\youwin.png")
+        youwin = Label(top, image=figura)
+        youwin.pack()
+
+
 
 def senhajogador(num):
     a = num
     jogador[-1] = a
-    vertexto.set(jogador)
+    qntacertos.set(jogador)
 
 def jogo():
     jogar = 0
 
-
-#Plano de Fundo usando imagem
+def altexto(numero):
+    texto_atual = texto_caixa.get()
+    if len(texto_atual) < 3:
+        texto_caixa.set(texto_atual + numero)
+    if len(texto_atual) == limitador:
+        texto_caixa.set(texto_atual[1:3] + numero)
+    else:
+        texto_caixa.set(texto_atual + numero)
+    
+'''Plano de Fundo usando imagem'''
 pic = PhotoImage(file=r"C:\Users\fabrica.aluno2\Pictures\Cofre.png")
-label1 = Label(root, image=pic)
-label1.place(x = -200, y = -20)
+bckground = Label(root, image=pic)
+bckground.place(x = -200, y = -20)
 
+def btn1():
+    jogar = 0
 
+'''Modificações feitas por mim'''
 
-#Original
-def limpar():
-    numero1_entrada.delete(0, END)
-    numero2_entrada.delete(0, END)
-
-def soma():
-    n1 = numero1.get()
-    n2 = numero2.get()
-    res = n1+n2
-    vresultado.set(res)
-
-def sub():
-    n1 = numero1.get()
-    n2 = numero2.get()
-    res = n1-n2
-    vresultado.set(res)
-
-def mulp():
-    n1 = numero1.get()
-    n2 = numero2.get()
-    res = n1*n2
-    vresultado.set(res)
-
-def divisao():
-    n1 = numero1.get()
-    n2 = numero2.get()
-    res = n1/n2
-    resarr = round(res,2)
-    vresultado.set(resarr)
-
-numero1 = DoubleVar()
-numero2 = DoubleVar()
-vnumero1 = Label(text="Número 1:",bg="#c3e8de",fg="black",font=("Arial","14","bold"))
-vnumero1.place(relx=0.05,rely=0.3)
-numero1_entrada= Entry(textvariable=numero1,font=("Arial","12","bold"),bg="white",fg="red",justify='center')
-numero1_entrada.place(relx=0.2,rely=0.3,relwidth=0.1)
-
-vnumero2 = Label(text="Número 2:",bg="#c3e8de",fg="black",font=("Arial","14","bold"))
-vnumero2.place(relx=0.32,rely=0.3)
-numero2_entrada= Entry(textvariable=numero2,font=("Arial","12","bold"),bg="white",fg="red",justify='center')
-numero2_entrada.place(relx=0.48,rely=0.3,relwidth=0.1)
-
-butlimpar = Button( text="Limpar", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'), command=limpar)
-butlimpar.place(relx=0.05, rely=0.4, relwidth=0.15, relheight=0.15)
-butsoma = Button( text="+", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'),command=soma)
-butsoma.place(relx=0.45, rely=0.4, relwidth=0.1, relheight=0.15)
-butsub = Button( text="-", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'),command=sub)
-butsub.place(relx=0.6, rely=0.4, relwidth=0.1, relheight=0.15)
-butmult = Button( text="*", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'),command=mulp)
-butmult.place(relx=0.72, rely=0.4, relwidth=0.1, relheight=0.15)
-butdiv = Button( text="/", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'),command=divisao)
-butdiv.place(relx=0.85, rely=0.4, relwidth=0.1, relheight=0.15)
-
-texto1 = Label(text="Resultado:",bg="#c3e8de",fg="black",font=("Arial","14","bold"))
-texto1.place(relx=0.6,rely=0.3)
-
-vresultado = StringVar()
-resultado=Label( textvariable=vresultado,bg="#FFFFFF",
-                 font=('verdana', 14, 'bold'))
-resultado.place(relx=0.75,rely=0.3,relwidth=0.2)
-
-
-
-
-
-#Modificações feitas por mim
-
-botaoteste = Button( text="Teste", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'),command=modificar_senha)
+botaoteste = Button( text="Teste", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'), command=testar_senha)
 botaoteste.place(relx=0.05, rely=0.8, relwidth=0.09, relheight=0.1)
 
 tituloJogo = Label(text="Jogo do Cofre:",bg="#6D6E71",fg="white",font=("Arial","20","bold"))
 tituloJogo.place(x=300,y=22)
 
-texto2 = Label(text="Números Certos:",bg="#c3e8de",fg="black",font=("Arial","14","bold"))
-texto2.place(relx=0.2,rely=0.8, relheight=0.1)
+acertos = Label(text="Acertos:",bg="#A7A9AC",fg="green",font=("Arial","10","bold"))
+acertos.place(x=420,y=250, relheight=0.05)
 
-vertexto = StringVar()
-testeresultado=Label( textvariable=vertexto,bg="#FFFFFF",
-                 font=('verdana', 14, 'bold'))
-testeresultado.place(relx=0.45,rely=0.8,relwidth=0.2, relheight=0.1)
+texto_caixa = StringVar()
+caixa_texto = Label( textvariable=texto_caixa, bg='#FFFFFF', font=('verdana', 10, 'bold'))
+caixa_texto.place(x=400, y=200, relwidth=0.1, relheight=0.05)
+
+tentativateste = StringVar()
+tentativa1 = Label( textvariable=tentativateste, bg="#FFFFFF", fg='red', font=('verdana', 10, 'bold'))
+tentativa1.place(x=300, y=100, relwidth=0.1, relheight=0.05)
+
+
+
+qntacertos = StringVar()
+testeresultado=Label( textvariable=qntacertos,bg="#FFFFFF", font=('verdana', 10, 'bold'))
+testeresultado.place(x=475, y=252, relwidth=0.114, relheight=0.04)
 
 
 '''Botões numéricos do Cofre'''
 
-buttomOne = Button( text="1", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=senhajogador(3))
-buttomOne.place(x=400, y=300, relwidth=0.05, relheight=0.05)
+buttomOne = Button( text="1", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('1'))
+buttomOne.pack()
+buttomOne.place(x=425, y=300, relwidth=0.05, relheight=0.05)
 
-buttomTwo = Button( text="2", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'))
-buttomTwo.place(x=450, y=300, relwidth=0.05, relheight=0.05)
+buttomTwo = Button( text="2", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('2'))
+buttomTwo.pack()
+buttomTwo.place(x=475, y=300, relwidth=0.05, relheight=0.05)
 
-buttomThree = Button( text="3", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'))
-buttomThree.place(x=500, y=300, relwidth=0.05, relheight=0.05)
+buttomThree = Button( text="3", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('3'))
+buttomThree.place(x=525, y=300, relwidth=0.05, relheight=0.05)
 
-buttomFour = Button( text="4", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'))
-buttomFour.place(x=400, y=350, relwidth=0.05, relheight=0.05)
+buttomFour = Button( text="4", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('4'))
+buttomFour.place(x=425, y=350, relwidth=0.05, relheight=0.05)
 
-buttomFive = Button( text="5", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'))
-buttomFive.place(x=450, y=350, relwidth=0.05, relheight=0.05)
+buttomFive = Button( text="5", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('5'))
+buttomFive.place(x=475, y=350, relwidth=0.05, relheight=0.05)
 
-buttomSix = Button( text="6", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'))
-buttomSix.place(x=500, y=350, relwidth=0.05, relheight=0.05)
+buttomSix = Button( text="6", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('6'))
+buttomSix.place(x=525, y=350, relwidth=0.05, relheight=0.05)
 
-buttomSeven = Button( text="7", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'))
-buttomSeven.place(x=400, y=400, relwidth=0.05, relheight=0.05)
+buttomSeven = Button( text="7", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('7'))
+buttomSeven.place(x=425, y=400, relwidth=0.05, relheight=0.05)
 
-buttomSeven = Button( text="8", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'))
-buttomSeven.place(x=450, y=400, relwidth=0.05, relheight=0.05)
+buttomSeven = Button( text="8", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('8'))
+buttomSeven.place(x=475, y=400, relwidth=0.05, relheight=0.05)
 
-buttomSeven = Button( text="9", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'))
-buttomSeven.place(x=500, y=400, relwidth=0.05, relheight=0.05)
+buttomSeven = Button( text="9", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('9'))
+buttomSeven.place(x=525, y=400, relwidth=0.05, relheight=0.05)
 
 
 
