@@ -13,8 +13,8 @@ function actionLogar(){
     //var senhord = elemento.value()
 
     if (login == nickmail && senhord == senha){
-        alert("Se sabe o e-mail e senha? Se é o bichão mesmo ein doido.")
+        alert("Acesso concedido.")
     }else{
-        alert("MO burrão vc em")
+        alert("Login e/ou senha incorretos.")
     }
 }

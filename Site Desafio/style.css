@@ -126,7 +126,11 @@ li, span {
 }
 
 
-/* TELA LOGIN AQUI Ó */
+
+
+
+
+
 .divlogin{
   display: flex;
   flex-direction: row;
@@ -136,7 +140,6 @@ li, span {
   top: 30%;
   height: 200px;
 }
-
 #loginForm{
   display: flex;
   flex-direction: column;
@@ -148,14 +151,11 @@ li, span {
   margin: auto;
   font-style: normal;
 }
-
 #loginForm p{
   padding-top: 30px;
   padding: 5px; 
   background-color: red;
-
 }
-
 .loginImg img{
   margin: auto;
   height: 250px;
@@ -166,7 +166,8 @@ li, span {
 
 
 
-*TELA PRODUTOS AQUI Ó
+
+
 .principal{
   display: flex;
   flex-direction: column;
