@@ -1,0 +1,104 @@
+:root{
+    --cor-fundo-menu: rgb(0, 36, 54);
+    --cor-laranja-az: #EF4E23;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(img/Fundo.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+.menulateral{
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 273px;
+    background: var(--cor-fundo-menu);
+}
+.menulateral a{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    padding-left: 41px; /*37px de distancia entre icone e texto*/
+    padding-top: 10px;
+}
+a:hover{
+/*Propriedades do hover*/
+    color: var(--cor-laranja-az);
+}
+a:hover .icons{
+    fill: var(--cor-laranja-az);
+}
+.menulateral ul li span{
+    padding-left: 25px;
+}
+ul{
+    list-style-type: none;
+}
+ul li{
+    align-items: center;
+    padding: 10px;
+    display: flex;
+}
+
+
+/*AJUSTE VETOR DA LOGO AZ MERIT*/
+#logoazmerit{
+/* AZ merit */
+    position: relative;
+    padding-left: 28px;
+    padding-top: 72px;
+    width: 183px;
+    height: 44px;
+}
+
+
+
+
+
+/* Não sei o porquê mas não funciona nada a partir daqui*/
+.vector_az{
+/* vector_az */
+position: absolute;
+width: 63.49px;
+height: 38px;
+}
+.vector_m{
+/* vector_m */
+position: absolute;
+width: 39.21px;
+height: 30px;
+}
+.vector_e{
+/* vector_e */
+position: absolute;
+width: 27.08px;
+height: 31px;
+}
+.vector_r{
+/* vector_r */
+position: absolute;
+width: 13.07px;
+height: 29px;
+}
+.vector_i{
+/* vector_i */
+position: absolute;
+width: 3.73px;
+height: 29px;
+}
+.vector_t{
+/* vector_t */
+position: absolute;
+width: 21.47px;
+height: 40px;
+}
+.vector_i_ponto{
+/* vector_i_ponto */
+position: absolute;
+width: 5.6px;
+height: 6px;
+}
