@@ -5,13 +5,21 @@
 *{
   margin: 0;
   padding: 0;
-  outline: none;
   border: none;
+  outline: none;
   text-decoration: none;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-nav{
+body{
+  background-image: url(img/ppc.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: inherit;
+  height: 100%;
+  margin: 0;
+}
+nav{/*MENU LATERAL*/
   z-index: 2;
   position: fixed;
   top: 0;
@@ -23,18 +31,18 @@ nav{
   overflow-x: hidden;
   transition: width 0.2s linear;
 }
-#logorodaroxa{
+#boxlogo{
   display: flex;
   align-items: center;
   transition: all 0.5s ease;
   margin: 10px;
 }
-#logorodaroxa img{
+#boxlogo img{
   width: 45px;
   height: 45px;
   border-radius: 50%;
 }
-#logorodaroxa span{
+#boxlogo span{
   font-weight: bold;
   font-size: 18px;
   text-transform: uppercase;
@@ -42,12 +50,13 @@ nav{
   top: 4px;
 }
 nav a{
-  position: relative;
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  display: table;
+  background-color: red;
   width: 300px;
   padding: 10px;
+  position: relative;
+  font-size: 14px;
+  display: table;
+  color: rgb(255, 255, 255);
 }
 .fas{
   position: relative;
@@ -69,6 +78,12 @@ nav:hover{
   width: 280px;
   transition: all 0.5s ease;
 }
+
+
+
+
+
+
 .aboutustext{
   position: absolute;
   bottom: 20px;
@@ -82,14 +97,6 @@ nav:hover{
   padding-top: 20px;
   padding-bottom: 20px;
   left: 30%;
-}
-body{
-  background-image: url(img/ppc.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-clip: inherit;
-  height: 100%;
-  margin: 0;
 }
 .home{
   width: 20px;
@@ -111,15 +118,6 @@ nav ul ul{
   min-width: 160px;
   z-index: 1;
 }
-nav ul li:hover>ul{
-  padding: 12px 16px;
-  display: block;
-}
-.active{
-  background-color: rgb(225, 0, 255);
-  color: rgb(0, 0, 0);
-}
-
 li, span {
   margin: 20px;
   list-style-type: none;
