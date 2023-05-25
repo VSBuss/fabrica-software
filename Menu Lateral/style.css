@@ -10,95 +10,79 @@ body{
     background-position: bottom right;
 }
 .menulateral{
-    position: absolute;
+    position: fixed;
+    top: 0;
     bottom: 0;
+    width: 100px;
     height: 100%;
-    width: 273px;
-    background: var(--cor-fundo-menu);
+    background-color: var(--cor-fundo-menu);
+    transition: 0.2s all ease;
 }
-.menulateral a{
-    color: rgb(255, 255, 255);
-    font-size: 16px;
+.menulateral .listamenu{
     display: flex;
-    flex-direction: row;
-    width: 300px;
-    padding-left: 41px; /*37px de distancia entre icone e texto*/
-    padding-top: 10px;
-}
-a:hover{
-/*Propriedades do hover*/
-    color: var(--cor-laranja-az);
-}
-a:hover .icons{
-    fill: var(--cor-laranja-az);
-}
-.menulateral ul li span{
-    padding-left: 25px;
-}
-ul{
+    flex-flow: column;
     list-style-type: none;
+    justify-content: space-between;
 }
-ul li{
-    align-items: center;
-    padding: 10px;
-    display: flex;
-}
-
-
-/*AJUSTE VETOR DA LOGO AZ MERIT*/
-#logoazmerit{
+/AJUSTE VETOR DA LOGO AZ MERIT/
+.menulateral .listamenu .logoazmerit{
 /* AZ merit */
     position: relative;
-    padding-left: 28px;
-    padding-top: 72px;
-    width: 183px;
-    height: 44px;
+    margin-left: -15px;
+}
+.menulateral .listamenu .itemlista{
+    margin-top: 50px;
+    padding-top: auto;
+    width: 100%;
+}
+.menulateral .listamenu .logoazmerit #logoazmerit .vector_merit{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s all ease;
+}
+.menulateral .listamenu .itemlista .itemmenu{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+}
+.menulateral .listamenu .itemlista .textoicon{
+    position: absolute;
+    padding: 2px 15px;
+    border-radius: 30px;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Tomorrow', serif;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s all ease;    
+}
+.menulateral .listamenu .itemlista .itemmenu .icon{
+    width: 25px;
+    height: 25px;
 }
 
 
-
-
-
-/* Não sei o porquê mas não funciona nada a partir daqui*/
-.vector_az{
-/* vector_az */
-position: absolute;
-width: 63.49px;
-height: 38px;
+/Propriedades do hover/
+.menulateral:hover{
+    width: 250px;
 }
-.vector_m{
-/* vector_m */
-position: absolute;
-width: 39.21px;
-height: 30px;
+.menulateral:hover .listamenu .itemlista .itemmenu .textoicon{
+    opacity: 1;
+    visibility: visible;
+    margin-left: 50px;
 }
-.vector_e{
-/* vector_e */
-position: absolute;
-width: 27.08px;
-height: 31px;
+.menulateral:hover .listamenu .logoazmerit #logoazmerit .vector_merit{
+    opacity: 1;
+    visibility: visible;
 }
-.vector_r{
-/* vector_r */
-position: absolute;
-width: 13.07px;
-height: 29px;
+.menulateral .listamenu .itemlista .itemmenu:hover{
+    color: var(--cor-laranja-az);
 }
-.vector_i{
-/* vector_i */
-position: absolute;
-width: 3.73px;
-height: 29px;
-}
-.vector_t{
-/* vector_t */
-position: absolute;
-width: 21.47px;
-height: 40px;
-}
-.vector_i_ponto{
-/* vector_i_ponto */
-position: absolute;
-width: 5.6px;
-height: 6px;
+.menulateral .listamenu .itemlista .itemmenu:hover .pathicon{
+    fill: var(--cor-laranja-az);
 }
