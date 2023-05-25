@@ -2,10 +2,17 @@
     --cor-fundo-menu: rgb(0, 36, 54);
     --cor-laranja-az: #EF4E23;
 }
+.bg{
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    opacity: 0.35;
+    position: absolute;
+}
 body{
     margin: 0;
     padding: 0;
-    background-image: url(img/Fundo.png);
+    font-family: 'Tomorrow', serif;
     background-repeat: no-repeat;
     background-position: bottom right;
 }
@@ -24,7 +31,7 @@ body{
     list-style-type: none;
     justify-content: space-between;
 }
-/AJUSTE VETOR DA LOGO AZ MERIT/
+/*AJUSTE VETOR DA LOGO AZ MERIT*/
 .menulateral .listamenu .logoazmerit{
 /* AZ merit */
     position: relative;
@@ -56,7 +63,6 @@ body{
     margin-left: 10px;
     font-weight: 500;
     font-size: 16px;
-    font-family: 'Tomorrow', serif;
     visibility: hidden;
     opacity: 0;
     transition: 0.2s all ease;    
@@ -67,7 +73,7 @@ body{
 }
 
 
-/Propriedades do hover/
+/*Propriedades do hover*/
 .menulateral:hover{
     width: 250px;
 }
@@ -85,4 +91,61 @@ body{
 }
 .menulateral .listamenu .itemlista .itemmenu:hover .pathicon{
     fill: var(--cor-laranja-az);
+}
+
+
+
+
+
+
+
+
+/*CABEÇALHO*/
+.cabecalho{
+    z-index: 1;
+    height: 114px;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--cor-laranja-az);
+}
+/*CAIXA COM FOTO E NOME DO USUÁRIO*/
+.cabecalho .user_box{
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cabecalho .user_box .nome_user{
+    font-size: 16px;
+    font-weight: bold;
+}
+.cabecalho .user_box .img_user{
+    width: 84px;
+    height: 84px;
+    padding-left: 10px;
+    border-radius: 50%;
+}
+/*CAIXA QUE INDICA PÁGINA ATUAL*/
+.tela_atual{
+    position: absolute;
+    top: 8%;
+    left: 17%;
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+/*RODAPÉ*/
+.rodape{
+    left: 50%;
+    bottom: 0%;
+    z-index: 0;
+    opacity: 0.35;
+    padding: auto;
+    font-size: 14px;
+    position: absolute;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
 }
