@@ -65,7 +65,7 @@ body{
     font-size: 16px;
     visibility: hidden;
     opacity: 0;
-    transition: 0.2s all ease;    
+    transition: 0.2s all ease;
 }
 .menulateral .listamenu .itemlista .itemmenu .icon{
     width: 25px;
