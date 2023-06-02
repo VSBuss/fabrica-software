@@ -1,6 +1,6 @@
 :root{
     --cor-fundo-menu: rgb(0, 36, 54);
-    --cor-laranja-az: #EF4E23;
+    --cor-laranja-az: rgb(239, 78, 35);
 }
 .bg{
     right: 0;
@@ -27,7 +27,7 @@ body{
 }
 .menulateral .listamenu{
     display: flex;
-    flex-flow: column;
+    flex-flow: column;  
     list-style-type: none;
     justify-content: space-between;
 }
@@ -91,8 +91,58 @@ body{
     fill: var(--cor-laranja-az);
 }
 
+.menulateral .ocean{
+    position: relative;
+    height: 100%;
+    margin-top: 50px;
+    overflow: hidden;
+}
 
+/*Estilo das Ondas https://www.cssscript.com/animated-waves-svg/*/
+.waves{
+    position: relative;
+    height: 10vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 550px;
+}
 
+.parallax > use{
+    animation: move-forever 10s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1){
+    animation-delay: -1s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(2){
+    animation-delay: -7s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3){
+    animation-delay: -5s;
+    animation-duration: 10s;
+}
+@keyframes move-forever{
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% { 
+        transform: translate3d(85px,0,0);
+    }
+}
+  /*Shrinking for mobile*/
+@media (max-width: 768px){
+    .waves {
+        height:40px;
+        min-height:40px;
+    }
+}
+.boxlogout{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: var(--cor-laranja-az);
+}
 
 
 
@@ -132,7 +182,7 @@ body{
 /*CAIXA QUE INDICA PÁGINA ATUAL*/
 .tela_atual{
     margin-top: 70px;
-    margin-left: 10px;
+    margin-left: 160px;
     font-size: 20px;
     font-weight: bolder;
     text-transform: uppercase;

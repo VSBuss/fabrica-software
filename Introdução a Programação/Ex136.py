@@ -67,7 +67,7 @@ def testar_senha():
         top.title("VOCÊ GANHOU!")
         top.geometry("400x300")
         '''Foto caso vença'''
-        figura = PhotoImage(file=r"C:\Users\fabrica.aluno2\Pictures\youwin.png")
+        figura = PhotoImage(file=r"")
         youwin = Label(top, image=figura)
         youwin.pack()
 
@@ -91,7 +91,7 @@ def altexto(numero):
         texto_caixa.set(texto_atual + numero)
     
 '''Plano de Fundo usando imagem'''
-pic = PhotoImage(file=r"C:\Users\fabrica.aluno2\Pictures\Cofre.png")
+pic = PhotoImage(file=r"Introdução a Programação\Cofre.png")
 bckground = Label(root, image=pic)
 bckground.place(x = -200, y = -20)
 
