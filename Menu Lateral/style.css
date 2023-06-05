@@ -200,3 +200,12 @@ body{
     font-weight: bolder;
     color: rgb(0, 0, 0);
 }
+
+.box_feedback{
+    position: fixed;
+    width: 80%;
+    height: 50%;
+    background-color: red;
+    margin-left: 14%;
+    margin-top: 3%;
+}
