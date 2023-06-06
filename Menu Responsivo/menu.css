@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: blueviolet;
+    width: 100vw;
+}
+
+.header .navbar{
+    display: flex;
+    padding: 2%;
+    align-items: center;
+    width: 100%;
+}
+
+.header .navbar .nav-menu{
+    display: flex;
+    align-items: center;
+    padding: 2%;
+    width: 100%;
+}
+
+.header .navbar .nav-menu .nav-item{
+    margin-left: 5%;
+    background-color: blue;
+    border: 3px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: white;
+    border-width: 1px;
+}
+
+.header .navbar .nav-menu .nav-item .nav-link{
+    color: ghostwhite;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.hamburgue{
+    display: none;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+.nav-link:hover::after{
+    content: "";
+    display: block;
+    height: 2px;
+
+}
+@media only screen and (max-width: 768px) {
+    .nav-menu{
+        left: 100%;
+        z-index: 3;
+        width: 100%;
+        margin-top: 5%;
+        transition: 0.3s;
+        text-align: center;
+        position: relative;
+        flex-direction: column;
+    }
+    .nav-link{
+        color: rgb(8, 8, 8);
+    }
+}
