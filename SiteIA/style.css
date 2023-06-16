@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header{
+    background-color: grey;
+    position: fixed;
+    height: 4%;
+    width: 100vw;
+}
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-around;
+}
+header nav ul li{
+    font-weight: 700;
+    padding-top: 5px;
+    font-size: larger;
+}
+
+footer{
+    text-align: center;
+    background-color: grey;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    font-size: small;
+}
+
+.boxcard{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(img/bg1.jpg);
+}
+.boxcard .card{
+    background-color: white;
+    text-align: center;
+    width: 450px;
+    height: 550px;
+    display: flex;
+    border: 5px;
+    border-radius: 2%;
+    border-style: solid;
+    border-color: rgb(60, 60, 255);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.boxcard .card h2{
+    font-weight: 700;
+    padding: 10px;
+    font-size: 25px;
+}
+.boxcard .card p{
+    padding: 10px;
+    font-size: 14px;
+    text-align: justify;
+}
+.boxcard .card img{
+    width: 350px;
+    align-self: center;
+    border-radius: 10px;
+    padding-bottom: 5px;
+}
+.info section{
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.info section h1{
+    text-align: center;
+}
+.info section p{
+    padding: 10px 20px;
+    text-align: justify;
+}
+
+.galeria{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+}
+
+.galeria h1{
+    color: white;
+    font-size: 3rem;
+}
+.galeria img{
+    padding-top: 10px;
+}
