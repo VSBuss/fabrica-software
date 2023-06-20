@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightsalmon;
+}
+.section-carrossel{
+    background-color: silver;
+    height: 450px;
+    width: 1075px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.swiper{
+    background-color: grey;
+    width: 950px;
+}
+.card-content{
+    display: flex;
+    padding: 30px;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+.section-carrossel .card-content .imagem{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 3px;
+}
+.section-carrossel .card-content .imagem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.card-content .media-icons{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 20px;
+    right: 20px;
+    align-items: center;
+    height: 40%;
+    justify-content: space-around;
+}
+.card{
+    position: relative;
+    background-color: white;
+    width: 300px;
+    border-radius: 15px;
+    margin: 20px 0;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
+}
+.card-content .media-icons i{
+    color: blue;
+    cursor: pointer;
+    transition: all 0.7s ease;
+}
+.card-content .media-icons i:hover{
+    opacity: 0.1;
+}
+.card .nome-cliente{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+    font-size: larger;
+    color: blue;
+    text-align: center;
+}
+.card .rating{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card .rating i{
+    padding: 5px;
+    color: gold;
+    font-size: 20px;
+}
