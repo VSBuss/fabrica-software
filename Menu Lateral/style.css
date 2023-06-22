@@ -20,7 +20,7 @@
     font-family: 'Tomorrow', serif;
 }
 /*Propriedades do Menu Lateral*/
-.home .menulateral{
+.menulateral{
     border-right-style: solid;
     border-right-color: var(--cor-laranja-az) ;
     border-right-width: 2px;
@@ -289,7 +289,7 @@
 
 /*Configurações do Site Responsivo*/
 @media only screen and (max-width: 1000px){
-    .menulateral.close{
+    .menulateral.closed{
         width: 80px;
     }
     .menulateral .listamenu .toggle{
@@ -307,23 +307,23 @@
         color: white;
         font-size: 22px;
     }
-    .menulateral.close .listamenu .toggle{
+    .menulateral.closed .listamenu .toggle{
         transform: translateY(-50%) rotate(180deg);
     }
-    .menulateral.close .listamenu .logoazmerit{
+    .menulateral.closed .listamenu .logoazmerit{
         margin-left: -30px;
     }
-    .menulateral.close .listamenu .logoazmerit #logoazmerit .path_az{
+    .menulateral.closed .listamenu .logoazmerit #logoazmerit .path_az{
         width: 55px;
     }
-    .menulateral.close .listamenu .logoazmerit #logoazmerit .path_merit{
+    .menulateral.closed .listamenu .logoazmerit #logoazmerit .path_merit{
         display: none;
     }
-    .menulateral.close .textoicon{
+    .menulateral.closed .textoicon{
         opacity: 0;
         display: none;
     }
-    .menulateral.close .listamenu .itemlista .cadastrar .setabaixo{
+    .menulateral.closed .listamenu .itemlista .cadastrar .setabaixo{
         display: none;
     }
 
@@ -347,13 +347,13 @@
         left: 100px;
         right: 20px;
     }
-    .home .menulateral .listamenu .itemlista{
+    .menulateral .listamenu .itemlista{
         margin-left: -15px;
     }
     .logout_div .boxlogout .itemlogout{
         margin-left: 30px;
     }
-    .menulateral.close .logout_div .boxlogout .itemlogout .textologout{
+    .menulateral.closed .logout_div .boxlogout .itemlogout .textologout{
         display: none;
         pointer-events: none;
     }
@@ -361,20 +361,25 @@
         left: 25%;
         padding-right: 20px;
     }
+    
 }
 
 
 
 
-.submenu{
+.itemlista .submenu{
     display: none;
+    transition: var(--tran-menu);
+}
+.itemlista .submenu.show{
+    display: flex;
     gap: 40px;
     padding-top: 40px;
     flex-flow: column;
     list-style-type: none;
     justify-content: space-between;
 }
-.submenu .textosub{
+.itemlista .submenu.show .textosub{
     color: white;
     text-decoration: none;
     position: absolute;
@@ -384,16 +389,17 @@
     margin-left: 20px;
     border-radius: 30px;
 }
-.submenu li a:hover .textosub{
+.itemlista .submenu.show li a:hover .textosub{
     color: var(--cor-laranja-az);
 }
-.submenu li a:hover .pathicon{
+.itemlista .submenu.show li a:hover .pathicon{
     fill: var(--cor-laranja-az);
 }
-.submenu.droped{
-    display: flex;
-    background-color: blue;
-    height: 100px;
-}
-/*https://www.codingnepalweb.com/side-menu-bar-with-sub-menu-javascript/
-https://www.youtube.com/watch?v=O9l75KOB2pE*/
+
+
+
+
+
+/*
+https://www.codingnepalweb.com/side-menu-bar-with-sub-menu-javascript/
+https://www.youtube.com/watch?v=O9l75KOB2pE

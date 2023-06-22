@@ -1,20 +1,17 @@
 const home = document.querySelector(".home"), /*body*/
-    menulateral = home.querySelector(".menulateral"), /*nav*/
-    toggle = home.querySelector(".toggle"), /**/
-    submenu = document.querySelector(".submenu");
+    menuLateral = document.querySelector(".menulateral"), /*nav*/
+    toggle = document.querySelector(".toggle"), /**/
+    dropdownBtn = document.querySelector(".cadastrar"),
+    subMenu = document.querySelector(".submenu");
 
 
     toggle.addEventListener("click", () =>{
-        menulateral.classList.toggle("close");
+        menuLateral.classList.toggle("closed");
+        subMenu.classList.remove('show');
     })
 
-
-
-
-
-/**/
-    submenu.addEventListener("click", dropdown);
-
-    function dropdown(){
-        submenu.classList.toggle(".droped");
-    }
+    dropdownBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        subMenu.classList.toggle('show');
+        menuLateral.classList.toggle("closed");
+    })
