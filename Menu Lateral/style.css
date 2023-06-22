@@ -13,14 +13,14 @@
     opacity: 0.35;
     position: absolute;
 }
-body{
+.home{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Tomorrow', serif;
 }
 /*Propriedades do Menu Lateral*/
-.menulateral{
+.home .menulateral{
     border-right-style: solid;
     border-right-color: var(--cor-laranja-az) ;
     border-right-width: 2px;
@@ -69,14 +69,14 @@ body{
     width: 100%;
 }
 .menulateral .listamenu .itemlista .itemmenu{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
     align-items: center;
     display: flex;
     cursor: pointer;
     width: 100%;
 }
 .menulateral .listamenu .itemlista .itemmenu .textoicon{
+    color: white;
+    text-decoration: none;
     position: absolute;
     font-size: 1rem;
     font-weight: 500;
@@ -201,7 +201,7 @@ body{
     position: fixed;
     margin-left: 40px;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: white;
     align-items: center;
     display: flex;
     cursor: pointer;
@@ -212,7 +212,6 @@ body{
     height: 25px;
 }
 .logout_div .boxlogout .itemlogout .textologout{
-    display: inline-block;
     position: absolute;
     font-size: 1rem;
     font-weight: 500;
@@ -365,5 +364,36 @@ body{
 }
 
 
+
+
+.submenu{
+    display: none;
+    gap: 40px;
+    padding-top: 40px;
+    flex-flow: column;
+    list-style-type: none;
+    justify-content: space-between;
+}
+.submenu .textosub{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 20px;
+    border-radius: 30px;
+}
+.submenu li a:hover .textosub{
+    color: var(--cor-laranja-az);
+}
+.submenu li a:hover .pathicon{
+    fill: var(--cor-laranja-az);
+}
+.submenu.droped{
+    display: flex;
+    background-color: blue;
+    height: 100px;
+}
 /*https://www.codingnepalweb.com/side-menu-bar-with-sub-menu-javascript/
 https://www.youtube.com/watch?v=O9l75KOB2pE*/

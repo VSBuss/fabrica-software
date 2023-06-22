@@ -1,11 +1,20 @@
-const home = document.querySelector(".home"),
-    menulateral = home.querySelector(".menulateral"),
-    toggle = home.querySelector(".toggle");
+const home = document.querySelector(".home"), /*body*/
+    menulateral = home.querySelector(".menulateral"), /*nav*/
+    toggle = home.querySelector(".toggle"), /**/
+    submenu = document.querySelector(".submenu");
+
 
     toggle.addEventListener("click", () =>{
         menulateral.classList.toggle("close");
     })
 
-$('.cadastrar').click(function(){
-    $('.home .menulateral .listamenu .itemlista .cadastrar .setabaixo').toggleClass("rotate");
-});
+
+
+
+
+/**/
+    submenu.addEventListener("click", dropdown);
+
+    function dropdown(){
+        submenu.classList.toggle(".droped");
+    }
