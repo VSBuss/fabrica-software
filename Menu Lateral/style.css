@@ -59,11 +59,6 @@
     padding-left: 7px;
 }
 
-/*Botão Maximizar Menu*/
-.menulateral .listamenu .toggle{
-    display: none;
-}
-
 /*Propriedades dos itens da lista*/
 .menulateral .listamenu .itemlista{
     width: 100%;
@@ -90,10 +85,21 @@
 }
 
 /*Propriedades do hover dos itens*/
-.menulateral .listamenu .itemlista .itemmenu:hover{
+.menulateral .listamenu .itemlista .itemmenu:hover .pathicon{
+    fill: var(--cor-laranja-az);
+}
+.menulateral .listamenu .itemlista .itemmenu:hover .textoicon{
     color: var(--cor-laranja-az);
 }
-.menulateral .listamenu .itemlista .itemmenu:hover .pathicon{
+
+/*Propriedades do hover de Cadastrar*/
+.menulateral .listamenu .itemlista .cadastrar:hover{
+    color: var(--cor-laranja-az);
+}
+.menulateral .listamenu .itemlista .cadastrar:hover .pathicon{
+    fill: var(--cor-laranja-az);
+}
+.menulateral .listamenu .itemlista .cadastrar:hover .setabaixo path{
     fill: var(--cor-laranja-az);
 }
 
@@ -132,17 +138,6 @@
 }
 .menulateral .listamenu .itemlista .cadastrar .setabaixo.rotate{
     transform: translateY(-50%) rotate(-180deg);
-}
-
-/*Propriedades do hover de Cadastrar*/
-.menulateral .listamenu .itemlista .cadastrar:hover{
-    color: var(--cor-laranja-az);
-}
-.menulateral .listamenu .itemlista .cadastrar:hover .pathicon{
-    fill: var(--cor-laranja-az);
-}
-.menulateral .listamenu .itemlista .cadastrar:hover .setabaixo path{
-    fill: var(--cor-laranja-az);
 }
 
 /*Tamanho das Ondas*/
@@ -292,24 +287,6 @@
     .menulateral.closed{
         width: 80px;
     }
-    .menulateral .listamenu .toggle{
-        display: flex;
-        position: absolute;
-        top: 35px;
-        right: -15px;
-        transform: translateY(-50%);
-        height: 25px;
-        width: 25px;
-        background: var(--cor-laranja-az);
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        color: white;
-        font-size: 22px;
-    }
-    .menulateral.closed .listamenu .toggle{
-        transform: translateY(-50%) rotate(180deg);
-    }
     .menulateral.closed .listamenu .logoazmerit{
         margin-left: -30px;
     }
@@ -350,12 +327,14 @@
     .menulateral .listamenu .itemlista{
         margin-left: -15px;
     }
+    .menulateral.closed .listamenu .itemlista{
+        pointer-events: none;
+    }
     .logout_div .boxlogout .itemlogout{
         margin-left: 30px;
     }
     .menulateral.closed .logout_div .boxlogout .itemlogout .textologout{
         display: none;
-        pointer-events: none;
     }
     .rodape{
         left: 25%;
