@@ -1,47 +1,78 @@
-const home = document.querySelector(".home"), /*body*/
-    menuLateral = document.querySelector(".menulateral"), /*nav*/
-    toggle = document.querySelector(".itemlista"), /**/
+const menuLateral = document.querySelector(".menulateral"),
     cadDropdown = document.querySelector(".cadastrar"),
     subMenu = document.querySelector(".submenu");
 
 
-    if (menuLateral.classList.contains("closed")){
-        menuLateral.addEventListener("click", ()=>{
-            menuLateral.classList.toggle("");
-        })
-    } else {
-        menuLateral.addEventListener("click", ()=>{
-            menuLateral.classList.toggle("closed");
-        })
-    }
-
-/* https://stackoverflow.com/questions/47106652/get-a-class-width-height-etc
-/*
-    menuLateral.addEventListener("click", ()=>{
-        menuLateral.classList.toggle("closed");
-    })
-
     cadDropdown.addEventListener("click", ()=>{
-        if (menuLateral == "closed"){
-            null
+        if(menuLateral !== "closed" && subMenu == "show"){
+            subMenu.classList.remove("show");
         } else {
-            subMenu.classList.toggle("");
+            menuLateral.classList.remove("closed");
+            subMenu.classList.toggle("show");
         }
     })
 
 
-/*
-    toggle.addEventListener("click", () =>{
-        menuLateral.classList.toggle("closed");
-        subMenu.classList.remove('show');
-    })
-*/
-
-
-/*
-    dropdownBtn.addEventListener('click', function(b){
-        b.preventDefault();
-        subMenu.classList.toggle('show');
+    menuLateral.addEventListener("click", ()=>{
         menuLateral.classList.toggle("closed");
     })
-*/
+
+
+    /*
+    menuLateral.addEventListener("click", ()=>{
+        menuLateral.classList.toggle("closed");
+    })
+    clickfora.addEventListener("click", ()=>{
+        menuLateral.classList.remove("closed");
+        subMenu.classList.remove("show");
+    })
+    */
+
+
+    /*
+    cadDropdown.addEventListener("click", ()=>{
+        if (menuLateral !== "closed"){
+            subMenu.classList.toggle("show");
+            menuLateral.classList.toggle("closed");
+        } else {
+            null
+        }
+    })
+    */
+
+    /*
+    
+    const menuLateral = document.querySelector(".menulateral"),
+    cadDropdown = document.querySelector(".cadastrar"),
+    subMenu = document.querySelector(".submenu"),
+    clickfora = document.querySelector(".menuabertomobile");
+
+    menuLateral.addEventListener("click", ()=>{
+        menuLateral.classList.toggle("closed");
+    })
+
+    clickfora.addEventListener("click", ()=>{
+        menuLateral.classList.remove("closed");
+        subMenu.classList.remove("show");        
+    })
+
+    cadDropdown.addEventListener("click", ()=>{
+        if (menuLateral !== "closed"){
+            subMenu.classList.toggle("show");
+            menuLateral.classList.toggle("closed");
+        } else {
+            subMenu.classList.toggle("show");
+        }
+    })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    */
