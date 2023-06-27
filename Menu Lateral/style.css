@@ -33,6 +33,9 @@
     background-color: var(--cor-fundo-menu);
     transition: var(--tran-menu);
 }
+.menulateral ul, .menulateral .logout_div{
+    z-index: 5;
+}
 
 /*Propriedades da Lista Menu*/
 .menulateral .listamenu{
@@ -259,7 +262,7 @@
 .rodape{
     left: 45%;
     bottom: 0%;
-    z-index: 0;
+    z-index: 1;
     opacity: 0.35;
     padding: auto;
     font-size: 14px;
@@ -271,7 +274,7 @@
 
 /*Propriedades da Página Exemplo*/
 .paginaexemplo{
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     width: auto;
     left: 300px;
@@ -280,6 +283,36 @@
     background-color: red;
     margin-top: 3%;
     border-radius: 30px;
+}
+
+/*Propriedades do Sub Menu*/
+.itemlista .submenu{
+    display: none;
+    transition: var(--tran-menu);
+}
+.itemlista .submenu.show{
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+    flex-flow: column;
+    list-style-type: none;
+    justify-content: space-between;
+}
+.itemlista .submenu.show .textosub{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 20px;
+    border-radius: 30px;
+}
+.itemlista .submenu.show li a:hover .textosub{
+    color: var(--cor-laranja-az);
+}
+.itemlista .submenu.show li a:hover .pathicon{
+    fill: var(--cor-laranja-az);
 }
 
 /*Configurações do Site Responsivo*/
@@ -306,25 +339,27 @@
 
 
 
-
-
-
+    /*Faz o resto da tela ficar escuro*/
     .menulateral .menuabertomobile{
-        z-index: 999;
+        z-index: 0;
         position: fixed;
         top: 0;
         bottom: 0;
-        margin-left: 250px;
+        margin-left: 252px; /*2px a mais por conta da borda*/
         width: 100vw;
         background-color: black;
         height: 100vh;
-        opacity: 0.3;
-        transition: var(--tran-menu);
+        opacity: 0.4;
+        animation: fadeIn 3s;
     }
     .menulateral.closed .menuabertomobile{
         display: none;
-        width: 1vw;
     }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+          to { opacity: 0.4; }
+    }
+
 
 
     .cabecalho{
@@ -368,34 +403,7 @@
 
 
 
-.itemlista .submenu{
-    display: none;
-    transition: var(--tran-menu);
-}
-.itemlista .submenu.show{
-    display: flex;
-    gap: 40px;
-    padding-top: 40px;
-    flex-flow: column;
-    list-style-type: none;
-    justify-content: space-between;
-}
-.itemlista .submenu.show .textosub{
-    color: white;
-    text-decoration: none;
-    position: absolute;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 2px 15px;
-    margin-left: 20px;
-    border-radius: 30px;
-}
-.itemlista .submenu.show li a:hover .textosub{
-    color: var(--cor-laranja-az);
-}
-.itemlista .submenu.show li a:hover .pathicon{
-    fill: var(--cor-laranja-az);
-}
+
 
 
 
