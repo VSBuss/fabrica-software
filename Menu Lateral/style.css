@@ -247,7 +247,7 @@
 .cabecalho .user_box .img_user{
     width: 84px;
     height: 84px;
-    padding-left: 10px;
+    margin-left: 10px;
     border-radius: 50%;
 }
 .cabecalho .tela_atual{
@@ -407,8 +407,7 @@
 
 
 
-
-
 /*
 https://www.codingnepalweb.com/side-menu-bar-with-sub-menu-javascript/
 https://www.youtube.com/watch?v=O9l75KOB2pE
+https://stackoverflow.com/questions/70827887/detect-click-vs-touch-in-javascript
