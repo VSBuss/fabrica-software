@@ -6,6 +6,11 @@
     --tran-menu: 0.5s all ease;
     --tran-texto: 0.8s all ease;
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .bg{
     right: 0;
     bottom: 0;
@@ -14,9 +19,6 @@
     position: absolute;
 }
 .home{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Tomorrow', serif;
 }
 /*Propriedades do Menu Lateral*/
@@ -33,7 +35,7 @@
     background-color: var(--cor-fundo-menu);
     transition: var(--tran-menu);
 }
-.menulateral ul, .menulateral .logout_div{
+.menulateral .listamenu, .menulateral .logout_div{
     z-index: 5;
 }
 
@@ -44,6 +46,7 @@
     flex-flow: column;
     list-style-type: none;
     justify-content: space-between;
+    margin: 30px 30px;
 }
 
 /*Propriedades do SVG AzMerit*/
@@ -320,6 +323,9 @@
     .menulateral.closed{
         width: 80px;
     }
+    .menulateral.closed .listamenu{
+        margin: 10px 20px;
+    }
     .menulateral.closed .listamenu .logoazmerit{
         margin-left: -30px;
     }
@@ -377,7 +383,7 @@
     .cabecalho .tela_atual span{
         text-align: justify;
     }
-    .paginaexemplo{
+    .home .paginaexemplo{
         left: 100px;
         right: 20px;
     }
