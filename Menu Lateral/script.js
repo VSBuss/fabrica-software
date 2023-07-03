@@ -1,6 +1,7 @@
 const menuLateral = document.querySelector(".menulateral"),
 cadDropdown = document.getElementById("cadastrarButton"),
-subMenu = document.querySelector(".submenu");
+subMenu = document.querySelector(".submenu"),
+setabaixo = document.querySelector(".setabaixo");
 
 var subMenuAberto = false
 var clickCadastrar = false
@@ -22,10 +23,12 @@ cadDropdown.addEventListener("click", ()=>{
     //declara que o clique foi no cadastrar
     clickCadastrar = true
     subMenu.classList.toggle("show");
+    setabaixo.classList.toggle("rotate");
 })
 
 //método responsável por fechar o sub menu
 function fecharSubMenu(){
     subMenu.classList.remove("show");
+    setabaixo.classList.remove("rotate");
     subMenuAberto = false
 }

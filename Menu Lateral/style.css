@@ -4,7 +4,6 @@
     --cor-laranja-az: rgb(239, 78, 35);
     /*Transições*/
     --tran-menu: 0.5s all ease;
-    --tran-texto: 0.8s all ease;
 }
 *{
     margin: 0;
@@ -35,9 +34,6 @@
     background-color: var(--cor-fundo-menu);
     transition: var(--tran-menu);
 }
-.menulateral .listamenu, .menulateral .logout_div{
-    z-index: 5;
-}
 
 /*Propriedades da Lista Menu*/
 .menulateral .listamenu{
@@ -46,11 +42,13 @@
     flex-flow: column;
     list-style-type: none;
     justify-content: space-between;
-    margin: 30px 30px;
+    margin-left: 40px;
+    position: relative;
 }
 
 /*Propriedades do SVG AzMerit*/
 .menulateral .listamenu .logoazmerit{
+    margin-top: 4vh;
     position: relative;
     margin-left: -15px;
     transition: var(--tran-menu);
@@ -68,6 +66,7 @@
 /*Propriedades dos itens da lista*/
 .menulateral .listamenu .itemlista{
     width: 100%;
+    background-color: blue;
 }
 .menulateral .listamenu .itemlista .itemmenu{
     align-items: center;
@@ -83,7 +82,6 @@
     font-weight: 500;
     padding: 2px 15px;
     margin-left: 50px;
-    border-radius: 30px;
 }
 .menulateral .listamenu .itemlista .itemmenu .icon{
     width: 25px;
@@ -124,7 +122,6 @@
     font-weight: 500;
     padding: 2px 15px;
     margin-left: 50px;
-    border-radius: 30px;
 }
 .menulateral .listamenu .itemlista .cadastrar .icon{
     width: 25px;
@@ -148,10 +145,11 @@
 
 /*Tamanho das Ondas*/
 .menulateral .logout_div{
-    position: relative;
+    z-index: 5;
     height: 100vh;
     margin-top: 50px;
     overflow: hidden;
+    position: relative;
 }
 
 /*Propriedades das Ondas https://www.cssscript.com/animated-waves-svg/*/
@@ -194,11 +192,13 @@
 }
 .logout_div .boxlogout{
     position: relative;
-    height: 100vh;
+    height: auto;
+    min-height: 100%;
     width: 100vw;
     background-color: var(--cor-laranja-az);
 }
 .logout_div .boxlogout .itemlogout{
+    background-color: blue;
     position: fixed;
     margin-left: 40px;
     text-decoration: none;
@@ -218,7 +218,7 @@
     font-weight: 500;
     padding: 2px 15px;
     margin-left: 50px;
-    border-radius: 30px;
+    background-color: blue;
 }
 
 /*Propriedades do Cabeçalho*/
@@ -296,7 +296,8 @@
 .itemlista .submenu.show{
     display: flex;
     gap: 40px;
-    padding-top: 40px;
+    margin-left: 65px;
+    padding-top: 25px;
     flex-flow: column;
     list-style-type: none;
     justify-content: space-between;
@@ -309,7 +310,6 @@
     font-weight: 500;
     padding: 2px 15px;
     margin-left: 20px;
-    border-radius: 30px;
 }
 .itemlista .submenu.show li a:hover .textosub{
     color: var(--cor-laranja-az);
@@ -323,11 +323,8 @@
     .menulateral.closed{
         width: 80px;
     }
-    .menulateral.closed .listamenu{
-        margin: 10px 20px;
-    }
     .menulateral.closed .listamenu .logoazmerit{
-        margin-left: -30px;
+        margin-left: -25px;
     }
     .menulateral.closed .listamenu .logoazmerit #logoazmerit .path_az{
         width: 55px;
