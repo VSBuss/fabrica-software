@@ -1,5 +1,5 @@
 const menuLateral = document.querySelector(".menulateral"),
-cadDropdown = document.getElementById("cadastrarButton"),
+cadDropdown = document.getElementById("submenuButton"),
 subMenu = document.querySelector(".submenu"),
 setabaixo = document.querySelector(".setabaixo");
 

@@ -66,7 +66,6 @@
 /*Propriedades dos itens da lista*/
 .menulateral .listamenu .itemlista{
     width: 100%;
-    background-color: blue;
 }
 .menulateral .listamenu .itemlista .itemmenu{
     align-items: center;
@@ -198,7 +197,6 @@
     background-color: var(--cor-laranja-az);
 }
 .logout_div .boxlogout .itemlogout{
-    background-color: blue;
     position: fixed;
     margin-left: 40px;
     text-decoration: none;
@@ -218,7 +216,6 @@
     font-weight: 500;
     padding: 2px 15px;
     margin-left: 50px;
-    background-color: blue;
 }
 
 /*Propriedades do Cabeçalho*/
@@ -275,17 +272,35 @@
     color: rgb(0, 0, 0);
 }
 
-/*Propriedades da Página Exemplo*/
-.paginaexemplo{
+/*Propriedades da Feedback Tela Vazia*/
+.telavazia{
     z-index: 2;
     position: fixed;
-    width: auto;
+    width: 80%;
     left: 300px;
     right: 50px;
     height: 75vh;
-    background-color: red;
+    margin-top: 3%;
+}
+.telavazia .textotelavazia{
+    font-size: 1rem;
+    position: relative;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+}
+.telavazia .giftelavazia{
+    z-index: 2;
+    margin-top: 5%;
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    justify-content: center;
     margin-top: 3%;
     border-radius: 30px;
+    border-color: var(--cor-laranja-az);
+    border-width: 20px;
+    border-style: solid;
 }
 
 /*Propriedades do Sub Menu*/
@@ -306,10 +321,10 @@
     color: white;
     text-decoration: none;
     position: absolute;
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: 500;
     padding: 2px 15px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .itemlista .submenu.show li a:hover .textosub{
     color: var(--cor-laranja-az);
@@ -319,7 +334,7 @@
 }
 
 /*Configurações do Site Responsivo*/
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 768px){
     .menulateral.closed{
         width: 80px;
     }
@@ -348,7 +363,7 @@
         position: fixed;
         top: 0;
         bottom: 0;
-        margin-left: 252px; /*2px a mais por conta da borda*/
+        margin-left: 250px; /*2px a mais por conta da borda*/
         width: 100vw;
         background-color: black;
         height: 100vh;
@@ -380,10 +395,6 @@
     .cabecalho .tela_atual span{
         text-align: justify;
     }
-    .home .paginaexemplo{
-        left: 100px;
-        right: 20px;
-    }
     .menulateral .listamenu .itemlista{
         margin-left: -15px;
     }
@@ -400,7 +411,15 @@
         left: 25%;
         padding-right: 20px;
     }
-    
+    .telavazia{
+        left: 100px;
+        right: 20px;
+    }
+    .home .carteira-trans{
+        left: 100px;
+        right: 20px;
+        background-color: blue;
+    }
 }
 
 
@@ -414,3 +433,19 @@
 https://www.codingnepalweb.com/side-menu-bar-with-sub-menu-javascript/
 https://www.youtube.com/watch?v=O9l75KOB2pE
 https://stackoverflow.com/questions/70827887/detect-click-vs-touch-in-javascript
+*/
+
+.carteira-trans{
+    z-index: 2;
+    position: fixed;
+    width: auto;
+    left: 300px;
+    right: 50px;
+    height: 75vh;
+    background-color: red;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(191, 191, 191);
+    margin-top: 3%;
+    border-radius: 20px;
+}
