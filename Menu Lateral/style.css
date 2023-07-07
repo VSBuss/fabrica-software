@@ -463,29 +463,29 @@ https://stackoverflow.com/questions/70827887/detect-click-vs-touch-in-javascript
     flex-direction: column;
     align-items: center;
     height: 100%;
-}
-.carteira-trans .main-score-history .score-history{
-    display: flex;
-    flex-direction: column;
-    margin-top: 1%;
-    background-color: var(--cor-fundo-menu);
-    width: 80%;
-    max-width: 1000px;
-    height: 80%;
-    border-radius: 20px;
-    color: white;
-}
-.carteira-trans .main-score-history .score-history .recenv{
-    display: flex;
-    margin-top: 10px;
-    justify-content: space-evenly;
+    background-color: white;
 }
 
-div.scroll{
-    width: 100%;
-    height: 90%;
-    padding: 20px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-align: center;
+.carteira-trans .main-score-history .div-tables{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.carteira-trans .main-score-history .div-tables .table-score{
+    display: flex;
+    flex-direction: column;
+}
+
+.carteira-trans .main-score-history .div-tables .table-score .thead-score{
+}
+.carteira-trans .main-score-history .div-tables .table-score .thead-score .tr-table{
+}
+
+.carteira-trans .main-score-history .div-tables .table-score .tbody-score{
+}
+
+.carteira-trans .main-score-history .div-tables .table-score .tbody-score tr{
+}
+
+.carteira-trans .main-score-history .div-tables .table-score .tbody-score tr td{
 }
