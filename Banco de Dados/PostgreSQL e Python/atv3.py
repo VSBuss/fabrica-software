@@ -19,12 +19,16 @@ connection = pg.connect(user = "postgres", password = "1234", host = "localhost"
 curs = connection.cursor()
 
 ##Quarto passo: Atribuir os comandos:
-'''
+
 table_name = input("Crie um nome para uma tabela: ")
 print("Sua tabela terá por padrão 3 colunas para inserir registros, dê um nome para a primeira coluna\nque não seja uma Primary Key, pois eu irei criar uma para você. =)")
 col1 = input("col1: ")
 col2 = input("col2: ")
 col3 = input("col3: ")
+
+col1 = col1.lower()
+col2 = col2.lower()
+col3 = col3.lower()
 
 sql_criartabela = "CREATE TABLE "+table_name+" ( id SERIAL PRIMARY KEY, "+col1+" VARCHAR(100) NOT NULL, "+col2+" VARCHAR(100) NOT NULL, "+col3+" VARCHAR(100) NOT NULL);"
 curs.execute(sql_criartabela)
@@ -32,17 +36,17 @@ connection.commit()
 
 qnt = int(input("Deseja inserir quantos registros na tabela? "))
 
-print("Insira os registros da tabela respectivamente:\n"
-        f"{col1}      {col2}      {col3}")
 for x in range(qnt):
-    reg1 = input("")
-    reg2 = input("")
-    reg3 = input("")
+    reg1 = input(f"\n{col1}: ")
+    reg2 = input(f"{col2}: ")
+    reg3 = input(f"{col3}: ")
     sql_insert_data = "INSERT INTO "+table_name+" ("+col1+", "+col2+", "+col3+") VALUES ("+reg1+", "+reg2+", "+reg3+")"
+    curs.execute(sql_insert_data)
+    connection.commit()
 
-'''
 
-sqlteste = "SELECT * FROM pipu order by id"
+
+sqlteste = "SELECT * FROM pets order by id"
 #showsql = "SELECT "+col1+","+col2+","+col3+" FROM "+table_name+" order by id"
 df = pd.read_sql_query(sqlteste, con=engine)
 print(df)
