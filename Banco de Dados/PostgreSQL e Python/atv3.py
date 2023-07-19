@@ -46,7 +46,7 @@ for x in range(qnt):
 
 
 
-sqlteste = "SELECT * FROM pets order by id"
+sqlteste = "SELECT * FROM "+table_name+" order by id"
 #showsql = "SELECT "+col1+","+col2+","+col3+" FROM "+table_name+" order by id"
 df = pd.read_sql_query(sqlteste, con=engine)
 print(df)
