@@ -1,15 +1,79 @@
-/*Propriedades da Página Exemplo*/
+/*Propriedades Home Usuário*/
 .main-home{
     z-index: 0;
+    display: flex;
+    flex-wrap: wrap;
     position: fixed;
     width: auto;
+    height: 75vh;
     left: 300px;
     right: 50px;
-    height: 75vh;
     background-color: red;
     margin-top: 3%;
     border-radius: 30px;
+    gap: 30px;
+    padding: 30px;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
+/*Cartão AZ Merit*/
+.main-home .azcashcard{
+    width: 340px;
+    height: 190px;
+    background-color: var(--cor-fundo-menu);
+}
+/*Créditos Disponíveis*/
+.main-home .creditos{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: 210px;
+    background-color: var(--cor-laranja-az);
+    gap: 50px;
+}
+.main-home .creditos .azrecebidos{
+    width: 280px;
+    height: 140px;
+    background-color: var(--cor-fundo-menu);
+}
+.main-home .creditos .azparaenvios{
+    width: 280px;
+    height: 140px;
+    background-color: var(--cor-fundo-menu);
+}
+/*Prévia da Loja*/
+.main-home .produtosview{
+    width: 340px;
+    height: 400px;
+    background-color: var(--cor-fundo-menu);
+}
+/*Carrossel*/
+.main-home .carroselhome{
+    width: 670px;
+    height: 370px;
+    background-color: var(--cor-fundo-menu);
+}
+
+/*Propriedades da Barra de Rolagem*/
+/*width*/
+::-webkit-scrollbar{
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track{
+    background: none;
+}
+/* Handle */
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: black;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover{
+    background: var(--cor-fundo-menu);
+}
+
 
 /*Configurações do Site Responsivo*/
 @media only screen and (max-width: 768px){

@@ -42,6 +42,7 @@
     align-items: center;
     background-color: yellow;
     margin: 10px 10px;
+    min-width: 300px;
 }
 .carteira-trans .main-score-history .div-tables .table-score{
     display: flex;
@@ -79,12 +80,14 @@
 }
 /* Handle */
 ::-webkit-scrollbar-thumb{
+    border-radius: 10px;
     background: var(--cor-laranja-az);
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover{
     background: var(--cor-fundo-menu);
 }
+
 /*Configurações do Site Responsivo*/
 @media only screen and (max-width: 768px){
     .carteira-trans{
