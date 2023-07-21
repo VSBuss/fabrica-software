@@ -19,7 +19,7 @@ connection = pg.connect(user = "postgres", password = "1234", host = "localhost"
 curs = connection.cursor()
 
 ##Quarto passo: Atribuir os comandos:
-
+'''
 table_name = input("Crie um nome para uma tabela: ")
 print("Sua tabela terá por padrão 3 colunas para inserir registros, dê um nome para a primeira coluna\nque não seja uma Primary Key, pois eu irei criar uma para você. =)")
 col1 = input("col1: ")
@@ -40,24 +40,23 @@ for x in range(qnt):
     reg1 = input(f"\n{col1}: ")
     reg2 = input(f"{col2}: ")
     reg3 = input(f"{col3}: ")
-    sql_insert_data = "INSERT INTO "+table_name+" ("+col1+", "+col2+", "+col3+") VALUES ("+reg1+", "+reg2+", "+reg3+")"
+    sql_insert_data = "INSERT INTO "+table_name+" ("+col1+", "+col2+", "+col3+") VALUES ('"+reg1+"', '"+reg2+"', '"+reg3+"')"
     curs.execute(sql_insert_data)
     connection.commit()
-
-
+'''
+table_name = 'criente'
 
 sqlteste = "SELECT * FROM "+table_name+" order by id"
 #showsql = "SELECT "+col1+","+col2+","+col3+" FROM "+table_name+" order by id"
 df = pd.read_sql_query(sqlteste, con=engine)
 print(df)
 
-
-
 '''
 sql_update = "UPDATE cliente SET nome = 'Patrícia' WHERE id_cliente = 4"
 curs.execute(sql_update)
 connection.commit()
-
+'''
+'''
 sql = "SELECT id_cliente, nome FROM cliente order by id_cliente"
 df = pd.read_sql_query(sql, con=engine)
 print(df)
