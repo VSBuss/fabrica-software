@@ -4,7 +4,7 @@
           <meta charset="utf-8">
           <title>Index</title>
           <link rel="stylesheet" href="/css/menu.css">
-          <link rel="stylesheet" href="/css/gestor/telavazia.css">
+          <link rel="stylesheet" href="/css/gestor/banco.css">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tomorrow">
     </head>
@@ -81,7 +81,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="home.html">
+                            <a href="cadastrousuario.html">
                                 <span>
                                     <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="pathicon" d="M16.375 7.625V5H14.625V7.625H12V9.375H14.625V12H16.375V9.375H19V7.625" fill="white"/>
@@ -92,7 +92,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="home.html">
+                            <a href="cadastrodeproduto.html">
                                 <span>
                                     <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path class="pathicon" fill-rule="evenodd" clip-rule="evenodd" d="M3.20789 17.1C3.20789 16.055 3.91987 15.2 4.79984 15.2C5.67981 15.2 6.39978 16.055 6.39978 17.1C6.39978 18.145 5.67981 19 4.79984 19C3.91987 19 3.20789 18.145 3.20789 17.1ZM0 1.9V0H2.61591L3.36788 1.9H15.1995C15.3383 1.90038 15.4746 1.9435 15.5952 2.02516C15.7157 2.10681 15.8164 2.22421 15.8873 2.36587C15.9582 2.50753 15.997 2.66862 15.9998 2.8334C16.0027 2.99818 15.9695 3.16102 15.9035 3.306L13.0396 9.4715C12.7676 10.0605 12.2396 10.45 11.6396 10.45H5.67981L4.95983 11.9985L4.93583 12.1125C4.93583 12.2455 5.02383 12.35 5.13582 12.35H14.3995V14.25H4.79984C3.91987 14.25 3.19989 13.395 3.19989 12.35C3.19989 12.0175 3.27189 11.704 3.39988 11.438L4.47985 9.1105L1.59995 1.9H0ZM11.2076 17.1C11.2076 16.055 11.9196 15.2 12.7996 15.2C13.6795 15.2 14.3995 16.055 14.3995 17.1C14.3995 18.145 13.6795 19 12.7996 19C11.9196 19 11.2076 18.145 11.2076 17.1ZM19.3751 6V8.625H22.0001V10.375H19.3751V13H17.6251V10.375H15.0001V8.625H17.6251V6H19.3751Z" fill="white"/>
@@ -152,19 +152,124 @@
     <header class="cabecalho">
         <div class="user_box">
             <span class="nome_user">Gestor Humano</span>
-            <a href="home.html"><img class="img_user" src="/Menu Lateral/img/Gestor.png" alt=""></a>
+            <a href="home.html"><img class="img_user" src="/img/Gestor.png" alt=""></a>
         </div>
-        <div class="tela_atual"><span>FEEDBACKS</span></div>
+        <div class="tela_atual"><span>Home</span></div>
     </header>
-    <!--JUNTAR COM TELA DO PAULO-->
-    <div class="telavazia">
-        <span class="textotelavazia">Está vazio por aqui...</span>
-        <img class="giftelavazia" src="/img/telavazia.gif" alt="">
-    </div>
+    <!--TELA MENU GESTOR-->
+    <main class="Conteiner-principal">
+        <div class="conteiner-titulo">
+            <h1 class="letra_titulo_uni_s">Saldo Total</h1>
+            <h1 class="letra_titulo_uni_r">Recolhidos</h1>
+        </div>
+
+        <nav class="conteiner_cartao">
+            <!--Saldo_total-->
+            <!------------------------------------------------------------->
+            <div class="cartao_1">
+                <div class="logo_az_cartao">
+                    <img class="logo-cartao" src="/img/Simbolo-Az-Cartao.png" alt="Carregando...">
+                    <h1 class="merit_letra">MERIT</h1> 
+                    <p class="barra">/</p>
+                    <img class="logo_final" src="/img/AZmerit-Simbolo-Cartao.png" alt="carregando...">
+                </div>
+                <!------------------------------------------------------------->
+
+                <div>
+                    <p class="valor-cartao">R$0</p>
+                </div>
+                <!------------------------------------------------------------->
+                
+                <div class="adm">
+                    <h1 class="adm_letra">Administrador</h1>
+                </div>
+
+            </div>
+            <!------------------------------------------------------------->
+
+            <!--seta-->
+
+            <div class="seta" id="arrowAnim">
+                <div class="arrowSliding">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay1">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay2">
+                    <div class="arrow"></div>
+                </div>
+                <div class="arrowSliding delay3">
+                    <div class="arrow"></div>
+                </div>
+                </div>
+
+            <!-------------------------------------------------------------->
+
+            <!--Recolhidos-->
+            <!------------------------------------------------------------->
+            <div class="cartao_2">
+                <div class="logo_az_cartao"> 
+                    <img class="logo-cartao" src="/img/Simbolo-Az-Cartao.png" alt="Carregando...">
+                    <h1 class="merit_letra">MERIT</h1> 
+                    <p class="barra">/</p>
+                    <img class="logo_final" src="/img/AZmerit-Simbolo-Cartao.png" alt="carregando...">
+                </div>
+                <!------------------------------------------------------------->
+                <div>
+                    <p class="valor-cartao">R$0</p>
+                </div>
+                <!------------------------------------------------------------->
+                <div class="adm">
+                    <h1 class="adm_letra">Administrador</h1>
+                </div>
+            </div>
+            <!------------------------------------------------------------->
+        </nav>
+
+        <!--Ver detalhes-->
+        <!------------------------------------------------------------->
+
+        <nav>
+            <div class="Conteiner-link">
+
+                <div class="bolinha-link">
+                    <p class="bolinha-do-link"></p>
+                    
+                    <div>
+                        <a class="link-detalhes" href="#">Ver Detalhes</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!--Fim Ver detalhes-->
+        <!------------------------------------------------------------->
+
+        <nav class="conteiner_bolinha_1">
+            <di class="bolinha_uma">
+                <div class="bolinha_1">
+                    <p class="bolinha-paragrafo">0%</p>
+                </div>
+            </di>
+        </nav>
+
+        <nav class="conteiner_bolinhas_2">
+            <div class="bolinha_duas">
+                <div class="bolinha_2">
+                    <p class="bolinha-paragrafo">0%</p>
+                </div>
+                <div class="bolinha_2">
+                    <p class="bolinha-paragrafo">0%</p>
+                </div>
+            </div>
+        </nav>
+    </main>
     <!--RODAPÉ-->
     <footer class="rodape"><p>2023 © AZ Tecnologia em Gestão. Todos os direitos reservados.</p></footer>
     <!--SCRIPT-->
     <script src="/js/script.js"></script>
-    
+
 </body>
 </html>

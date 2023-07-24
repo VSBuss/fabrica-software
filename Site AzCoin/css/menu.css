@@ -36,7 +36,7 @@
 
 /*Propriedades da Lista Menu*/
 .menulateral .listamenu{
-    gap: 40px;
+    gap: 3.5vh;
     display: flex;
     flex-flow: column;
     list-style-type: none;
@@ -277,7 +277,7 @@
 }
 .itemlista .submenu.show{
     display: flex;
-    gap: 40px;
+    gap: 3.5vh;
     margin-left: 65px;
     padding-top: 25px;
     flex-flow: column;
