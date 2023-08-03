@@ -1,7 +1,10 @@
 .main-home{
     z-index: 2;
+    display: flex;
     position: fixed;
+    justify-content: center;
     width: auto;
+    margin-top: 3%;
     left: 300px;
     right: 50px;
     height: 75vh;
@@ -10,44 +13,111 @@
     border-style: solid;
     border-radius: 20px;
     border-color: rgb(191, 191, 191);
-    margin-top: 3%;
+    padding: 20px;
+}
 
+.grid{
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    background-color: red;
+}
+
+.grid .gridzin{
+    background-color: tomato;
+    min-height: 20px;
+    max-height: 430px;
+}
+/*Cartão AZ*/
+.grid #azcard{
+    min-width: 260px;
+    min-height: 160px;
+    max-width: 340px;
+    max-height: 210px;
+    height: auto;
+    display: flex;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
+    background-color: var(--cor-fundo-menu);
+}
+/*Cards*/
+.grid .gridzin:nth-child(2){
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
-
-.azcard{
-    background-color: yellow;
-    width: 350px;
-    height: 200px;
+.grid .gridzin .azbidos{
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    height: fit-content;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
+    background-color: var(--cor-fundo-menu);
 }
-
-.boxloja{
-    background-color: yellow;
-    width: 230px;
-    height: 320px;
+.grid .gridzin .azvios{
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    height: fit-content;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
+    background-color: var(--cor-fundo-menu);
 }
-
-.azrecebidos{
-    background-color: yellow;
-    width: 300px;
-    height: 150px;
+.grid .gridzin #azcoin{
+    max-width: 40px;
 }
-
-.azparaenvios{
-    background-color: yellow;
-    width: 300px;
-    height: 150px;
+/*Lojinha*/
+.grid #lojinha{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    padding: 20px;
+    max-width: fit-content;
+    height: fit-content;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
+    background-color: var(--cor-fundo-menu);
 }
-
-.carrosselhome{
-    background-color: yellow;
-    width: 600px;
-    height: 350px;
+.grid #lojinha .carrossel{
+    background-color: white;
+}
+.grid #lojinha .bucks{
+    display: flex;
+    align-items: center;
+}
+.grid #lojinha .bucks #azcoin{
+    max-width: 30px;
+    margin: 0 10px 0 30px;
+}
+.grid #lojinha #button{
+    background-color: var(--cor-laranja-az);
+    padding: 5px 20px 5px 20px;
+}
+/*Carrossel*/
+.grid #carrossel{
+    min-width: 670px;
+    min-height: 370px;
+    height: auto;
+    display: flex;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
+    background-color: var(--cor-fundo-menu);    
 }
 
 /*Configurações do Site Responsivo*/
@@ -63,9 +133,6 @@
 ::-webkit-scrollbar{
     width: 10px;
 }
-::-webkit-scrollbar-corner{
-    
-}
 /* Track */
 ::-webkit-scrollbar-track{
     background: none;
@@ -79,3 +146,5 @@
 ::-webkit-scrollbar-thumb:hover{
     background: var(--cor-fundo-menu);
 }
+
+/*https://stackoverflow.com/questions/43129360/css-grid-wrapping

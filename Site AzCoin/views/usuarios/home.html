@@ -3,13 +3,13 @@
     <head>
           <meta charset="utf-8">
           <title>Index</title>
-          <link rel="stylesheet" href="/css/menu.css">
-          <link rel="stylesheet" href="/css/usuarios/home.css">
+          <link rel="stylesheet" href="../../css/menu.css">
+          <link rel="stylesheet" href="../../css/usuarios/home.css">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tomorrow">
     </head>
 <body class="home">
-    <img class="bg" src="/img/Fundo.png" alt="">
+    <img class="bg" src="../../img/Fundo.png" alt="">
     <!--MENU LATERAL-->
     <nav class="menulateral closed">
         <ul class="listamenu">
@@ -133,17 +133,47 @@
     <header class="cabecalho">
         <div class="user_box">
             <span class="nome_user">Milena</span>
-            <a href="home.html"><img class="img_user" src="/img/Milena.jpg" alt=""></a>
+            <a href="home.html"><img class="img_user" src="../../img/Milena.jpg" alt=""></a>
         </div>
         <div class="tela_atual"><span>Home</span></div>
     </header>
     <!--TELA HOME USUARIO-->
     <div class="main-home">
-        <div class="azcard"></div>
-        <div class="boxloja"></div>
-        <div class="azrecebidos"></div>
-        <div class="azparaenvios"></div>
-        <div class="carrosselhome"></div>
+        <div class="grid">
+            <!--Cartão AZ-->
+            <div class="gridzin" id="azcard">
+
+            </div>
+            <!--Saldos do Usuário-->
+            <div class="gridzin">
+                <div class="azbidos">
+                    <img id="azcoin" src="../../img/moedaAZ.png" alt="">
+                    <h3>AZcoins recebidos:</h1>
+                    <h1>12000</h1>
+                </div>
+                <div class="azvios">
+                    <img id="azcoin" src="../../img/moedaAZ.png" alt="">
+                    <h3>AZcoins para envios:</h3>
+                    <h1>8000</h1>
+                </div>
+            </div>
+            <!--Prévia da Loja-->
+            <div class="gridzin" id="lojinha">
+                <h3>Novidades da AZ Produtos</h3>
+                <div class="carrossel">
+                    <img src="../../img/denero.png" alt="">
+                </div>
+                <div class="bucks">
+                    <span>AZ BUCKS</span>
+                    <img id="azcoin" src="../../img/moedaAZ.png" alt="">
+                    <span>9000</span>
+                </div>
+                <button id="button">IR PARA A LOJA</button>
+            </div>
+            <!--Carrossel Home-->
+            <div class="gridzin" id="carrossel">
+            </div>
+        </div>
     </div>
     <!--BOTÃO VOLTAR-->
     <!--RODAPÉ-->
