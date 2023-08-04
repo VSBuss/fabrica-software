@@ -13,27 +13,35 @@
     border-style: solid;
     border-radius: 20px;
     border-color: rgb(191, 191, 191);
-    padding: 20px;
+    padding-top: 20px;
 }
 
 .grid{
-    margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    background-color: red;
+    grid-template-columns: repeat(auto-fill, 100%);
+    grid-template-rows: repeat(auto-fill, 100%);
+    grid-gap: 10px;
+    background-color: blueviolet;
 }
 
 .grid .gridzin{
     background-color: tomato;
-    min-height: 20px;
-    max-height: 430px;
+    width: fit-content;
+    height: fit-content;
 }
 /*Cartão AZ*/
-.grid #azcard{
-    min-width: 260px;
-    min-height: 160px;
+.grid .gridzin #azcard{
+    width: fit-content;
+    height: fit-content;
+    height: auto;
+    display: flex;
+}
+.grid #azcard .card{
+    min-width: 340px;
+    min-height: 210px;
     max-width: 340px;
     max-height: 210px;
     height: auto;
@@ -117,7 +125,8 @@
     border-radius: 15px;
     border-style: solid;
     border-color: var(--cor-laranja-az);
-    background-color: var(--cor-fundo-menu);    
+    background-color: var(--cor-fundo-menu);
+    justify-content: center;
 }
 
 /*Configurações do Site Responsivo*/
