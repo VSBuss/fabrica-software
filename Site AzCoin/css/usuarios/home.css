@@ -1,58 +1,140 @@
-/*Propriedades Home Usuário*/
 .main-home{
-    z-index: 0;
+    z-index: 2;
     display: flex;
-    flex-wrap: wrap;
     position: fixed;
+    justify-content: center;
     width: auto;
-    height: 75vh;
+    margin-top: 3%;
     left: 300px;
     right: 50px;
-    background-color: red;
-    margin-top: 3%;
-    border-radius: 30px;
-    gap: 30px;
-    padding: 30px;
-    justify-content: center;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    height: 75vh;
+    background-color: rgba(217, 217, 217, .44);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: rgb(191, 191, 191);
+    padding-top: 20px;
 }
-/*Cartão AZ Merit*/
-.main-home .azcashcard{
-    width: 340px;
-    height: 190px;
+
+.grid{
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 100%);
+    grid-template-rows: repeat(auto-fill, 100%);
+    grid-gap: 10px;
+    background-color: blueviolet;
+}
+
+.grid .gridzin{
+    background-color: tomato;
+    width: fit-content;
+    height: fit-content;
+}
+/*Cartão AZ*/
+.grid .gridzin #azcard{
+    width: fit-content;
+    height: fit-content;
+    height: auto;
+    display: flex;
+}
+.grid #azcard .card{
+    min-width: 340px;
+    min-height: 210px;
+    max-width: 340px;
+    max-height: 210px;
+    height: auto;
+    display: flex;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
     background-color: var(--cor-fundo-menu);
 }
-/*Créditos Disponíveis*/
-.main-home .creditos{
+/*Cards*/
+.grid .gridzin:nth-child(2){
     display: flex;
     flex-wrap: wrap;
-    width: auto;
-    height: 210px;
+}
+.grid .gridzin .azbidos{
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    height: fit-content;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
+    background-color: var(--cor-fundo-menu);
+}
+.grid .gridzin .azvios{
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    height: fit-content;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
+    background-color: var(--cor-fundo-menu);
+}
+.grid .gridzin #azcoin{
+    max-width: 40px;
+}
+/*Lojinha*/
+.grid #lojinha{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    padding: 20px;
+    max-width: fit-content;
+    height: fit-content;
+    align-items: center;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
+    background-color: var(--cor-fundo-menu);
+}
+.grid #lojinha .carrossel{
+    background-color: white;
+}
+.grid #lojinha .bucks{
+    display: flex;
+    align-items: center;
+}
+.grid #lojinha .bucks #azcoin{
+    max-width: 30px;
+    margin: 0 10px 0 30px;
+}
+.grid #lojinha #button{
     background-color: var(--cor-laranja-az);
-    gap: 50px;
-}
-.main-home .creditos .azrecebidos{
-    width: 280px;
-    height: 140px;
-    background-color: var(--cor-fundo-menu);
-}
-.main-home .creditos .azparaenvios{
-    width: 280px;
-    height: 140px;
-    background-color: var(--cor-fundo-menu);
-}
-/*Prévia da Loja*/
-.main-home .produtosview{
-    width: 340px;
-    height: 400px;
-    background-color: var(--cor-fundo-menu);
+    padding: 5px 20px 5px 20px;
 }
 /*Carrossel*/
-.main-home .carroselhome{
-    width: 670px;
-    height: 370px;
+.grid #carrossel{
+    min-width: 670px;
+    min-height: 370px;
+    height: auto;
+    display: flex;
+    border-width: 2px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: var(--cor-laranja-az);
     background-color: var(--cor-fundo-menu);
+    justify-content: center;
+}
+
+/*Configurações do Site Responsivo*/
+@media only screen and (max-width: 768px){
+    .main-home{
+        left: 100px;
+        right: 20px;
+    }
 }
 
 /*Propriedades da Barra de Rolagem*/
@@ -66,19 +148,12 @@
 }
 /* Handle */
 ::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    background: black;
+    border-radius: 5px;
+    background: var(--cor-laranja-az);
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover{
     background: var(--cor-fundo-menu);
 }
 
-
-/*Configurações do Site Responsivo*/
-@media only screen and (max-width: 768px){
-    .main-home{
-        left: 100px;
-        right: 20px;
-    }
-}
+/*https://stackoverflow.com/questions/43129360/css-grid-wrapping

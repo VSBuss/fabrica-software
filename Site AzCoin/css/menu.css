@@ -17,6 +17,7 @@
     z-index: 0;
     opacity: 0.35;
     position: absolute;
+    pointer-events: none;
 }
 
 /*Propriedades do Menu Lateral*/
@@ -70,7 +71,6 @@
     align-items: center;
     display: flex;
     cursor: pointer;
-    width: 100%;
 }
 .menulateral .listamenu .itemlista .itemmenu .textoicon{
     color: white;
@@ -343,8 +343,6 @@
           to { opacity: 0.4; }
     }
 
-
-
     .cabecalho{
         margin-left: 80px;
         height: 80px;
@@ -377,13 +375,6 @@
         padding-right: 20px;
     }
 }
-
-
-
-
-
-
-
 
 /*
 https://www.codingnepalweb.com/side-menu-bar-with-sub-menu-javascript/
