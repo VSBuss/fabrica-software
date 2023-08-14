@@ -1,0 +1,1042 @@
+:root{
+    /*Cores*/
+    --cor-fundo-menu: rgb(0, 36, 54);
+    --cor-laranja-az: rgb(239, 78, 35);
+    /*Transições*/
+    --tran-menu: 0.5s all ease;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tomorrow', serif;
+}
+.bg{
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    opacity: 0.35;
+    position: absolute;
+}
+/*Propriedades do Menu Lateral*/
+.menulateral{
+    border-right-style: solid;
+    border-right-color: var(--cor-laranja-az) ;
+    border-right-width: 2px;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--cor-fundo-menu);
+    transition: var(--tran-menu);
+}
+
+/*Propriedades da Lista Menu*/
+.menulateral .listamenu{
+    gap: 40px;
+    display: flex;
+    flex-flow: column;
+    list-style-type: none;
+    justify-content: space-between;
+    margin-left: 40px;
+    position: relative;
+}
+
+/*Propriedades do SVG AzMerit*/
+.menulateral .listamenu .logoazmerit{
+    margin-top: 4vh;
+    position: relative;
+    margin-left: -15px;
+    transition: var(--tran-menu);
+}
+.menulateral .listamenu .logoazmerit #logoazmerit{
+    align-items: center;
+    display: flex;
+    transition: width 0.5s;
+}
+.menulateral .listamenu .logoazmerit #logoazmerit .path_merit{
+    padding-bottom: 4px;
+    padding-left: 7px;
+}
+
+/*Propriedades dos itens da lista*/
+.menulateral .listamenu .itemlista{
+    width: 100%;
+}
+.menulateral .listamenu .itemlista .itemmenu{
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+}
+.menulateral .listamenu .itemlista .itemmenu .textoicon{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 50px;
+}
+.menulateral .listamenu .itemlista .itemmenu .icon{
+    width: 25px;
+    height: 25px;
+}
+
+/*Propriedades do hover dos itens*/
+.menulateral .listamenu .itemlista .itemmenu:hover .pathicon{
+    fill: var(--cor-laranja-az);
+}
+.menulateral .listamenu .itemlista .itemmenu:hover .textoicon{
+    color: var(--cor-laranja-az);
+}
+
+/*Propriedades do hover de Cadastrar*/
+.menulateral .listamenu .itemlista .cadastrar:hover{
+    color: var(--cor-laranja-az);
+}
+.menulateral .listamenu .itemlista .cadastrar:hover .pathicon{
+    fill: var(--cor-laranja-az);
+}
+.menulateral .listamenu .itemlista .cadastrar:hover .setabaixo path{
+    fill: var(--cor-laranja-az);
+}
+
+/*Botão Cadastrar*/
+.menulateral .listamenu .itemlista .cadastrar{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+}
+.menulateral .listamenu .itemlista .cadastrar .textoicon{
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 50px;
+}
+.menulateral .listamenu .itemlista .cadastrar .icon{
+    width: 25px;
+    height: 25px;
+}
+.menulateral .listamenu .itemlista .cadastrar .setabaixo{
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    display: flex;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    font-size: 22px;
+    right: 10px;
+    margin-top: 30px;
+}
+.menulateral .listamenu .itemlista .cadastrar .setabaixo.rotate{
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+/*Tamanho das Ondas*/
+.menulateral .logout_div{
+    z-index: 5;
+    height: 100vh;
+    margin-top: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+/*Propriedades das Ondas https://www.cssscript.com/animated-waves-svg/*/
+.logout_div .waves{
+    position: relative;
+    height: 10vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 550px;
+}
+.parallax > use{
+    animation: move-forever 10s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1){
+    animation-delay: -1s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(2){
+    animation-delay: -7s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3){
+    animation-delay: -5s;
+    animation-duration: 10s;
+}
+@keyframes move-forever{
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% { 
+        transform: translate3d(85px,0,0);
+    }
+}
+  /*Shrinking for mobile*/
+@media (max-width: 768px){
+    .waves {
+        height:40px;
+        min-height:40px;
+    }
+}
+.logout_div .boxlogout{
+    position: relative;
+    height: auto;
+    min-height: 100%;
+    width: 100vw;
+    background-color: var(--cor-laranja-az);
+}
+.logout_div .boxlogout .itemlogout{
+    position: fixed;
+    margin-left: 40px;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    bottom: 3%;
+}
+.logout_div .boxlogout .itemlogout .iconlogout{
+    width: 25px;
+    height: 25px;
+}
+.logout_div .boxlogout .itemlogout .textologout{
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 50px;
+}
+
+/*Propriedades do Cabeçalho*/
+.cabecalho{
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    height: 100px;
+    margin-left: 250px;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--cor-laranja-az);
+}
+
+/*Propriedades da área do usuário*/
+.cabecalho .user_box{
+    position: fixed;
+    right: 0;
+    padding-top: 10px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cabecalho .user_box .nome_user{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.cabecalho .user_box .img_user{
+    width: 84px;
+    height: 84px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+.cabecalho .tela_atual{
+    margin-top: 70px;
+    margin-left: 60px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+/*Propriedades do Rodapé*/
+.rodape{
+    left: 45%;
+    bottom: 0%;
+    z-index: 1;
+    opacity: 0.35;
+    padding: auto;
+    font-size: 14px;
+    position: absolute;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+/*Propriedades da Feedback Tela Vazia*/
+.telavazia{
+    z-index: 2;
+    position: fixed;
+    width: 80%;
+    left: 300px;
+    right: 50px;
+    height: 75vh;
+    margin-top: 3%;
+}
+.telavazia .textotelavazia{
+    font-size: 1rem;
+    position: relative;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+}
+.telavazia .giftelavazia{
+    z-index: 2;
+    margin-top: 5%;
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    justify-content: center;
+    margin-top: 3%;
+    border-radius: 30px;
+    border-color: var(--cor-laranja-az);
+    border-width: 20px;
+    border-style: solid;
+}
+
+/*Propriedades do Sub Menu*/
+.itemlista .submenu{
+    display: none;
+    transition: var(--tran-menu);
+}
+.itemlista .submenu.show{
+    display: flex;
+    gap: 40px;
+    margin-left: 65px;
+    padding-top: 25px;
+    flex-flow: column;
+    list-style-type: none;
+    justify-content: space-between;
+}
+.itemlista .submenu.show .textosub{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 10px;
+}
+.itemlista .submenu.show li a:hover .textosub{
+    color: var(--cor-laranja-az);
+}
+.itemlista .submenu.show li a:hover .pathicon{
+    fill: var(--cor-laranja-az);
+}
+
+/*Configurações do Site Responsivo*/
+@media only screen and (max-width: 768px){
+    .menulateral.closed{
+        width: 80px;
+    }
+    .menulateral.closed .listamenu .logoazmerit{
+        margin-left: -25px;
+    }
+    .menulateral.closed .listamenu .logoazmerit #logoazmerit .path_az{
+        width: 55px;
+    }
+    .menulateral.closed .listamenu .logoazmerit #logoazmerit .path_merit{
+        display: none;
+    }
+    .menulateral.closed .textoicon{
+        opacity: 0;
+        display: none;
+    }
+    .menulateral.closed .listamenu .itemlista .cadastrar .setabaixo{
+        display: none;
+    }
+
+    /*Faz o resto da tela ficar escuro*/
+    .menulateral .menuabertomobile{
+        z-index: 0;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        margin-left: 250px; /*2px a mais por conta da borda*/
+        width: 100vw;
+        background-color: black;
+        height: 100vh;
+        opacity: 0.4;
+        animation: fadeIn 3s;
+    }
+    .menulateral.closed .menuabertomobile{
+        display: none;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+          to { opacity: 0.4; }
+    }
+
+    .cabecalho{
+        margin-left: 80px;
+        height: 80px;
+    }
+    .cabecalho .user_box .img_user{
+        width: 65px;
+        height: 65px;
+    }
+    .cabecalho .tela_atual{
+        margin-top: 0;
+        max-width: 200px;
+    }
+    .cabecalho .tela_atual span{
+        text-align: justify;
+    }
+    .menulateral .listamenu .itemlista{
+        margin-left: -15px;
+    }
+    .menulateral.closed .listamenu .itemlista{
+        pointer-events: none;
+    }
+    .logout_div .boxlogout .itemlogout{
+        margin-left: 30px;
+    }
+    .menulateral.closed .logout_div .boxlogout .itemlogout .textologout{
+        display: none;
+    }
+    .rodape{
+        left: 25%;
+        padding-right: 20px;
+    }
+
+    /*TELA GABRIEL*/
+    .envio .tudo{
+        margin-left: 150px;
+    }
+
+    .envio .moeda{
+        width: 0px;
+        height: 0px;
+    }
+
+    .envio .boneco{
+        display: none;
+    }
+
+    .envio .painel-principal{
+        background-color: #ececec8c;
+        width: 75%;
+        height: 100%;
+        border-radius: 20px;
+        z-index: 10;
+        margin-left: -20px;
+    }
+
+    .envio .painel-principal .caixa-input {
+        position: relative;
+        top: 15%;/*distancia entre os inputs caso um em cima do*/
+        display: flex;
+        left: 8%;
+        font-size: 18px;
+    }
+
+    /* Característica do input */
+    .envio .painel-principal .caixa-input .input {
+        font-size: 16px; /*tamanho fonte escrita usuário*/ 
+        padding: 10px 10px 10px 5px; 
+        display: block;
+        width: 20%; /* tamanho da caixa de input + borda */
+        border: none;
+        border-bottom: 2px solid #d55a3b00;
+        background: transparent;
+        font-family: 'Tomorrow', sans-serif; /* fonte utilizada no input */
+    }
+
+    .envio .painel-principal  .caixa-input .input:focus {
+        outline: none; 
+    }
+
+    .envio .input{
+        color: black; /*cor do que o usuários está digitando*/
+        margin-left: 0.5%;
+    }
+
+    .envio .caixa-input .label {
+        color: rgb(239, 78, 35);/*cor do texto acima da caixa de texto*/
+        font-size: 16px;/*tamanho fonte que está digitando*/
+        font-weight: normal;
+        font-family: 'Tomorrow', sans-serif; /*fonte utlizada na texto acima do input*/
+        position: absolute;
+        pointer-events: none;
+        left: 0;
+        top: 10%;
+        display: flex;
+    }
+
+    .envio .caixa-input .label-letra {
+        transition: 0.2s ease all;
+        transition-delay: calc(var(--index) * .05s);
+        font-size: 18px;/*Tamanho do span em cima do label*/  
+    }
+
+    .envio .caixa-input .input:focus ~ label .label-letra,
+    .envio .caixa-input .input:valid ~ label .label-letra {
+        transform: translateY(-20px);
+        font-size: 16px;/*tamanho após o usuário der click*/
+        color: rgb(239, 78, 35);
+    }
+
+    .envio .caixa-input .visualizar{
+        margin-top: 0.5%;
+        margin-left: 25%;
+        cursor: pointer;
+    }
+
+    /* Fim Input com Span Subindo */
+
+    /* inicio Posisão do input 2*/
+    .envio .painel-principal .caixa-input2 {
+        position: relative;
+        top: 15%;/*distancia entre os inputs caso um em cima do*/
+        display: flex;
+        left: 7%;
+        font-size: 18px;
+    }
+
+/* Característica do input */
+    .envio .painel-principal .caixa-input2 .input {
+        font-size: 16px; /*tamanho fonte escrita usuário*/ 
+        padding: 10px 10px 10px 5px; 
+        display: block;
+        margin-left: 0.7%;
+        width: 40%; /* tamanho da caixa de input + borda */
+        border: none;
+        border-bottom: 2px solid #d55a3b00;
+        background: transparent;
+        font-family: 'Tomorrow', sans-serif; /* fonte utilizada no input */
+    }
+
+    .envio .painel-principal  .caixa-input2 .input:focus {
+        outline: none; 
+    }
+
+    .envio .input{
+        color: black; /*cor do que o usuários está digitando*/
+        margin-left: 0.5%;
+    }
+
+    .envio .caixa-input2 .label {
+        color: rgb(239, 78, 35);/*cor do texto acima da caixa de texto*/
+        font-size: 18px;/*tamanho fonte que está digitando*/
+        font-weight: normal;
+        font-family: 'Tomorrow', sans-serif; /*fonte utlizada na texto acima do input*/
+        position: absolute;
+        pointer-events: none;
+        left: 0.1%;
+        top: 5%;
+        display: flex;
+    }
+
+    .envio .caixa-input2 .label-letra {
+        transition: 0.2s ease all;
+        transition-delay: calc(var(--index) * .05s);
+        font-size: 18px;/*Tamanho do span em cima do label*/  
+    }
+
+    .envio .caixa-input2 .input:focus ~ label .label-letra,
+    .envio .caixa-input2 .input:valid ~ label .label-letra {
+        transform: translateY(-20px);
+        font-size: 16px;/*tamanho após o usuário der click*/
+        color: rgb(239, 78, 35);
+    }
+
+    .envio #espaco{
+        color: transparent;
+    }
+
+    .envio .linha1{
+        border-color: #d9d9d9;
+        width: 50%;
+        margin-top: 6%;
+        margin-left: 8%;
+    }
+
+    .envio .linha2{
+        border-color: #d9d9d9;
+        width: 50%;
+        margin-top: 6%;
+        margin-left: 8%;
+    }
+
+    .envio .data{
+        width: 25%;
+        margin-left: 5.5%;
+        justify-content: left;
+
+    }
+
+    .envio .posicao-data{
+        margin-top: 1%;
+        justify-content: left;
+
+    }
+
+    .envio form {
+        padding: 20px 30px 45px 20px;
+        width: 30%;
+        margin: 5% auto;
+    }
+
+    .envio .lb {
+        display: flex;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color:rgb(239, 78, 35) ;
+        font-weight: bold;
+    }
+
+    .envio .infos,input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-family: 'Tomorrow', sans-serif;
+        border-radius: 5px;
+        border: none;
+        margin-bottom: 20px;
+        background-color: rgb(0, 36, 54);
+        color: white;
+    }
+
+    /*Botões inicar e cancelar campanha*/
+
+    .envio .botoes{
+        margin-left: -100px;
+        margin-top: -9%;
+        font-size: 18px;
+    }
+
+    .envio .custom-btn {
+        width: 28vh;
+        height: 55px;
+        color: #fff;
+        border-radius: 50px;
+        padding: 0.5% 5%;
+        font-family: 'Tomorrow', sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+        7px 7px 20px 0px rgba(0,0,0,.1),
+        4px 4px 5px 0px rgba(0,0,0,.1);
+        outline: none;
+    }
+
+    .envio .btn-1 {
+        background: linear-gradient(0deg, rgb(239, 78, 35) 0%, rgb(239, 78, 35) 100%);
+        border: none;
+    }
+
+    .envio .btn-1:before {
+        height: 0%;
+        width: 2%;
+    }
+
+    .envio .btn-1:hover {
+        box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+        inset -4px -4px 6px 0 rgba(255,255,255,.2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+    }
+
+    /*Modais*/
+    .envio #close-modal{
+        background-color: rgb(239, 78, 35);
+        left: 36%;
+        top: 28%;
+        width: 30%;
+    }
+
+    .envio #fade{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.459);
+        z-index: 5;
+    }
+
+    .envio #modal{
+        position: fixed;
+        left: 55%;
+        top: 50%; 
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: 90%;
+        max-width:90%;
+        background-color: #fff;
+        padding: 1.2rem;
+        border-radius: 0.5rem; 
+        z-index: 10;
+    }
+
+    .envio #fade,
+    .envio #modal{ 
+        transition: 0.5s;
+        opacity: 1; 
+        pointer-events: all;
+    }
+
+    .envio .linha3{
+        width: 100%;
+    }
+
+    .envio .modal-body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .envio .conteudo-modal{ 
+        padding: 1%;
+        display: flex;
+        margin-top: 5%;
+    }
+
+    .envio #editar{
+        margin-top: 20px;
+    }
+
+    .envio .interior{
+        padding-top: 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .envio #modal.hide, #fade.hide{
+        opacity: 0; 
+        pointer-events: none;
+    }
+
+    .envio #modal.hide{ 
+        top: 0;
+    }
+
+    .envio .titulo-modal{
+        display: flex;
+        margin-left: 2%;
+    }
+
+    /*Fim dos Modais*/
+
+    }
+
+/*TELA GABRIEL*/
+.tudo{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 190%;
+    margin-top: 0vh;
+    margin-right: 10%;
+    margin-left: 46vh;
+}
+
+.boneco{
+    position: fixed;
+    margin-left: -16vh;
+    height: 38vh;
+    width: 19vh;
+}
+
+.painel-principal{
+    background-color: #ececec8c;
+    width: 36%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+/* inicio Posisão do input */
+.painel-principal .caixa-input {
+    position: relative;
+    top: 10.7vh;/*distancia entre os inputs caso um em cima do*/
+    display: flex;
+    left: 13vh;
+    font-size: 2.5vh;
+}
+
+/* Característica do input */
+.painel-principal .caixa-input .input {
+    font-size: 2.5vh; /*tamanho fonte escrita usuário*/ 
+    display: block;
+    width: 51vh; /* tamanho da caixa de input + borda */
+    border: none;
+    border-bottom: 2px solid #d55a3b00;
+    background: transparent;
+    font-family: 'Tomorrow', sans-serif; /* fonte utilizada no input */
+}
+
+.painel-principal  .caixa-input .input:focus {
+outline: none; 
+}
+
+
+.caixa-input .label {
+color: rgb(239, 78, 35);/*cor do texto acima da caixa de texto*/
+font-size: 2.5vh;/*tamanho fonte que está digitando*/
+font-weight: normal;
+font-family: 'Tomorrow', sans-serif; /*fonte utlizada na texto acima do input*/
+position: absolute;
+pointer-events: none;
+left: -1.5vh;
+top: -1vh;
+display: flex;
+}
+
+.caixa-input .label-letra {
+transition: 0.2s ease all;
+transition-delay: calc(var(--index) * .05s);
+font-size: 2.5vh;/*Tamanho do span em cima do label*/  
+}
+
+.caixa-input .input:focus ~ label .label-letra,
+.caixa-input .input:valid ~ label .label-letra {
+transform: translateY(-20px);
+font-size: 2.5vh;/*tamanho após o usuário der click*/
+color: rgb(239, 78, 35);
+}
+
+.caixa-input .visualizar{
+    margin-top: 0vh;
+    margin-left: 1vh;
+    cursor: pointer;
+}
+
+/* Fim Input com Span Subindo */
+
+/* inicio Posisão do input 2*/
+.painel-principal .caixa-input2 {
+    position: relative;
+    top: 9.9vh;/*distancia entre os inputs caso um em cima do*/
+    display: flex;
+    left: 13vh;
+    font-size: 2.5vh;
+}
+
+/* Característica do input */
+.painel-principal .caixa-input2 .input {
+    font-size: 2.5vh; /*tamanho fonte escrita usuário*/ 
+    display: block;
+    width: 51vh; /* tamanho da caixa de input + borda */
+    border: none;
+    border-bottom: 2px solid #d55a3b00;
+    background: transparent;
+    font-family: 'Tomorrow', sans-serif; /* fonte utilizada no input */
+}
+
+.painel-principal  .caixa-input2 .input:focus {
+outline: none; 
+}
+
+.caixa-input2 .label {
+    color: rgb(239, 78, 35);/*cor do texto acima da caixa de texto*/
+    font-size: 2.5vh;/*tamanho fonte que está digitando*/
+    font-weight: normal;
+    font-family: 'Tomorrow', sans-serif; /*fonte utlizada na texto acima do input*/
+    position: absolute;
+    pointer-events: none;
+    left: -1.5vh;
+    top: -1vh;
+    display: flex;
+}
+
+.caixa-input2 .label-letra {
+transition: 0.2s ease all;
+transition-delay: calc(var(--index) * .05s);
+font-size: 2.5vh;/*Tamanho do span em cima do label*/  
+}
+
+.caixa-input2 .input:focus ~ label .label-letra,
+.caixa-input2 .input:valid ~ label .label-letra {
+transform: translateY(-20px);
+font-size: 2.5vh;/*tamanho após o usuário der click*/
+color: rgb(239, 78, 35);
+}
+
+#espaco{
+    color: transparent;
+}
+
+.linha1{
+    border-color: #a03434;
+    width: 50vh;
+    margin-top: 10.6vh;
+    margin-left: 13vh;
+}
+
+.linha2{
+    border-color: #a03434;
+    width: 50vh;
+    margin-top: 10.6vh;
+    margin-left: 13vh;
+    }
+
+.data{
+    width: 40vh;
+    margin-top: 0vh;
+    justify-content: space-evenly;
+}
+
+.posicao-data{
+    margin-top: 10vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+} 
+
+form {
+    width: 30vh;
+    margin: 5vh auto;
+}
+
+.lb {
+    display: flex;
+    margin-bottom: 0.5vh;
+    font-size: 2vh;
+    color:rgb(239, 78, 35) ;
+    font-weight: bold;
+}
+
+.infos,input[type="date"] {
+width: 27vh;
+padding: 1.5vh;
+font-size: 2.3vh;
+font-family: 'Tomorrow', sans-serif;
+border-radius: 0.5vh;
+border: none;
+margin-bottom: 2vh;
+background-color: rgb(239, 78, 35);
+color: white;
+}
+
+/*Botões inicar e cancelar campanha*/
+.botoes{
+margin-top: 8vh;
+display: flex;
+justify-content: space-evenly;
+font-size: 2.5vh;
+}
+
+.custom-btn {
+width: 25vh;
+height: 6vh;
+color: #fff;
+border-radius: 5vh;
+font-family: 'Tomorrow', sans-serif;
+font-weight: 500;
+background: transparent;
+cursor: pointer;
+transition: all 0.3s ease;
+position: relative;
+display: inline-block;
+box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+7px 7px 20px 0px rgba(0,0,0,.1),
+4px 4px 5px 0px rgba(0,0,0,.1);
+outline: none;
+}
+
+.btn-1 {
+background: linear-gradient(0deg, rgb(0, 36, 54) 0%, rgb(0, 36, 54) 100%);
+border: none;
+}
+
+.btn-1:before {
+height: 0%;
+width: 2%;
+}
+
+.btn-1:hover {
+box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+/*Modais*/
+#close-modal{
+    background-color: rgb(239, 78, 35);
+    left: 45vh;
+    top: 15vh;
+    width: 35vh;
+}
+
+#fade{
+    position: fixed;
+    top: 0vh;
+    left: 0vh;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.459);
+    z-index: 1000;
+}
+
+#modal{
+    position: fixed;
+    left: 115vh;
+    top: 50vh; 
+    transform: translate(-50%, -50%);
+    width: 130vh;
+    height: 90vh;
+    max-width:140vh;
+    background-color: #fff;
+    padding: 1.2rem;
+    border-radius: 3rem; 
+    z-index: 1000;
+}
+
+#fade,#modal{ 
+    transition: 0.5s;
+    opacity: 1; 
+    pointer-events: all;
+}
+
+.linha3{
+    width: 127vh;
+}
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo-modal{ 
+    padding: 1vh;
+    display: flex;
+}
+
+#editar{
+    margin-top: 2vh;
+}
+
+.interior{
+    padding: 5vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+#modal.hide, #fade.hide{
+    opacity: 0; 
+    pointer-events: none;
+}
+
+#modal.hide{ 
+    top: 0;
+}
+
+.titulo-modal{
+    display: flex;
+    margin-left: 2vh;
+}
+/*Fim dos Modais*/
+
+

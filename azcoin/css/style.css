@@ -1,0 +1,201 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+
+}
+
+.bodyLogin{
+  background-color: rgb(10, 35, 52);
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../img/fundoLaranja.png);
+  background-repeat: no-repeat;
+}
+
+#atorLogin{
+  position: absolute;
+  width: 612px;
+  height: 390px;
+  top: 500px;
+  left: 8%;
+}
+
+#moedaFrente{
+  width: 600px;
+  position: absolute;
+  left: 13%;
+  top: 20%;
+  animation: coin-frente 4s linear infinite;
+}
+
+#sectionLogin{
+  position: absolute;
+  background-color: rgba(23, 61, 87);
+  width: 400px;
+  height: 500px;
+  border-radius: 20px;
+  top: 24%;
+  left: 60%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgb(0,0,0,0.450);
+
+}
+
+.imgLogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+#img-login{
+  width: 60%;
+  
+}
+
+
+.campo{
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 30px;
+  margin-top: 30px;
+  justify-content: center;
+  text-align: center;
+  top: 70px;
+  align-items: center;
+  gap: 8px;
+  padding-left: 3%;
+  padding-right: 3%;
+
+
+}
+
+.inputLogin{
+  width: 85%;
+  padding: 2px;
+  
+}
+.EntrarLogin{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-self: center;
+  display: flex;
+  bottom: 15%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.entrar{
+  text-align: center;
+  font-size: 1em;
+  width: 150px;
+  border-radius: 50px;
+  height: 30px;
+  background-color: rgba(215, 91, 54);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.entrar:hover{
+  opacity: 80%;
+}
+
+.botao{
+  display: block;
+  text-align: left;
+  width: fit-content;
+  height: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  margin-top: 73px;
+  margin-left: 262px;
+  
+}
+
+.botao:hover{
+  color:rgba(215, 91, 54);
+  opacity: 80%;
+}
+
+.icons{
+  font-size: 2em;
+  width: 30px;
+  padding: 5px;
+ border: 0px;
+ 
+}
+
+.inputLogin{
+  display: block;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #D55A3B;
+  outline: none;
+  color: white;
+  font-size: 14px;
+}
+
+@keyframes coin-frente{
+  to{
+    transform: rotateY(0deg);
+    
+
+  }
+  from{
+    transform:  rotateY(360deg);
+  } 
+  
+  
+}
+
+
+@media screen and (max-width: 768px){
+  .bodyLogin{
+    background-size: 100% 100%;
+  }
+
+  #sectionLogin{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  #atorLogin{
+    display: none;
+  }
+  .loader{
+    display: none;
+  }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1110px){
+  .bodyLogin{
+    background-size: 100% 115%;
+  }
+
+  #sectionLogin{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+  }
+
+  #atorLogin{
+    top: 68%;
+    left: 50%;
+    width: 512px;
+    height: 290px;
+    transform: translate(-50%);
+  }
+}
+
+
+
+
