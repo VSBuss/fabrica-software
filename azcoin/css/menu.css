@@ -99,7 +99,8 @@
 .menulateral .listamenu .itemlista .cadastrar:hover .pathicon{
     fill: var(--cor-laranja-az);
 }
-.menulateral .listamenu .itemlista .cadastrar:hover .setabaixo path{
+.menulateral .listamenu .itemlista .cadastrar:hover .setabaixo path,
+.menulateral .listamenu .itemlista .cadastrar:hover .setabaixo2 path{
     fill: var(--cor-laranja-az);
 }
 
@@ -123,7 +124,8 @@
     width: 25px;
     height: 25px;
 }
-.menulateral .listamenu .itemlista .cadastrar .setabaixo{
+.menulateral .listamenu .itemlista .cadastrar .setabaixo,
+.menulateral .listamenu .itemlista .cadastrar .setabaixo2{
     justify-content: center;
     align-items: center;
     transform: translateY(-50%);
@@ -135,7 +137,8 @@
     right: 10px;
     margin-top: 30px;
 }
-.menulateral .listamenu .itemlista .cadastrar .setabaixo.rotate{
+.menulateral .listamenu .itemlista .cadastrar .setabaixo.rotate,
+.menulateral .listamenu .itemlista .cadastrar .setabaixo2.rotate{
     transform: translateY(-50%) rotate(-180deg);
 }
 
@@ -269,10 +272,12 @@
     color: rgb(0, 0, 0);
 }
 /*Propriedades do Sub Menu*/
-.itemlista .submenu{
+.itemlista .submenu,
+.itemlista .submenu2{
     display: none;
 }
-.itemlista .submenu.show{
+.itemlista .submenu.show,
+.itemlista .submenu2.show{
     display: flex;
     gap: 3.5vh;
     margin-left: 65px;
@@ -281,7 +286,8 @@
     list-style-type: none;
     justify-content: space-between;
 }
-.itemlista .submenu.show .textosub{
+.itemlista .submenu.show .textosub,
+.itemlista .submenu2.show .textosub{
     color: white;
     text-decoration: none;
     position: absolute;
@@ -290,10 +296,12 @@
     padding: 2px 15px;
     margin-left: 10px;
 }
-.itemlista .submenu.show li a:hover .textosub{
+.itemlista .submenu.show li a:hover .textosub,
+.itemlista .submenu2.show li a:hover .textosub{
     color: var(--cor-laranja-az);
 }
-.itemlista .submenu.show li a:hover .pathicon{
+.itemlista .submenu.show li a:hover .pathicon,
+.itemlista .submenu2.show li a:hover .pathicon{
     fill: var(--cor-laranja-az);
 }
 
@@ -315,7 +323,8 @@
         opacity: 0;
         display: none;
     }
-    .menulateral.closed .listamenu .itemlista .cadastrar .setabaixo{
+    .menulateral.closed .listamenu .itemlista .cadastrar .setabaixo,
+    .menulateral.closed .listamenu .itemlista .cadastrar .setabaixo2{
         display: none;
     }
 
