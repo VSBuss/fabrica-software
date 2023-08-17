@@ -11,43 +11,140 @@
     border-radius: 20px;
     border-color: rgb(191, 191, 191);
     margin-top: 3%;
-
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     overflow-x: hidden;
     overflow-y: scroll;
+    padding: 20px;
 }
 
 .azcard{
-    background-color: yellow;
-    width: 350px;
+    display: flex;
+    position: relative;
+    min-width: 300px;
+    max-width: 350px;
     height: 200px;
 }
-
-.boxloja{
-    background-color: yellow;
-    width: 230px;
-    height: 320px;
+.azcard .background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    min-width: 300px;
+    max-width: 350px;
+    height: 200px;
+    background: linear-gradient(90deg, #0500E9 0%, #2559A2 15.70%, #DC7B52 47.76%, #F44336 76.56%, #EF4E23 100%);
+    filter: blur(40px);
+}
+.azcard .cardcontent{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    min-width: 300px;
+    max-width: 340px;
+    height: 210px;
+    border-radius: 15px;
+    border: 0px solid black;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+    background-color: rgb(0, 36, 54);
+}
+.saldosaz{
+    display: flex;
+    min-width: 60%;
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 400px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin-top: 20px;
 }
 
 .azrecebidos{
-    background-color: yellow;
     width: 300px;
     height: 150px;
+    border-radius: 15px;
+    background-color: rgb(0, 36, 54);
+    border-radius: 15px;
+    border: 2px solid rgb(239, 78, 35);
 }
 
 .azparaenvios{
-    background-color: yellow;
     width: 300px;
     height: 150px;
+    border-radius: 15px;
+    background-color: rgb(0, 36, 54);
+    border-radius: 15px;
+    border: 2px solid rgb(239, 78, 35);
+}
+
+.boxloja{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 320px;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 2px solid rgb(239, 78, 35);
+    background-color: rgb(0, 36, 54);
+    padding-top: 30px;
+}
+.boxloja span{
+    color: white;
+    align-self: center;
+}
+.boxloja .swiper{
+    margin-top: 40px;
+    width: 80%;
+    border-radius: 15px;
+    height: 160px;
+    background-color: white;
+}
+.boxloja .swiper .swiper-wrapper .swiper-slide {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boxloja .swiper .swiper-wrapper .swiper-slide .project-img img{
+    box-shadow: 0 1px 2px #0003;
+    width: 100%;
 }
 
 .carrosselhome{
-    background-color: yellow;
-    width: 600px;
     height: 350px;
+    min-width: 300px;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: rgb(0, 36, 54);
+}
+.carrosselhome .swiper{
+    height: 350px;
+}
+.carrosselhome .swiper .swiper-wrapper .swiper-slide {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carrosselhome .swiper .swiper-wrapper .swiper-slide .project-img img{
+    box-shadow: 0 1px 2px #0003;
+    width: 100%;
+}
+.swiper-button-next{
+    
+}
+.swiper-button-prev{
+    color: black;
 }
 
 /*Configurações do Site Responsivo*/
@@ -63,9 +160,6 @@
 ::-webkit-scrollbar{
     width: 10px;
 }
-::-webkit-scrollbar-corner{
-    
-}
 /* Track */
 ::-webkit-scrollbar-track{
     background: none;
@@ -73,9 +167,9 @@
 /* Handle */
 ::-webkit-scrollbar-thumb{
     border-radius: 5px;
-    background: var(--cor-laranja-az);
+    background: rgb(239, 78, 35);
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover{
-    background: var(--cor-fundo-menu);
+    background: rgb(239, 78, 35);
 }
