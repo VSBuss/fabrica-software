@@ -154,6 +154,6 @@
 
     <footer class="rodape"><p>2023 © AZ Tecnologia em Gestão. Todos os direitos reservados.</p></footer>
 
-    <script src="/js/feedbacks.js"></script>
+    <script src="../../js/feedbacks.js"></script>
 </body>
 </html>
