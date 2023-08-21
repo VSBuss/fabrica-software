@@ -1,6 +1,12 @@
+:root{
+    /*Cores*/
+    --cor-fundo-menu: rgb(0, 36, 54);
+    --cor-laranja-az: rgb(239, 78, 35);
+    --swiper-navigation-color: var(--cor-laranja-az);
+}
 .main-home{
-    z-index: 2;
     position: fixed;
+    z-index: 2;
     width: auto;
     left: 300px;
     right: 50px;
@@ -21,8 +27,8 @@
 }
 
 .azcard{
-    display: flex;
     position: relative;
+    display: flex;
     min-width: 300px;
     max-width: 340px;
     height: 200px;
@@ -41,10 +47,10 @@
     filter: blur(40px);
 }
 .azcard .cardcontent{
+    position: absolute;
     color: white;
     display: flex;
     flex-direction: column;
-    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -99,32 +105,32 @@
     margin-top: 20px;
 }
 .azrecebidos{
-    display: flex;
     position: relative;
+    display: flex;
     flex-direction: column;
     color: white;
     width: 300px;
     height: 150px;
     border-radius: 15px;
-    background-color: rgb(0, 36, 54);
+    background-color: var(--cor-fundo-menu);
     border-radius: 15px;
-    border: 2px solid rgb(239, 78, 35);
+    border: 2px solid var(--cor-laranja-az);
 }
 .azrecebidos img{
     width: 37px;
     height: 37px;
 }
 .azparaenvios{
-    display: flex;
     position: relative;
+    display: flex;
     flex-direction: column;
     color: white;
     width: 300px;
     height: 150px;
     border-radius: 15px;
-    background-color: rgb(0, 36, 54);
+    background-color: var(--cor-fundo-menu);
     border-radius: 15px;
-    border: 2px solid rgb(239, 78, 35);
+    border: 2px solid var(--cor-laranja-az);
 }
 .azparaenvios img{
     width: 37px;
@@ -139,11 +145,11 @@
     gap: 10px;
 }
 .valor{
+    position: absolute;
     display: flex;
     align-self: center;
     font-size: 30px;
     font-weight: bolder;
-    position: absolute;
     top: 40%;
 }
 .xpira{
@@ -152,14 +158,15 @@
     bottom: 5px;
 }
 .boxloja{
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 300px;
-    height: 320px;
+    height: 350px;
     margin-top: 20px;
     border-radius: 15px;
-    border: 2px solid rgb(239, 78, 35);
-    background-color: rgb(0, 36, 54);
+    background-color: var(--cor-fundo-menu);
+    border: 2px solid var(--cor-laranja-az);
     padding-top: 30px;
 }
 .boxloja span{
@@ -172,39 +179,38 @@
     border-radius: 15px;
     height: 160px;
     background-color: white;
+    padding-bottom: 5px !important;
 }
-.boxloja .swiper .swiper-wrapper .swiper-slide {
+.boxloja .swiper .swiper-wrapper .swiper-slide{
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .boxloja .swiper .swiper-wrapper .swiper-slide .project-img img{
-    box-shadow: 0 1px 2px #0003;
     width: 100%;
+}
+.boxloja .button-loja{
+    color: white;
+    position: absolute;
+    bottom: 15px;
+    align-self: center;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    background: #D75B37;
 }
 
 .carrosselhome{
-    height: 350px;
-    min-width: 300px;
-    max-width: 600px;
+    display: flex;
+    position: relative;
     margin-top: 20px;
     border-radius: 15px;
-    background-color: rgb(0, 36, 54);
+    height: 320px;
+    background-color: var(--cor-fundo-menu);
 }
-.carrosselhome .swiper{
-    height: 350px;
-}
-.carrosselhome .swiper .swiper-wrapper .swiper-slide {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.carrosselhome .swiper .swiper-wrapper .swiper-slide .project-img img{
-    box-shadow: 0 1px 2px #0003;
-    width: 100%;
-}
+/*https://swiperjs.com/demos#infinite-loop*/
 
 /*Configurações do Site Responsivo*/
 @media only screen and (max-width: 768px){
@@ -226,9 +232,9 @@
 /* Handle */
 ::-webkit-scrollbar-thumb{
     border-radius: 5px;
-    background: rgb(239, 78, 35);
+    background: var(--cor-laranja-az);
 }
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover{
-    background: rgb(239, 78, 35);
+    background: var(--cor-laranja-az);
 }
