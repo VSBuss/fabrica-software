@@ -210,7 +210,6 @@
     height: 320px;
     background-color: var(--cor-fundo-menu);
 }
-/*https://swiperjs.com/demos#infinite-loop*/
 
 /*Configurações do Site Responsivo*/
 @media only screen and (max-width: 768px){
@@ -238,3 +237,31 @@
 ::-webkit-scrollbar-thumb:hover{
     background: var(--cor-laranja-az);
 }
+
+
+.card-image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+}
+.card-image .card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card .card-content .azbucks,
+.card .card-content .price{
+    color: white;
+    font: 16px medium;
+}
+.card .azcoin{
+    width: 25px;
+    height: 25px;
+}
+
+/*https://www.youtube.com/watch?v=qOO6lVMhmGc&t=184s

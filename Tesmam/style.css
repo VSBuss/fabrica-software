@@ -1,0 +1,763 @@
+:root{
+    /*Cores*/
+    --cor-fundo-menu: rgb(0, 36, 54);
+    --cor-laranja-az: rgb(239, 78, 35);
+    /*Transições*/
+    --tran-menu: 0.5s all ease;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg{
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    opacity: 0.35;
+    position: absolute;
+}
+.home{
+    font-family: 'Tomorrow', serif;
+}
+/*Propriedades do Menu Lateral*/
+.menulateral{
+    border-right-style: solid;
+    border-right-color: var(--cor-laranja-az) ;
+    border-right-width: 2px;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--cor-fundo-menu);
+    transition: var(--tran-menu);
+}
+
+/*Propriedades da Lista Menu*/
+.menulateral .listamenu{
+    gap: 40px;
+    display: flex;
+    flex-flow: column;
+    list-style-type: none;
+    justify-content: space-between;
+    margin-left: 40px;
+    position: relative;
+}
+
+/*Propriedades do SVG AzMerit*/
+.menulateral .listamenu .logoazmerit{
+    margin-top: 4vh;
+    position: relative;
+    margin-left: -15px;
+    transition: var(--tran-menu);
+}
+.menulateral .listamenu .logoazmerit #logoazmerit{
+    align-items: center;
+    display: flex;
+    transition: width 0.5s;
+}
+.menulateral .listamenu .logoazmerit #logoazmerit .path_merit{
+    padding-bottom: 4px;
+    padding-left: 7px;
+}
+
+/*Propriedades dos itens da lista*/
+.menulateral .listamenu .itemlista{
+    width: 100%;
+}
+.menulateral .listamenu .itemlista .itemmenu{
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+}
+.menulateral .listamenu .itemlista .itemmenu .textoicon{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 50px;
+}
+.menulateral .listamenu .itemlista .itemmenu .icon{
+    width: 25px;
+    height: 25px;
+}
+
+/*Propriedades do hover dos itens*/
+.menulateral .listamenu .itemlista .itemmenu:hover .pathicon{
+    fill: var(--cor-laranja-az);
+}
+.menulateral .listamenu .itemlista .itemmenu:hover .textoicon{
+    color: var(--cor-laranja-az);
+}
+
+/*Propriedades do hover de Cadastrar*/
+.menulateral .listamenu .itemlista .cadastrar:hover{
+    color: var(--cor-laranja-az);
+}
+.menulateral .listamenu .itemlista .cadastrar:hover .pathicon{
+    fill: var(--cor-laranja-az);
+}
+.menulateral .listamenu .itemlista .cadastrar:hover .setabaixo path{
+    fill: var(--cor-laranja-az);
+}
+
+/*Botão Cadastrar*/
+.menulateral .listamenu .itemlista .cadastrar{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+}
+.menulateral .listamenu .itemlista .cadastrar .textoicon{
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 50px;
+}
+.menulateral .listamenu .itemlista .cadastrar .icon{
+    width: 25px;
+    height: 25px;
+}
+.menulateral .listamenu .itemlista .cadastrar .setabaixo{
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    display: flex;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    font-size: 22px;
+    right: 10px;
+    margin-top: 30px;
+}
+.menulateral .listamenu .itemlista .cadastrar .setabaixo.rotate{
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+/*Tamanho das Ondas*/
+.menulateral .logout_div{
+    z-index: 5;
+    height: 100vh;
+    margin-top: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+/*Propriedades das Ondas https://www.cssscript.com/animated-waves-svg/*/
+.logout_div .waves{
+    position: relative;
+    height: 10vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 550px;
+}
+.parallax > use{
+    animation: move-forever 10s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1){
+    animation-delay: -1s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(2){
+    animation-delay: -7s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3){
+    animation-delay: -5s;
+    animation-duration: 10s;
+}
+@keyframes move-forever{
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% { 
+        transform: translate3d(85px,0,0);
+    }
+}
+  /*Shrinking for mobile*/
+@media (max-width: 768px){
+    .waves {
+        height:40px;
+        min-height:40px;
+    }
+}
+.logout_div .boxlogout{
+    position: relative;
+    height: auto;
+    min-height: 100%;
+    width: 100vw;
+    background-color: var(--cor-laranja-az);
+}
+.logout_div .boxlogout .itemlogout{
+    position: fixed;
+    margin-left: 40px;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    bottom: 3%;
+}
+.logout_div .boxlogout .itemlogout .iconlogout{
+    width: 25px;
+    height: 25px;
+}
+.logout_div .boxlogout .itemlogout .textologout{
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 50px;
+}
+
+/*Propriedades do Cabeçalho*/
+.cabecalho{
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    height: 100px;
+    margin-left: 250px;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--cor-laranja-az);
+}
+
+/*Propriedades da área do usuário*/
+.cabecalho .user_box{
+    position: fixed;
+    right: 0;
+    padding-top: 10px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cabecalho .user_box .nome_user{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.cabecalho .user_box .img_user{
+    width: 84px;
+    height: 84px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+.cabecalho .tela_atual{
+    margin-top: 70px;
+    margin-left: 60px;
+    font-size: 20px;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+/*Propriedades do Rodapé*/
+.rodape{
+    left: 45%;
+    bottom: 0%;
+    z-index: 1;
+    opacity: 0.35;
+    padding: auto;
+    font-size: 14px;
+    position: absolute;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+/*Propriedades da Feedback Tela Vazia*/
+.telavazia{
+    z-index: 2;
+    position: fixed;
+    width: 80%;
+    left: 300px;
+    right: 50px;
+    height: 75vh;
+    margin-top: 3%;
+}
+.telavazia .textotelavazia{
+    font-size: 1rem;
+    position: relative;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+}
+.telavazia .giftelavazia{
+    z-index: 2;
+    margin-top: 5%;
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    justify-content: center;
+    margin-top: 3%;
+    border-radius: 30px;
+    border-color: var(--cor-laranja-az);
+    border-width: 20px;
+    border-style: solid;
+}
+
+/*Propriedades do Sub Menu*/
+.itemlista .submenu{
+    display: none;
+    transition: var(--tran-menu);
+}
+.itemlista .submenu.show{
+    display: flex;
+    gap: 40px;
+    margin-left: 65px;
+    padding-top: 25px;
+    flex-flow: column;
+    list-style-type: none;
+    justify-content: space-between;
+}
+.itemlista .submenu.show .textosub{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 2px 15px;
+    margin-left: 10px;
+}
+.itemlista .submenu.show li a:hover .textosub{
+    color: var(--cor-laranja-az);
+}
+.itemlista .submenu.show li a:hover .pathicon{
+    fill: var(--cor-laranja-az);
+}
+
+/*Configurações do Site Responsivo*/
+@media only screen and (max-width: 768px){
+    .menulateral.closed{
+        width: 80px;
+    }
+    .menulateral.closed .listamenu .logoazmerit{
+        margin-left: -25px;
+    }
+    .menulateral.closed .listamenu .logoazmerit #logoazmerit .path_az{
+        width: 55px;
+    }
+    .menulateral.closed .listamenu .logoazmerit #logoazmerit .path_merit{
+        display: none;
+    }
+    .menulateral.closed .textoicon{
+        opacity: 0;
+        display: none;
+    }
+    .menulateral.closed .listamenu .itemlista .cadastrar .setabaixo{
+        display: none;
+    }
+
+
+
+    /*Faz o resto da tela ficar escuro*/
+    .menulateral .menuabertomobile{
+        z-index: 0;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        margin-left: 250px; /*2px a mais por conta da borda*/
+        width: 100vw;
+        background-color: black;
+        height: 100vh;
+        opacity: 0.4;
+        animation: fadeIn 3s;
+    }
+    .menulateral.closed .menuabertomobile{
+        display: none;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+          to { opacity: 0.4; }
+    }
+
+
+
+    .cabecalho{
+        margin-left: 80px;
+        height: 80px;
+    }
+    .cabecalho .user_box .img_user{
+        width: 65px;
+        height: 65px;
+    }
+    .cabecalho .tela_atual{
+        margin-top: 0;
+        max-width: 200px;
+    }
+    .cabecalho .tela_atual span{
+        text-align: justify;
+    }
+    .menulateral .listamenu .itemlista{
+        margin-left: -15px;
+    }
+    .menulateral.closed .listamenu .itemlista{
+        pointer-events: none;
+    }
+    .logout_div .boxlogout .itemlogout{
+        margin-left: 30px;
+    }
+    .menulateral.closed .logout_div .boxlogout .itemlogout .textologout{
+        display: none;
+    }
+    .rodape{
+        left: 25%;
+        padding-right: 20px;
+    }
+    .telavazia{
+        left: 100px;
+        right: 20px;
+    }
+    .home .loja{
+        left: 100px;
+        right: 20px;
+    }
+}
+
+/*Propriedades da Barra de Rolagem*/
+/*width*/
+::-webkit-scrollbar{
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track{
+    background: none;
+}
+/* Handle */
+::-webkit-scrollbar-thumb{
+    background: var(--cor-laranja-az);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover{
+    background: var(--cor-fundo-menu);
+}
+
+
+
+
+
+
+
+
+/* CSS da Carrosel */
+/* CSS da Carrosel */
+.loja{
+    position: fixed;
+    left: 300px;
+    right: 50px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.carousel{
+    width: 100%;
+    position: relative;
+    top: 0;
+}
+.carousel-container{
+    align-items: center;
+    display: flex;
+    height: 100px;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+}
+.carousel-item{
+    height: 240px;
+    opacity: 3;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 230px;
+    z-index: 0;
+    border-radius: 12px;
+    background-size: contain;
+    
+}
+.carousel-item-1{
+    left: 15%;
+    opacity: .4;
+    transform: translateX(-50%);
+}
+.carousel-item-2, .carousel-item-4{
+    height: 265px;
+    opacity: 0.8;
+    width: 270px;
+    z-index: 1;
+}
+.carousel-item-2{
+    left: 30%;
+    transform: translateX(-50%);
+}
+.carousel-item-3{
+    box-shadow: -2px 5px 33px 6px rgb(0,0,0,0.35);
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px;
+    height: 280px;
+    z-index: 2;
+}
+.carousel-item-4{
+    left: 70%;
+    transform: translateX(-50%);
+}
+.carousel-item-5{
+    left: 85%;
+    opacity: .4;
+    transform: translateX(-50%);
+}
+.carousel-item-6{
+    left: 5%;
+    opacity: .6;
+}
+.carousel-controls{
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px;
+    height: 50px;
+    
+}
+.carousel-controls button{
+    border: 0;
+    cursor: pointer;
+    font-size: 25px;
+    margin: 0 200px;
+    padding: 0 12px;
+    font-size: 0;
+    background-color: transparent;
+     
+}
+.carousel-controls-button:focus{
+    outline: none;
+}
+.carousel-controls-previous{
+    position: absolute;
+    right: 85%;
+    top: 77%;
+    transform: translateY(-50%);
+   
+    
+}
+
+.carousel-controls-previous::before{
+    border: solid #000;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    left: -30px;
+    padding: 10px;
+    position: relative;
+    top: 65px;
+    transform: rotate(135deg) translateY(-50%);
+    transition: left 0.15s ease-in-out;
+    width: 5px;
+}
+.carousel-controls-previous:hover::before{
+    left: -40px;
+    
+}
+.carousel-controls-next{
+    position: absolute;
+    left: 87%;
+    top:77%;
+}
+.carousel-controls-next::before{
+    border: solid #000;
+    border-width: 0 5px 5px 0;
+    content: '';
+    display: inline-block;
+    height: 5px;
+    padding: 10px;
+    position: absolute;
+    right: -30px;
+    top: 65px;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: right 0.15s ease-in-out;
+    width: 5px;
+}
+.carousel-controls-next:hover:before{
+    right: -40px;
+}
+.carousel-nav{
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+}
+.carousel nav li{
+    background: #ccc;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0 16px;
+    width: 10px;
+}
+.carousel-nav li.carousel-item-selected{
+    background: #555;
+}
+
+/*Cards*/
+.container{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position:relative ;
+    justify-content: center;
+    margin-top: 250px;
+    transform: translateY(-0%);
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.img-card{
+height: 350px;
+width: 250px;
+margin: 25px;
+border-radius: 25px;
+overflow: hidden;
+box-shadow: 0px 0px 10px rgba(0, 0, 0,0.7);
+filter:grayscale(100%);
+backdrop-filter: blur(10px);
+
+
+}
+.img-card .imagem{
+    width: 253px;
+    height: 350px;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    background: rgba(217, 217, 217, 0.58);
+    
+    transition: all 1.7s;
+    border: 1px solid white;
+    color: black;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0,0.22);
+    object-fit: contain;
+    
+}
+.img-card:hover{
+    border: 1px solid black;
+    transform: scale(1.07);
+    filter: grayscale(0%);
+}
+.img-card:active{
+    transform: scale(0.95);
+}
+
+
+/*tela de descrição*/
+.tela_descricao{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    position: relative;
+}
+
+.descricao{
+    background-color: aqua;
+    height: 220px;
+    width: 150px;
+    position: relative;
+    margin-left: -58%;
+    justify-content: center;
+    margin-top: 7.5%;
+    
+}
+.imagem-descricao{
+    position: relative;
+    margin-top: -35px;
+    margin-left: 20%;
+    
+
+}
+.img{
+    height: 500px;
+    width: 450px;
+    position: relative;
+    top: -200px;
+    border: solid cadetblue;
+    border-radius: 20px;
+    left: 450px;
+    
+}
+.texto2{
+    position: relative;
+    background-color:blueviolet;
+    margin: -60%;
+    width: 100px;
+    top: -450px;   
+    margin-left: 700%;
+}
+.buton{
+    position: relative;
+    margin-left: 692%;
+    top: -300px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    background: #183153;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0px 6px 24px 0px (0,0,0,0.2);
+    overflow: hidden;
+    
+}
+.buton:after{
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #D75B36;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+}
+.buton:hover::after{
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+.buton span{
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
+} 
+.buton:hover span{
+    color: #183153;
+    animation: scaleUp 1.5s ease-in-out;
+}
+
+@keyframes scaleUp {
+0%{
+transform: scale(1);
+}
+50%{
+    transform: scale(0.95);
+}
+100%{
+    transform: scale(1);
+}
+
+}
