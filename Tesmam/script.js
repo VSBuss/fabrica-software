@@ -32,8 +32,10 @@ function fecharSubMenu(){
     setabaixo.classList.remove("rotate");
     subMenuAberto = false
 }
+
+
 // Script do Carrosel//
-const carouselContainer = document.querySelector('.carousel-container');
+      const carouselContainer = document.querySelector('.carousel-container');
       const carouselControlsContainer = document.querySelector('.carousel-controls');
       const carouselControls = ['previous','next'];
       const carouselItems = document.querySelectorAll('.carousel-item');
