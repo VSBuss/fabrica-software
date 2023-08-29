@@ -19,7 +19,7 @@ connection = pg.connect(user = "postgres", password = "1234", host = "localhost"
 curs = connection.cursor()
 
 ##Quarto passo: Atribuir os comandos:
-'''
+
 table_name = input("Crie um nome para uma tabela: ")
 print("Sua tabela terá por padrão 3 colunas para inserir registros, dê um nome para a primeira coluna\nque não seja uma Primary Key, pois eu irei criar uma para você. =)")
 col1 = input("col1: ")
