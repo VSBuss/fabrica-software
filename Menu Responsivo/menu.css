@@ -13,6 +13,7 @@ li{
     flex-direction: row;
     background-color: blueviolet;
     width: 100vw;
+    height: 100px;
 }
 
 .header .navbar{
@@ -45,7 +46,7 @@ li{
     font-weight: 400;
     text-decoration: none;
 }
-.hamburgue{
+.hamburguer{
     display: none;
 }
 .bar{
@@ -77,5 +78,8 @@ li{
     }
     .nav-link{
         color: rgb(8, 8, 8);
+    }
+    .hamburguer{
+        display: block;
     }
 }

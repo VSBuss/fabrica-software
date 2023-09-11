@@ -64,3 +64,5 @@ medico['especialidade'] = str(input('Digite a especialidade do médico: '))
 print(recem_nascido)
 print(mae)
 print(medico)
+
+'''Link do slide referente ao exercício 91: https://drive.google.com/drive/folders/1-T2MmnqBA9j0yyRYHgcCEc5QkYtj6F1o?usp=sharing'''

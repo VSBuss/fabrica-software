@@ -8,7 +8,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: lightsalmon;
+    background-size: 30%;
+    background-repeat: repeat;
+    background-image: url(img/Garfo.webp);
 }
 .section-carrossel{
     background-color: silver;

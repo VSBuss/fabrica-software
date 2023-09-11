@@ -1,6 +1,0 @@
-{
-    "liveServer.settings.port": 5501
-}
-module.exports = {
-  php: "C:\\xampp\\php\\php.exe"
-}

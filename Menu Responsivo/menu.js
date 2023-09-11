@@ -14,7 +14,5 @@ navLink.forEach(n => n.addEventListener("click", closeMenu));
 
 function closeMenu(){
     hamburguer.classList.remove("active");
-
     navMenu.classList.remove("active");
-
 }
