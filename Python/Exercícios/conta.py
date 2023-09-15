@@ -60,10 +60,13 @@ class Conta:
         return dados
 
 class Conta2:
+
     def __init__(self, num_conta, nome, saldo)-> None:
         self.num_conta = num_conta
         self.nome = nome
         self.saldo = saldo
+
+    
     def cadastrar(self) -> bool:
         try:
             self.num_conta = self.num_conta
@@ -71,12 +74,16 @@ class Conta2:
             self.saldo = self.saldo
         except:
             return False
+        
+    
     def depositar(self, saldo) -> bool:
         try:
             self.saldo += saldo
             return True
         except:
             return False
+
+
     def sacar(self, saque)-> bool:
         if(self.saldo<saque):
             print("Saldo insuficiente.")
@@ -85,6 +92,8 @@ class Conta2:
             self.saldo -= saque
             print("Saque realizado com sucesso!")
             return True
+
+
     def listarDados(self)-> str:
         dados = {"Número da Conta: ":self.num_conta,
                  "Nome: ":self.nome,

@@ -12,8 +12,11 @@ while True:
                        "[0] - Cancelar\n"
                        "Digite o número da opção desejada: "))
     match opcoes:
+
         case 0:
             break
+
+
         case 1:
             num_conta = random.randint(0000,1000)
             nome = input("Nome do Cliente: ")
@@ -22,12 +25,16 @@ while True:
             conta.cadastrar()
             dados_conta.append(conta)
             print(f"Número da conta cadastrada {num_conta}")
+
+
         case 2:
             num_conta = int(input("Informe o número da sua conta: "))
             for objeto in dados_conta:
                 if(num_conta == objeto.num_conta):
-                    mostrar_dados = objeto.ListarDados()
+                    mostrar_dados = objeto.listarDados()
                     print(mostrar_dados)
+
+
         case 3:
             num_conta = int(input("Informe o número da conta: "))
             valor = float(input("Informe o valor a ser depositado: "))
@@ -35,11 +42,11 @@ while True:
                 if(num_conta == objeto.num_conta):
                     objeto.depositar(valor)
                     print(f"Você depositou R${valor:.2f} na conta concorrente de número {num_conta}")
+
+
         case 4:
             num_conta = int(input("Informe o número da conta: "))
             valor = float(input("Informe o valor a ser sacado: "))
             for objeto in dados_conta:
                 if (num_conta == objeto.num_conta):
                     objeto.sacar(valor)
-        case 5:
-            break
