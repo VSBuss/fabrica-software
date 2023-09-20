@@ -40,6 +40,31 @@ df = pd.read_sql_query(sql, con=engine)
 print(df)
 '''
 
+## Comandos para criação do BD:
+'''
+CREATE TABLE tipo(
+	id_tipo int PRIMARY KEY,
+	nome VARCHAR
+);
+CREATE TABLE grupo(
+	id_grupo int PRIMARY KEY,
+	nome VARCHAR
+);
+CREATE TABLE conta(
+	id int PRIMARY KEY,
+	receita_despesa BOOL,
+	valor FLOAT NOT NULL,
+	data_cadastro DATE NOT NULL,
+	data_vencimento DATE NOT NULL,
+	data_pg DATE,
+	situacao BOOL,
+	id_tipo INT NOT NULL,
+	id_grupo INT NOT NULL,
+	FOREIGN KEY (id_tipo) REFERENCES tipo (id_tipo),
+	FOREIGN KEY (id_grupo) REFERENCES grupo (id_grupo)
+);
+'''
+
 ## EXEMPLOS ^^^^^^^^^^
 
 ## INSERE OS VALORES DOS NOMES DE TIPO E GRUPO DO BANCO DE DADOS NAS VARIÁVEIS DO TIPO LISTA COM O NOME DE tipo e grupo

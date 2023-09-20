@@ -1,0 +1,35 @@
+Vantagens
+
+
+
+
+Com uma API mínima, as interfaces são facilmente definidas usando um pequeno código Python.
+
+Evite a alternância constante entre os designers da GUI e o IDE Python.
+
+Foi projetado para permitir a codificação de funcionalidades avançadas com um mínimo de esforço.
+
+O código é organizado em módulos e preparado para ser reaproveitado por outras aplicações.
+
+Facilita a manutenção dos aplicativos.
+
+Torne a prototipagem muito mais fácil e rápida.
+
+Devido à sua simplicidade possui uma baixa curva de aprendizado.
+
+
+Pyforms é um framework Python 3 para desenvolver aplicações capazes de executar em 3 ambientes diferentes, 
+Desktop GUI, Terminal e Web. A biblioteca é composta por três subbibliotecas, cada uma implementando a 
+camada responsável por interpretar a aplicação Pyforms em cada ambiente diferente.
+
+É amplamente considerada uma das melhores bibliotecas para o desenvolvimento de interfaces de usuário para 
+dispositivos modernos baseados em toque, e sua aceleração de hardware é obtida por meio de shaders OpenGL e GPU. 
+A biblioteca Python possui uma ampla gama de recursos como suporte para câmera, suporte para animação, alinhamento de texto, efeitos de GPU e muito mais.
+
+OpenGL - Usando OpenGL é possível criar gráficos 3D com uma qualidade visual próxima de um ray tracer (simula reflexo em tempo real). 
+Efeitos de GPU - Você pode reproduzir efeitos e transições acelerados por GPU em tempo real sem renderizá-los.
+
+"O desenvolvimento desta biblioteca começou com a necessidade de permitir que usuários com poucos conhecimentos de programação pudessem editar 
+parâmetros dos meus scripts python. A ideia era transformar scripts já desenvolvidos em aplicações GUI com pouco esforço e em pouco tempo."
+
+https://github.com/UmSenhorQualquer/pyforms
