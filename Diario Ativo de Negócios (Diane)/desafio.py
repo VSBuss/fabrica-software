@@ -11,7 +11,6 @@ pip install psycopg2
 pip install sqlalchemy
 '''
 
-from classes import Conta
 from datetime import date
 
 ## Variável da string de conexão
@@ -115,23 +114,29 @@ while opcoes != '3':
             data_cadastro = date.today()
             data_cadastro = data_cadastro.strftime("%d/%m/%Y")
             data_vencimento = input("Data de vencimento [dd/mm/ano]: ")
-            situacao = input("A conta está paga?\n[1] - SIM\n[0] - NÃO\n")
-            if situacao == '1':
-                # Executar uma instrução SQL para inserir dados em uma tabela
-                curs.execute("INSERT INTO conta (receita_despesa, valor, data_cadastro, data_vencimento, data_pg, situacao, id_tipo, id_grupo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
-                            (receita_despesa, valor, data_cadastro, data_vencimento, data_cadastro, situacao, descricao, grupo))
-                # Confirmar a transação
-                connection.commit()
-                # Fechar a conexão
-                connection.close()
-            elif situacao == '0':
-                # Executar uma instrução SQL para inserir dados em uma tabela
-                curs.execute("INSERT INTO conta (receita_despesa, valor, data_cadastro, data_vencimento, situacao, id_tipo, id_grupo) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                            (receita_despesa, valor, data_cadastro, data_vencimento, situacao, descricao, grupo))
-                # Confirmar a transação
-                connection.commit()
-                # Fechar a conexão
-                connection.close()
+            while True:
+                situacao = input("A conta está paga?\n[1] - SIM\n[0] - NÃO\n")
+                if situacao == '1':
+                    # Executar uma instrução SQL para inserir dados em uma tabela
+                    curs.execute("INSERT INTO conta (receita_despesa, valor, data_cadastro, data_vencimento, data_pg, situacao, id_tipo, id_grupo) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+                                (receita_despesa, valor, data_cadastro, data_vencimento, data_cadastro, situacao, descricao, grupo))
+                    # Confirmar a transação
+                    connection.commit()
+                    # Fechar a conexão
+                    connection.close()
+                    break
+                elif situacao == '0':
+                    # Executar uma instrução SQL para inserir dados em uma tabela
+                    curs.execute("INSERT INTO conta (receita_despesa, valor, data_cadastro, data_vencimento, situacao, id_tipo, id_grupo) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                                (receita_despesa, valor, data_cadastro, data_vencimento, situacao, descricao, grupo))
+                    # Confirmar a transação
+                    connection.commit()
+                    # Fechar a conexão
+                    connection.close()
+                    break
+                else:
+                    print("\nEntrada Inválida.")
+                    continue
 
         elif opcoes2 == '2':
             1==1
