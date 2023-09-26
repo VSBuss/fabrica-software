@@ -62,6 +62,9 @@ CREATE TABLE conta(
 	FOREIGN KEY (id_tipo) REFERENCES tipo (id_tipo),
 	FOREIGN KEY (id_grupo) REFERENCES grupo (id_grupo)
 );
+CREATE TABLE saldo(
+    valor float
+);
 '''
 
 ## EXEMPLOS ^^^^^^^^^^
@@ -71,17 +74,17 @@ tipo = []
 grupo = []
 
 ## Seleciona e insere os nomes dos grupos e tipos de conta nas listas acima.
-x = 0
 sql = "SELECT nome FROM tipo"
 df = pd.read_sql_query(sql, con=engine)
+x = 0
 while x < df.shape[0]:
     variable = df['nome'].values[x]
     tipo.append(variable)
     x = x + 1
 
-x = 0
 sql = "SELECT nome FROM grupo"
 df = pd.read_sql_query(sql, con=engine)
+x = 0
 while x < df.shape[0]:
     variable = df['nome'].values[x]
     grupo.append(variable)
@@ -96,7 +99,7 @@ while opcoes != '3':
                    "[1] - Contas\n"
                    "[2] - Relatórios\n"
                    "[3] - Sair\n\n")
-    if opcoes == '1':
+    if opcoes == '1': ## Contas
         opcoes2 = input("\n----------DIANE----------\n\n"
                         "[1] - Cadastrar Conta\n"
                         "[2] - Sugestões de Investimento\n"
@@ -145,7 +148,7 @@ while opcoes != '3':
         else:
             print("\nEntrada Inválida")
         
-    elif opcoes == '2':
+    elif opcoes == '2': ## Relatórios
         opcoes3 = input("\n----------DIANE----------\n"
                           "------Conta Pessoal------\n"
                           "[1] - Despesas Pagas\n"
@@ -156,22 +159,33 @@ while opcoes != '3':
                           "[6] - Saldo\n"
                           "[7] - Voltar\n\n")
         ## DESPESAS PAGAS
-        if opcoes3 == '1': 
-            sql =  "SELECT valor, grupo.nome, tipo.nome FROM conta " \
+        if opcoes3 == '1':
+            print("\nInforme o intervalo de tempo para gerar o relatório:")
+            datainicial = input("Data Inicial: ")
+            datafinal = input("Data Final: ")
+            print("\n")
+            sql =  "SELECT valor, grupo.nome as nomegrupo, tipo.nome FROM conta " \
                    "JOIN grupo " \
                    "ON conta.id_grupo = grupo.id_grupo " \
                    "JOIN tipo " \
                    "ON conta.id_tipo = tipo.id_tipo " \
-                   "where data_pg is not null"
+                   "WHERE data_pg IS NOT NULL"
             df = pd.read_sql_query(sql, con=engine)
-            pagos = df['valor'].values[0]
-            print(df)
+            x=0
+            while x < df.shape[0]:
+                valor = df['valor'].values[x]
+                nomegrupo = df['nomegrupo'].values[x]
+                nomeconta = df['nome'].values[x]
+                print(f"R${valor:.2f} - {nomeconta}")
+                x = x + 1
         
         ## DESPESAS EM ABERTO
         elif opcoes3 == '2':     
-            sql = "SELECT * FROM conta WHERE data_pg IS NULL" \
-            "JOIN grupo"
-            df = pd.read_sql_query()
+            sql = "SELECT * FROM conta" \
+            "JOIN grupo" \
+            "ON conta.id_grupo = grupo.id_grupo" \
+            " WHERE data_pg IS NULL"
+            df = pd.read_sql_query(sql, con=engine)
             print(df)
             x = 0
             while x < df.shape[0]:
@@ -207,7 +221,7 @@ while opcoes != '3':
         else:
             print("\nEntrada Inválida")
         
-    elif opcoes == '3':
+    elif opcoes == '3': ## Sair
         print("\nTchau =)")
     else:
         print("\nEntrada Inválida")
