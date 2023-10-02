@@ -1,0 +1,13 @@
+links:
+https://www.newtoncbraga.com.br/index.php/projetos-educacionais/9278-utilizando-a-matriz-de-contatos-de-170-pontos-art1810
+
+http://www.bosontreinamentos.com.br/eletronica/curso-de-eletronica/o-que-e-uma-matriz-de-contatos-curso-de-eletronica-basica/
+
+https://portal.vidadesilicio.com.br/protoboard/
+
+https://www.google.com/search?q=jumpers+para+protoboard&tbm=isch&ved=2ahUKEwifv6yt1c6BAxWcupUCHTaLA6IQ2-cCegQIABAA&oq=protoboard+jumper&gs_lcp=CgNpbWcQARgBMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB46BQgAEIAEOgQIABAeUMMHWO0nYIM7aAFwAHgAgAG7BogB2iKSAQwwLjEuMTMuMS42LTGYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=HigWZZ-4HZz11sQPtpaOkAo&bih=689&biw=1366#imgrc=BKziUocy4fqBNM&imgdii=rHWyvAfyO7MjiM
+
+https://www.casadarobotica.com/prototipagem/protoboard
+
+https://ardudino.wordpress.com/2015/12/08/led-com-botao/
+

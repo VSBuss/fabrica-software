@@ -26,13 +26,31 @@ a senha foi correta e encerrar o jogo.
 
 Crie uma instância da classe Jogo e chame o método jogar para iniciar o jogo.'''
 
-from tkinter import *
+
+## Para usar o SQLITE você precisa baixar esse app: https://sqlitebrowser.org/dl/
+##import sqlite3
+import tkinter as tk
+
+'''
+## Criar conexão com o banco de dados
+conexao = sqlite3.connect('jogo_do_cofre.db')
+## Criar o cursor
+cursor = conexao.cursor()
+## Criar a tabela
+cursor.execute("CREATE TABLE jogadores (nome text, data_atual text, recorde int)")
+## Commit the changes
+conexao.commit()
+## Fechar a conexão com o BD
+conexao.close()
+'''
+
+
 root = Tk()
 root.geometry("800x600")
 root.resizable(0,0)
 root.configure(bg="#002436")
-'''Título do programa'''
-root.title("Programa de Python Simples")
+## Título do programa
+root.title("Jogo do Cofre")
 limitador = 3
 import random
 import time
@@ -40,6 +58,50 @@ import time
 senhacofre = [random.randint(1,5), random.randint(1,5), random.randint(1,5)]
 jogador = [0,0,0]
 num = ''
+
+'''
+def cadastrar_recorde():
+
+    ## Título dos Campos ou Labels
+    label_nome = tkinter.Label(janela, text='Nome')
+    label_nome.grid(row=0, column=0, padx=10, pady=10)
+    
+    label_data = tkinter.Label(janela, text='Data')
+    label_data.grid(row=1, column=0, padx=10, pady=10)
+
+    label_recorde = tkinter.Label(janela, text='Recorde')
+    label_recorde.grid(row=2, column=0, padx=10, pady=10)
+
+    ## Caixas de Entradas ou Inputs
+    entry_nome = tkinter.Entry(janela, width=35)
+    entry_nome.grid(row=0, column=1, padx=10, pady=10)
+
+    entry_data = tkinter.Entry(janela, width=35)
+    entry_data.grid(row=1, column=1, padx=10, pady=10)
+
+    entry_recorde = tkinter.Entry(janela, width=35)
+    entry_recorde.grid(row=2, column=1, padx=10, pady=10)
+
+    ## Limpa os dados das caixas de entrada
+    entry_nome.delete(0, "end")
+    entry_data.delete(0, "end")
+    entry_recorde.delete(0, "end")
+
+    ## Botão Cadastrar
+    ##botao_salvar = tkinter.Button(text='SALVAR', command=)
+
+    ## Realiza a conexão com o BD
+    conexao = sqlite3.connect('jogo_do_cofre.db')
+    cursor = conexao.cursor()
+    ## Insere dados na tabela
+    cursor.execute("INSERT INTO jogadores VALUES (:nome, :data_atual, :recorde)",
+                   {
+                       'nome': entry_nome.get(),
+                       'data_atual': entry_data.get(),
+                       'recorde': entry_recorde.get()
+                   }
+                   )
+'''
 
 def tentativa():
     if senhacofre == jogador:
@@ -90,7 +152,7 @@ def altexto(numero):
     else:
         texto_caixa.set(texto_atual + numero)
     
-'''Plano de Fundo usando imagem'''
+## Plano de Fundo usando imagem
 pic = PhotoImage(file=r"Introdução a Programação\Cofre.png")
 bckground = Label(root, image=pic)
 bckground.place(x = -200, y = -20)
@@ -98,7 +160,70 @@ bckground.place(x = -200, y = -20)
 def btn1():
     jogar = 0
 
-'''Modificações feitas por mim'''
+## Modificações feitas por mim
+class tkinterApp(tkinter.root):
+     
+    # __init__ function for class tkinterApp
+    def __init__(self, *args, **kwargs):
+         
+        # __init__ function for class Tk
+        tk.Tk.__init__(self, *args, **kwargs)
+         
+        # creating a container
+        container = tk.Frame(self) 
+        container.pack(side = "top", fill = "both", expand = True)
+  
+        container.grid_rowconfigure(0, weight = 1)
+        container.grid_columnconfigure(0, weight = 1)
+  
+        # initializing frames to an empty array
+        self.frames = {} 
+  
+        # iterating through a tuple consisting of the different page layouts
+        for F in (StartPage, Page1, Page2):
+  
+            frame = F(container, self)
+  
+            # initializing frame of that object from
+            # startpage, page1, page2 respectively with
+            # for loop
+            self.frames[F] = frame
+  
+            frame.grid(row = 0, column = 0, sticky ="nsew")
+  
+        self.show_frame(StartPage)
+
+    # to display the current frame passed as
+    # parameter
+    def show_frame(self, cont):
+        frame = self.frames[cont]
+        frame.tkraise()
+
+class StartPage(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+         
+        # label of frame Layout 2
+        label = ttk.Label(self, text ="Startpage", font = LARGEFONT)
+         
+        # putting the grid in its place by using
+        # grid
+        label.grid(row = 0, column = 4, padx = 10, pady = 10)
+  
+        button1 = ttk.Button(self, text ="Page 1",
+        command = lambda : controller.show_frame(Page1))
+     
+        # putting the button in its place by
+        # using grid
+        button1.grid(row = 1, column = 1, padx = 10, pady = 10)
+  
+        ## button to show frame 2 with text layout2
+        button2 = ttk.Button(self, text ="Page 2",
+        command = lambda : controller.show_frame(Page2))
+     
+        # putting the button in its place by
+        # using grid
+        button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
 botaoteste = Button( text="Teste", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'), command=testar_senha)
 botaoteste.place(relx=0.05, rely=0.8, relwidth=0.09, relheight=0.1)
@@ -155,7 +280,13 @@ buttomSeven.place(x=475, y=400, relwidth=0.05, relheight=0.05)
 buttomSeven = Button( text="9", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('9'))
 buttomSeven.place(x=525, y=400, relwidth=0.05, relheight=0.05)
 
+## Botão para sal
+'''botao_recordes = Button(text='Recordes', command=cadastrar_recorde)'''
 
-
-
+##Mantém a janela em aberto
 root.mainloop()
+
+
+
+
+############ https://www.geeksforgeeks.org/tkinter-application-to-switch-between-different-page-frames/ ############
