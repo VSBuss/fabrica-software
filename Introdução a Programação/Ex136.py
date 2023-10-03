@@ -28,7 +28,7 @@ Crie uma instância da classe Jogo e chame o método jogar para iniciar o jogo.'
 
 
 ## Para usar o SQLITE você precisa baixar esse app: https://sqlitebrowser.org/dl/
-##import sqlite3
+## import sqlite3
 import tkinter as tk
 
 '''
@@ -45,7 +45,7 @@ conexao.close()
 '''
 
 
-root = Tk()
+root = tk.Tk()
 root.geometry("800x600")
 root.resizable(0,0)
 root.configure(bg="#002436")
@@ -129,8 +129,8 @@ def testar_senha():
         top.title("VOCÊ GANHOU!")
         top.geometry("400x300")
         '''Foto caso vença'''
-        figura = PhotoImage(file=r"")
-        youwin = Label(top, image=figura)
+        figura = tk.PhotoImage(file=r"")
+        youwin = tk.Label(top, image=figura)
         youwin.pack()
 
 
@@ -153,15 +153,15 @@ def altexto(numero):
         texto_caixa.set(texto_atual + numero)
     
 ## Plano de Fundo usando imagem
-pic = PhotoImage(file=r"Introdução a Programação\Cofre.png")
-bckground = Label(root, image=pic)
+pic = tk.PhotoImage(file=r"Introdução a Programação\Cofre.png")
+bckground = tk.Label(root, image=pic)
 bckground.place(x = -200, y = -20)
 
 def btn1():
     jogar = 0
 
 ## Modificações feitas por mim
-class tkinterApp(tkinter.root):
+class tkinterApp(tk.Tk):
      
     # __init__ function for class tkinterApp
     def __init__(self, *args, **kwargs):
@@ -204,13 +204,13 @@ class StartPage(tk.Frame):
         tk.Frame.__init__(self, parent)
          
         # label of frame Layout 2
-        label = ttk.Label(self, text ="Startpage", font = LARGEFONT)
+        label = tk.Label(self, text ="Startpage", font = LARGEFONT)
          
         # putting the grid in its place by using
         # grid
         label.grid(row = 0, column = 4, padx = 10, pady = 10)
   
-        button1 = ttk.Button(self, text ="Page 1",
+        button1 = tk.Button(self, text ="Page 1",
         command = lambda : controller.show_frame(Page1))
      
         # putting the button in its place by
@@ -218,67 +218,66 @@ class StartPage(tk.Frame):
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
   
         ## button to show frame 2 with text layout2
-        button2 = ttk.Button(self, text ="Page 2",
+        button2 = tk.Button(self, text ="Page 2",
         command = lambda : controller.show_frame(Page2))
      
         # putting the button in its place by
         # using grid
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-botaoteste = Button( text="Teste", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'), command=testar_senha)
-botaoteste.place(relx=0.05, rely=0.8, relwidth=0.09, relheight=0.1)
+        botaoteste = tk.Button( text="Teste", bd=2, bg='#107db2', fg='white',font=('verdana', 14, 'bold'), command=testar_senha)
+        botaoteste.place(relx=0.05, rely=0.8, relwidth=0.09, relheight=0.1)
 
-tituloJogo = Label(text="Jogo do Cofre:",bg="#6D6E71",fg="white",font=("Arial","20","bold"))
-tituloJogo.place(x=300,y=22)
+        tituloJogo = tk.Label(text="Jogo do Cofre:",bg="#6D6E71",fg="white",font=("Arial","20","bold"))
+        tituloJogo.place(x=300,y=22)
 
-acertos = Label(text="Acertos:",bg="#A7A9AC",fg="green",font=("Arial","10","bold"))
-acertos.place(x=420,y=250, relheight=0.05)
+        acertos = tk.Label(text="Acertos:",bg="#A7A9AC",fg="green",font=("Arial","10","bold"))
+        acertos.place(x=420,y=250, relheight=0.05)
 
-texto_caixa = StringVar()
-caixa_texto = Label( textvariable=texto_caixa, bg='#FFFFFF', font=('verdana', 10, 'bold'))
-caixa_texto.place(x=400, y=200, relwidth=0.1, relheight=0.05)
+        texto_caixa = tk.StringVar()
+        caixa_texto = tk.Label( textvariable=texto_caixa, bg='#FFFFFF', font=('verdana', 10, 'bold'))
+        caixa_texto.place(x=400, y=200, relwidth=0.1, relheight=0.05)
 
-tentativateste = StringVar()
-tentativa1 = Label( textvariable=tentativateste, bg="#FFFFFF", fg='red', font=('verdana', 10, 'bold'))
-tentativa1.place(x=300, y=100, relwidth=0.1, relheight=0.05)
-
-
-
-qntacertos = StringVar()
-testeresultado=Label( textvariable=qntacertos,bg="#FFFFFF", font=('verdana', 10, 'bold'))
-testeresultado.place(x=475, y=252, relwidth=0.114, relheight=0.04)
+        tentativateste = tk.StringVar()
+        tentativa1 = tk.Label( textvariable=tentativateste, bg="#FFFFFF", fg='red', font=('verdana', 10, 'bold'))
+        tentativa1.place(x=300, y=100, relwidth=0.1, relheight=0.05)
 
 
-'''Botões numéricos do Cofre'''
 
-buttomOne = Button( text="1", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('1'))
-buttomOne.pack()
-buttomOne.place(x=425, y=300, relwidth=0.05, relheight=0.05)
+        qntacertos = tk.StringVar()
+        testeresultado= tk.Label( textvariable=qntacertos,bg="#FFFFFF", font=('verdana', 10, 'bold'))
+        testeresultado.place(x=475, y=252, relwidth=0.114, relheight=0.04)
 
-buttomTwo = Button( text="2", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('2'))
-buttomTwo.pack()
-buttomTwo.place(x=475, y=300, relwidth=0.05, relheight=0.05)
 
-buttomThree = Button( text="3", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('3'))
-buttomThree.place(x=525, y=300, relwidth=0.05, relheight=0.05)
+        # BOTÕES NUMÉRICOS DO COFRE
+        buttomOne = tk.Button( text="1", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('1'))
+        buttomOne.pack()
+        buttomOne.place(x=425, y=300, relwidth=0.05, relheight=0.05)
 
-buttomFour = Button( text="4", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('4'))
-buttomFour.place(x=425, y=350, relwidth=0.05, relheight=0.05)
+        buttomTwo = tk.Button( text="2", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('2'))
+        buttomTwo.pack()
+        buttomTwo.place(x=475, y=300, relwidth=0.05, relheight=0.05)
 
-buttomFive = Button( text="5", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('5'))
-buttomFive.place(x=475, y=350, relwidth=0.05, relheight=0.05)
+        buttomThree = tk.Button( text="3", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('3'))
+        buttomThree.place(x=525, y=300, relwidth=0.05, relheight=0.05)
 
-buttomSix = Button( text="6", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('6'))
-buttomSix.place(x=525, y=350, relwidth=0.05, relheight=0.05)
+        buttomFour = tk.Button( text="4", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('4'))
+        buttomFour.place(x=425, y=350, relwidth=0.05, relheight=0.05)
 
-buttomSeven = Button( text="7", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('7'))
-buttomSeven.place(x=425, y=400, relwidth=0.05, relheight=0.05)
+        buttomFive = tk.Button( text="5", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('5'))
+        buttomFive.place(x=475, y=350, relwidth=0.05, relheight=0.05)
 
-buttomSeven = Button( text="8", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('8'))
-buttomSeven.place(x=475, y=400, relwidth=0.05, relheight=0.05)
+        buttomSix = tk.Button( text="6", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('6'))
+        buttomSix.place(x=525, y=350, relwidth=0.05, relheight=0.05)
 
-buttomSeven = Button( text="9", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('9'))
-buttomSeven.place(x=525, y=400, relwidth=0.05, relheight=0.05)
+        buttomSeven = tk.Button( text="7", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('7'))
+        buttomSeven.place(x=425, y=400, relwidth=0.05, relheight=0.05)
+
+        buttomEight = tk.Button( text="8", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('8'))
+        buttomEight.place(x=475, y=400, relwidth=0.05, relheight=0.05)
+
+        buttomNine = tk.Button( text="9", bd=2, bg='#7ED63E', fg='black',font=('verdana', 8, 'bold'), command=lambda: altexto('9'))
+        buttomNine.place(x=525, y=400, relwidth=0.05, relheight=0.05)
 
 ## Botão para sal
 '''botao_recordes = Button(text='Recordes', command=cadastrar_recorde)'''
