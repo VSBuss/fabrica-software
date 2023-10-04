@@ -178,9 +178,9 @@ while opcoes != '3':
                 nomeconta = df['nome'].values[x]
                 print(f"R${valor:.2f} - {nomeconta}")
                 x = x + 1
-        
+
         ## DESPESAS EM ABERTO
-        elif opcoes3 == '2':     
+        elif opcoes3 == '2':
             sql = "SELECT * FROM conta" \
             "JOIN grupo" \
             "ON conta.id_grupo = grupo.id_grupo" \
@@ -194,15 +194,15 @@ while opcoes != '3':
                 print(nome)
 
         ## RECEITAS RECEBIDAS
-        elif opcoes3 == '3': 
+        elif opcoes3 == '3':
             1==1
 
         ## RECEITAS A RECEBER
-        elif opcoes3 == '4': 
+        elif opcoes3 == '4':
             1==1
 
         ## RELATÓRIO GERAL
-        elif opcoes3 == '5': 
+        elif opcoes3 == '5':
             1==1
 
         ## SALDO

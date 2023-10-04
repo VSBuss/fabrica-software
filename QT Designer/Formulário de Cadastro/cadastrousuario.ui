@@ -17,8 +17,8 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>9</y>
+      <x>10</x>
+      <y>0</y>
       <width>671</width>
       <height>531</height>
      </rect>
@@ -34,23 +34,7 @@ background-color: rgb(85, 0, 127);</string>
      <enum>QFrame::Raised</enum>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="12" column="1">
-      <widget class="QPushButton" name="cadastrar">
-       <property name="font">
-        <font>
-         <pointsize>20</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(85, 0, 127);
-background-color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>CADASTRAR</string>
-       </property>
-      </widget>
-     </item>
-     <item row="12" column="0">
+     <item row="20" column="0">
       <widget class="QPushButton" name="listar">
        <property name="font">
         <font>
@@ -66,27 +50,19 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="11" column="0" colspan="2">
-      <widget class="QRadioButton" name="bebidas">
+     <item row="20" column="1">
+      <widget class="QPushButton" name="cadastrar">
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
+         <pointsize>20</pointsize>
         </font>
        </property>
-       <property name="text">
-        <string>BEBIDAS</string>
-       </property>
-      </widget>
-     </item>
-     <item row="10" column="0" colspan="2">
-      <widget class="QRadioButton" name="perecivel">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-        </font>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(85, 0, 127);
+background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
-        <string>PERECÍVEL</string>
+        <string>CADASTRAR</string>
        </property>
       </widget>
      </item>
@@ -99,49 +75,12 @@ background-color: rgb(255, 255, 255);</string>
         </font>
        </property>
        <property name="text">
-        <string>Código:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0" colspan="2">
-      <widget class="QLineEdit" name="codigo">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0" colspan="2">
-      <widget class="QLineEdit" name="descricao">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>Preço:</string>
+        <string>Nome completo:</string>
        </property>
       </widget>
      </item>
      <item row="7" column="0" colspan="2">
-      <widget class="QLineEdit" name="preco">
+      <widget class="QLineEdit" name="rg">
        <property name="font">
         <font>
          <pointsize>12</pointsize>
@@ -152,8 +91,8 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="0" colspan="2">
-      <widget class="QLabel" name="label_5">
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_8">
        <property name="font">
         <font>
          <pointsize>14</pointsize>
@@ -161,12 +100,44 @@ background-color: rgb(255, 255, 255);</string>
         </font>
        </property>
        <property name="text">
-        <string>Categoria:</string>
+        <string>Data de Nascimento:</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="0" colspan="2">
-      <widget class="QLabel" name="label_3">
+     <item row="11" column="0" colspan="2">
+      <widget class="QLineEdit" name="email">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="0" colspan="2">
+      <widget class="QLineEdit" name="telefone">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QLabel" name="label_6">
        <property name="font">
         <font>
          <pointsize>14</pointsize>
@@ -174,19 +145,58 @@ background-color: rgb(255, 255, 255);</string>
         </font>
        </property>
        <property name="text">
-        <string>Descrição:</string>
+        <string>Telefone:</string>
        </property>
       </widget>
      </item>
-     <item row="9" column="0" colspan="2">
-      <widget class="QRadioButton" name="limpeza">
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_7">
        <property name="font">
         <font>
          <pointsize>14</pointsize>
+         <italic>true</italic>
         </font>
        </property>
        <property name="text">
-        <string>LIMPEZA</string>
+        <string>RG:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="16" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>Endereço:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="18" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>CEP:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="17" column="0" colspan="2">
+      <widget class="QLineEdit" name="endereco">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
@@ -200,10 +210,72 @@ background-color: rgb(255, 255, 255);</string>
         </font>
        </property>
        <property name="text">
-        <string>Cadastro de Produtos</string>
+        <string>Cadastro de Usuários</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>CPF:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QLineEdit" name="cpf">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>E-mail:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QLineEdit" name="nome">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="19" column="0" colspan="2">
+      <widget class="QLineEdit" name="cep">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
