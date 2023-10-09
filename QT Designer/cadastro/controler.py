@@ -7,7 +7,7 @@ numero_id = 0
 banco = pymysql.connections.Connection(
     host="localhost",
     user="root",
-    passwd="",
+    password="",
     database="cadastro275"
 )
 ####################################
@@ -46,8 +46,6 @@ def funcao_principal():
         dados = (str(codigo),str(descricao), str(preco), categoria)
         cursor.execute(sql, dados)
         banco.commit()
-    
-
 
 def listar():
     listarProdutos.show()
@@ -77,10 +75,30 @@ def excluir_dados():
     banco.commit()
 
 def salvar_dados_editados():
-    print('SELOKO MEU')
+    global numero_id
+    print("salvar", numero_id)
+
+    #ler os dados dos lineEdits
+    codigo = tela_editar.lineEdit_2.text()
+    descricao = tela_editar.lineEdit_3.text()
+    preco = tela_editar.lineEdit_4.text()
+    categoria = tela_editar.lineEdit_5.text()
+    print(codigo, descricao, preco, categoria)
+
+    #atualizar os dados no banco
+    cursor = banco.cursor()
+    cursor.execute("UPDATE produtos SET codigo = '{}', descricao = '{}', preco = '{}', categoria = '{}' WHERE id_produtos = '{}'".format(codigo, descricao, preco, categoria, numero_id))
+    banco.commit()
+
+    #atualizar as janelas
+    tela_editar.close()
+    listarProdutos.close()
+    listar()
+
 def editar_dados():
     global numero_id
     linha = listarProdutos.tableWidget.currentRow()
+
     cursor = banco.cursor()
     cursor.execute("SELECT id_produtos FROM produtos")
     dados_recebidos = cursor.fetchall()
@@ -89,22 +107,25 @@ def editar_dados():
     produto = cursor.fetchall()
     tela_editar.show()
 
-    tela_editar.lineEdit.setText(str(produto[0][0]))
-    tela_editar.codigo.setText(str(produto[0][1]))
-    tela_editar.descricao.setText(str(produto[0][2]))
-    tela_editar.preco.setText(str(produto[0][3]))
-    tela_editar.categoria.setText(str(produto[0][4]))
     numero_id = valor_id
 
+    tela_editar.lineEdit.setText(str(produto[0][0]))
+    tela_editar.lineEdit_2.setText(str(produto[0][1]))
+    tela_editar.lineEdit_3.setText(str(produto[0][2]))
+    tela_editar.lineEdit_4.setText(str(produto[0][3]))
+    tela_editar.lineEdit_5.setText(str(produto[0][4]))
+
 app = QtWidgets.QApplication([])
-produtos = uic.loadUi("cadastro_produtos.ui")
-listarProdutos = uic.loadUi("listar_dados.ui")
-tela_editar = uic.loadUi("modal_editar.ui")
+produtos = uic.loadUi("QT Designer/cadastro/cadastro_produtos.ui")
+listarProdutos = uic.loadUi("QT Designer/cadastro/listar_dados.ui")
+tela_editar = uic.loadUi("QT Designer/cadastro/modal_editar.ui")
 produtos.cadastrar.clicked.connect(funcao_principal)
 produtos.listar.clicked.connect(listar)
 listarProdutos.deletar.clicked.connect(excluir_dados)
 listarProdutos.editar.clicked.connect(editar_dados)
 tela_editar.salvar.clicked.connect(salvar_dados_editados)
+
+
 produtos.show()
 app.exec()
 
