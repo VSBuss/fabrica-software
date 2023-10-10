@@ -33,7 +33,7 @@ background-image: url(:/newPrefix/carroslocadora.png);</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="locdiaria">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -55,7 +55,7 @@ background-image: url(:/newPrefix/carroslocadora.png);</string>
       <string>Locação Diária</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="locmensal">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -77,7 +77,7 @@ background-image: url(:/newPrefix/carroslocadora.png);</string>
       <string>Locação Mensal</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_3">
+    <widget class="QPushButton" name="comprarcarro">
      <property name="geometry">
       <rect>
        <x>360</x>
@@ -99,7 +99,7 @@ background-image: url(:/newPrefix/carroslocadora.png);</string>
       <string>Comprar Carro</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="cadcarro">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -121,7 +121,7 @@ background-image: url(:/newPrefix/carroslocadora.png);</string>
       <string>Cadastrar Carro</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="cadcliente">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -144,7 +144,7 @@ background-image: url(:/newPrefix/carroslocadora.png);</string>
       <string>Cadastrar Cliente</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="editarcliente">
      <property name="geometry">
       <rect>
        <x>360</x>

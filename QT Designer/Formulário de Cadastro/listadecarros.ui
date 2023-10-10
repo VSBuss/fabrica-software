@@ -38,7 +38,7 @@ color: rgb(255, 255, 255)</string>
       <rect>
        <x>490</x>
        <y>120</y>
-       <width>291</width>
+       <width>251</width>
        <height>41</height>
       </rect>
      </property>
@@ -50,7 +50,7 @@ color: rgb(255, 255, 255)</string>
       </font>
      </property>
      <property name="text">
-      <string>LISTA DE PRODUTOS</string>
+      <string>LISTA DE CARROS</string>
      </property>
     </widget>
     <widget class="QTableWidget" name="tableWidget">

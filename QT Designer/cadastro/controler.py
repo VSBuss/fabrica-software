@@ -10,42 +10,45 @@ banco = pymysql.connections.Connection(
     password="",
     database="cadastro275"
 )
-####################################
+
+# MOSTRA UM POP UP DE ERRO
+# https://www.tutorialspoint.com/pyqt/pyqt_qmessagebox.htm
 def show_popup():
     msg = QMessageBox()
     msg.setWindowTitle("Erro")
     msg.setText("PREENCHA TODOS OS CAMPOS!")
+    msg.setIcon(QMessageBox.Icon.Warning)
     msg.exec()
-####################################
+
+def popup():
+    modalpopup.show()
+#Realiza o cadastro
 def funcao_principal():
+    categoria = ''
+
+    preco = produtos.preco.text()
     codigo = produtos.codigo.text()
     descricao = produtos.descricao.text()
-    preco = produtos.preco.text()
 
+    if produtos.limpeza.isChecked():
+        categoria="Limpeza"
+    elif produtos.perecivel.isChecked():
+        categoria="Perecível"
+    elif produtos.bebida.isChecked():
+        categoria="Bebidas"
 
-
-    ####################################
-    if codigo == '' or descricao == '' or preco == '':
+    if codigo == '' or descricao == '' or preco == '' or categoria == '':
         show_popup()
-    ####################################
     else:
-
-        if produtos.limpeza.isChecked():
-            print("Categoria Limpeza")
-            categoria="Limpeza"
-        elif produtos.perecivel.isChecked():
-            print("Categoria Perecível")
-            categoria="Perecível"
-        elif produtos.bebida.isChecked():
-            print("Categoria Bebidas")
-            categoria="Bebidas"
-        
         #Inserindo dados no banco de dados
         cursor = banco.cursor()
         sql = "INSERT INTO produtos (codigo, descricao, preco, categoria) VALUES (%s,%s,%s,%s)"
         dados = (str(codigo),str(descricao), str(preco), categoria)
         cursor.execute(sql, dados)
         banco.commit()
+        produtos.preco.clear()
+        produtos.codigo.clear()
+        produtos.descricao.clear()
 
 def listar():
     listarProdutos.show()
@@ -119,6 +122,7 @@ app = QtWidgets.QApplication([])
 produtos = uic.loadUi("QT Designer/cadastro/cadastro_produtos.ui")
 listarProdutos = uic.loadUi("QT Designer/cadastro/listar_dados.ui")
 tela_editar = uic.loadUi("QT Designer/cadastro/modal_editar.ui")
+modalpopup = uic.loadUi("QT Designer/cadastro/modal_preencha.ui")
 produtos.cadastrar.clicked.connect(funcao_principal)
 produtos.listar.clicked.connect(listar)
 listarProdutos.deletar.clicked.connect(excluir_dados)

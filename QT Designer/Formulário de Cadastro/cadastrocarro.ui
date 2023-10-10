@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>903</width>
-    <height>636</height>
+    <width>1097</width>
+    <height>256</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,116 +34,15 @@ background-color: rgb(85, 0, 127);</string>
      <enum>QFrame::Raised</enum>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="4" colspan="3">
-      <widget class="QLabel" name="label">
-       <property name="font">
-        <font>
-         <pointsize>20</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Cadastro de Carros</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0" colspan="2">
-      <widget class="QLabel" name="label_2">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>Marca:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2" colspan="2">
-      <widget class="QLineEdit" name="nome">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="4" colspan="2">
-      <widget class="QLabel" name="label_6">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>venc IPVA:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="8" colspan="2">
-      <widget class="QDateEdit" name="dateEdit">
+     <item row="3" column="8" colspan="2">
+      <widget class="QDateEdit" name="dataDPVAT">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="0" colspan="2">
-      <widget class="QLabel" name="label_3">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>Modelo:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2" colspan="2">
-      <widget class="QLineEdit" name="cpf">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="4" colspan="2">
-      <widget class="QLabel" name="label_11">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>venc DPVAT:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="8" colspan="2">
-      <widget class="QDateEdit" name="dateEdit_3">
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
+     <item row="4" column="0">
       <widget class="QLabel" name="label_9">
        <property name="font">
         <font>
@@ -156,8 +55,8 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="2" colspan="2">
-      <widget class="QLineEdit" name="endereco">
+     <item row="4" column="2" colspan="2">
+      <widget class="QLineEdit" name="cor">
        <property name="font">
         <font>
          <pointsize>12</pointsize>
@@ -168,7 +67,7 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="4" colspan="2">
+     <item row="4" column="4" colspan="2">
       <widget class="QLabel" name="label_12">
        <property name="font">
         <font>
@@ -181,54 +80,8 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="8" colspan="2">
-      <widget class="QDateEdit" name="dateEdit_2">
-       <property name="styleSheet">
-        <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_7">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>Ano:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1" colspan="2">
-      <widget class="QLineEdit" name="cep">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="3">
-      <widget class="QLabel" name="label_4">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>Combustivel:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="4">
-      <widget class="QComboBox" name="comboBox">
+     <item row="5" column="4">
+      <widget class="QComboBox" name="combustivel">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);</string>
@@ -255,7 +108,32 @@ background-color: rgb(255, 255, 255);</string>
        </item>
       </widget>
      </item>
-     <item row="4" column="5">
+     <item row="3" column="4" colspan="2">
+      <widget class="QLabel" name="label_11">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>venc DPVAT:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2" colspan="2">
+      <widget class="QLineEdit" name="modelo">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="5">
       <widget class="QLabel" name="label_8">
        <property name="font">
         <font>
@@ -268,8 +146,8 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="6" colspan="2">
-      <widget class="QLineEdit" name="rg_2">
+     <item row="5" column="6" colspan="2">
+      <widget class="QLineEdit" name="placa">
        <property name="font">
         <font>
          <pointsize>12</pointsize>
@@ -280,8 +158,8 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="8">
-      <widget class="QLabel" name="label_10">
+     <item row="2" column="0" colspan="2">
+      <widget class="QLabel" name="label_2">
        <property name="font">
         <font>
          <pointsize>14</pointsize>
@@ -289,37 +167,12 @@ background-color: rgb(255, 255, 255);</string>
         </font>
        </property>
        <property name="text">
-        <string>UF:</string>
+        <string>Marca:</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="9">
-      <widget class="QLineEdit" name="rg">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0" colspan="2">
-      <widget class="QLabel" name="label_13">
-       <property name="font">
-        <font>
-         <pointsize>14</pointsize>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>Categoria:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="2" colspan="2">
-      <widget class="QComboBox" name="comboBox_2">
+     <item row="6" column="2" colspan="2">
+      <widget class="QComboBox" name="categoria">
        <property name="styleSheet">
         <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);</string>
@@ -341,8 +194,8 @@ background-color: rgb(255, 255, 255);</string>
        </item>
       </widget>
      </item>
-     <item row="5" column="4">
-      <widget class="QLabel" name="label_15">
+     <item row="6" column="0" colspan="2">
+      <widget class="QLabel" name="label_13">
        <property name="font">
         <font>
          <pointsize>14</pointsize>
@@ -350,12 +203,12 @@ background-color: rgb(255, 255, 255);</string>
         </font>
        </property>
        <property name="text">
-        <string>N° Motor:</string>
+        <string>Categoria:</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="5">
-      <widget class="QLineEdit" name="cep_3">
+     <item row="5" column="9">
+      <widget class="QLineEdit" name="uf">
        <property name="font">
         <font>
          <pointsize>12</pointsize>
@@ -366,7 +219,7 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="6">
+     <item row="6" column="6">
       <widget class="QLabel" name="label_14">
        <property name="font">
         <font>
@@ -379,8 +232,21 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="7">
-      <widget class="QLineEdit" name="cep_2">
+     <item row="6" column="4">
+      <widget class="QLabel" name="label_15">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>N° Motor:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="7">
+      <widget class="QLineEdit" name="nChassi">
        <property name="font">
         <font>
          <pointsize>12</pointsize>
@@ -391,7 +257,19 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="8" colspan="2">
+     <item row="6" column="5">
+      <widget class="QLineEdit" name="nMotor">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="8" colspan="2">
       <widget class="QPushButton" name="cadastrar">
        <property name="font">
         <font>
@@ -404,6 +282,128 @@ background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
         <string>CADASTRAR</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="8" colspan="2">
+      <widget class="QDateEdit" name="dataLicen">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>Ano:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="3">
+      <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>Combustivel:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1" colspan="2">
+      <widget class="QLineEdit" name="ano">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="8" colspan="2">
+      <widget class="QDateEdit" name="dataIPVA">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>Modelo:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4" colspan="2">
+      <widget class="QLabel" name="label_6">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>venc IPVA:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2" colspan="2">
+      <widget class="QLineEdit" name="marca">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="8">
+      <widget class="QLabel" name="label_10">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>UF:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Cadastro de Carros</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
