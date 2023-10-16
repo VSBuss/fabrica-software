@@ -1,3 +1,5 @@
+import os
+import sys
 from PyQt6 import uic, QtWidgets
 from PyQt6.QtWidgets import QMessageBox
 import pymysql.connections
@@ -119,10 +121,11 @@ def editar_dados():
     tela_editar.lineEdit_5.setText(str(produto[0][4]))
 
 app = QtWidgets.QApplication([])
-produtos = uic.loadUi("QT Designer/cadastro/cadastro_produtos.ui")
-listarProdutos = uic.loadUi("QT Designer/cadastro/listar_dados.ui")
-tela_editar = uic.loadUi("QT Designer/cadastro/modal_editar.ui")
-modalpopup = uic.loadUi("QT Designer/cadastro/modal_preencha.ui")
+
+produtos = uic.loadUi(r'C:\Users\fabrica.aluno2\Documents\GitHub\fabrica-software\QT Designer\cadastro\cadastro_produtos.ui')
+listarProdutos = uic.loadUi(r'C:\Users\fabrica.aluno2\Documents\GitHub\fabrica-software\QT Designer\cadastro\listar_dados.ui')
+tela_editar = uic.loadUi(r'C:\Users\fabrica.aluno2\Documents\GitHub\fabrica-software\QT Designer\cadastro\modal_editar.ui')
+modalpopup = uic.loadUi(r'C:\Users\fabrica.aluno2\Documents\GitHub\fabrica-software\QT Designer\cadastro\modal_preencha.ui')
 produtos.cadastrar.clicked.connect(funcao_principal)
 produtos.listar.clicked.connect(listar)
 listarProdutos.deletar.clicked.connect(excluir_dados)
@@ -150,4 +153,8 @@ CREATE TABLE produtos(
     preco DOUBLE,
     categoria VARCHAR(30)
 );
+
+
+Abrir pasta onde estão os arquivos, trocar o caminho por 'cmd' dar enter e executar o seguinte comando de acordo com o nome dos arquivos ui para trocá-los por py
+python -m PyQt6.uic.pyuic -o output.py -x input.ui
 '''
