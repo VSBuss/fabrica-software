@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="img">
+    <file>BMW_R18_Classic.jpg</file>
+    <file>BMW_R1250_RT.jpg</file>
+    <file>HD_Ultra_Glide.jpg</file>
+    <file>honda-cb-500f.jpg</file>
+    <file>Triumph_Bonneville_T-100.jpg</file>
+    <file>triumph-street-scrambler-900.jpg</file>
+    <file>triumph-tiger-900-gt-pro.jpg</file>
+    <file>triumph-tiger-1200-rally-pro.jpg</file>
+    <file>triumph-tiger-sport-660.jpg</file>
+    <file>a5cfdab5588f184b5aff97cb7043a5c7.jpg</file>
+    <file>login.png</file>
+    <file>senha.jpeg</file>
+  </qresource>
+</RCC>
