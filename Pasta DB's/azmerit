@@ -1,0 +1,1422 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.3
+-- Dumped by pg_dump version 15.3
+
+-- Started on 2023-10-19 11:37:58
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+DROP DATABASE "AZMerit";
+--
+-- TOC entry 3502 (class 1262 OID 24576)
+-- Name: AZMerit; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE "AZMerit" WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = libc LOCALE = 'Portuguese_Brazil.1252';
+
+
+ALTER DATABASE "AZMerit" OWNER TO postgres;
+
+\connect "AZMerit"
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 235 (class 1259 OID 24780)
+-- Name: analise; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.analise (
+    id_analise integer NOT NULL,
+    qde_enviado numeric(20,2),
+    data_analise date DEFAULT now() NOT NULL,
+    hora_analise time without time zone DEFAULT now() NOT NULL,
+    mensagem character varying(240),
+    id_feedback integer,
+    id_status_feedback integer,
+    id_carteira integer
+);
+
+
+ALTER TABLE public.analise OWNER TO postgres;
+
+--
+-- TOC entry 234 (class 1259 OID 24779)
+-- Name: analise_id_analise_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.analise_id_analise_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.analise_id_analise_seq OWNER TO postgres;
+
+--
+-- TOC entry 3503 (class 0 OID 0)
+-- Dependencies: 234
+-- Name: analise_id_analise_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.analise_id_analise_seq OWNED BY public.analise.id_analise;
+
+
+--
+-- TOC entry 227 (class 1259 OID 24704)
+-- Name: campanha; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.campanha (
+    id_campanha integer NOT NULL,
+    nome_campanha character varying(150) NOT NULL,
+    data_inicio date DEFAULT now() NOT NULL,
+    hora_inicio time without time zone DEFAULT now(),
+    data_final date NOT NULL,
+    hora_final time without time zone,
+    saldo_distr numeric(20,2),
+    qde_az_por_colaborador numeric(20,2) NOT NULL,
+    id_usuario integer,
+    id_carteira integer
+);
+
+
+ALTER TABLE public.campanha OWNER TO postgres;
+
+--
+-- TOC entry 226 (class 1259 OID 24703)
+-- Name: campanha_id_campanha_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.campanha_id_campanha_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.campanha_id_campanha_seq OWNER TO postgres;
+
+--
+-- TOC entry 3504 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: campanha_id_campanha_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.campanha_id_campanha_seq OWNED BY public.campanha.id_campanha;
+
+
+--
+-- TOC entry 243 (class 1259 OID 24837)
+-- Name: carteira; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.carteira (
+    id_carteira integer NOT NULL,
+    valor_recebido_campanha numeric(20,2),
+    saldo_doacao_usuario numeric(20,2),
+    saldo_recebido_feedback numeric(20,2),
+    saldo_pendente_aprovacao numeric(20,2),
+    id_usuario integer,
+    id_campanha integer,
+    id_analise integer,
+    id_central_transacao integer,
+    id_status_feedback integer
+);
+
+
+ALTER TABLE public.carteira OWNER TO postgres;
+
+--
+-- TOC entry 242 (class 1259 OID 24836)
+-- Name: carteira_id_carteira_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.carteira_id_carteira_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.carteira_id_carteira_seq OWNER TO postgres;
+
+--
+-- TOC entry 3505 (class 0 OID 0)
+-- Dependencies: 242
+-- Name: carteira_id_carteira_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.carteira_id_carteira_seq OWNED BY public.carteira.id_carteira;
+
+
+--
+-- TOC entry 241 (class 1259 OID 24825)
+-- Name: central_transacao; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.central_transacao (
+    id_central_transacao integer NOT NULL,
+    saldo_total_mov numeric(20,2),
+    valor_enviado numeric(20,2),
+    valor_recebido numeric(20,2),
+    id_tipo_transacao integer
+);
+
+
+ALTER TABLE public.central_transacao OWNER TO postgres;
+
+--
+-- TOC entry 240 (class 1259 OID 24824)
+-- Name: central_transacao_id_central_transacao_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.central_transacao_id_central_transacao_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.central_transacao_id_central_transacao_seq OWNER TO postgres;
+
+--
+-- TOC entry 3506 (class 0 OID 0)
+-- Dependencies: 240
+-- Name: central_transacao_id_central_transacao_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.central_transacao_id_central_transacao_seq OWNED BY public.central_transacao.id_central_transacao;
+
+
+--
+-- TOC entry 229 (class 1259 OID 24718)
+-- Name: estoque; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.estoque (
+    id_estoque integer NOT NULL,
+    qde_entrada integer NOT NULL,
+    qde_total_estoque integer NOT NULL,
+    data_entrada date DEFAULT now() NOT NULL,
+    hora_entrada time without time zone DEFAULT now(),
+    custo_prod numeric(20,2) NOT NULL,
+    id_produto integer
+);
+
+
+ALTER TABLE public.estoque OWNER TO postgres;
+
+--
+-- TOC entry 228 (class 1259 OID 24717)
+-- Name: estoque_id_estoque_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.estoque_id_estoque_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.estoque_id_estoque_seq OWNER TO postgres;
+
+--
+-- TOC entry 3507 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: estoque_id_estoque_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.estoque_id_estoque_seq OWNED BY public.estoque.id_estoque;
+
+
+--
+-- TOC entry 231 (class 1259 OID 24732)
+-- Name: feedback; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.feedback (
+    id_feedback integer NOT NULL,
+    qde_az_enviado numeric(20,2) NOT NULL,
+    data_validacao date DEFAULT now() NOT NULL,
+    hora_validacao time without time zone DEFAULT now() NOT NULL,
+    mensagem character varying(240) NOT NULL,
+    remetente_usuario integer,
+    "destinatário_usuario" integer,
+    id_status_feedback integer,
+    id_usuario integer,
+    id_campanha integer
+);
+
+
+ALTER TABLE public.feedback OWNER TO postgres;
+
+--
+-- TOC entry 230 (class 1259 OID 24731)
+-- Name: feedback_id_feedback_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.feedback_id_feedback_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.feedback_id_feedback_seq OWNER TO postgres;
+
+--
+-- TOC entry 3508 (class 0 OID 0)
+-- Dependencies: 230
+-- Name: feedback_id_feedback_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.feedback_id_feedback_seq OWNED BY public.feedback.id_feedback;
+
+
+--
+-- TOC entry 219 (class 1259 OID 24643)
+-- Name: perfil_usuario; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.perfil_usuario (
+    id_perfil_usuario integer NOT NULL,
+    descricao_perfil character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.perfil_usuario OWNER TO postgres;
+
+--
+-- TOC entry 218 (class 1259 OID 24642)
+-- Name: perfil_usuario_id_perfil_usuario_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.perfil_usuario_id_perfil_usuario_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.perfil_usuario_id_perfil_usuario_seq OWNER TO postgres;
+
+--
+-- TOC entry 3509 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: perfil_usuario_id_perfil_usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.perfil_usuario_id_perfil_usuario_seq OWNED BY public.perfil_usuario.id_perfil_usuario;
+
+
+--
+-- TOC entry 223 (class 1259 OID 24657)
+-- Name: produto; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.produto (
+    id_produto integer NOT NULL,
+    nome character varying(200) NOT NULL,
+    imagem character varying,
+    descricao character varying(250),
+    qde_produto integer,
+    valor_produto numeric(20,2) NOT NULL,
+    id_status_produto integer
+);
+
+
+ALTER TABLE public.produto OWNER TO postgres;
+
+--
+-- TOC entry 222 (class 1259 OID 24656)
+-- Name: produto_id_produto_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.produto_id_produto_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.produto_id_produto_seq OWNER TO postgres;
+
+--
+-- TOC entry 3510 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: produto_id_produto_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.produto_id_produto_seq OWNED BY public.produto.id_produto;
+
+
+--
+-- TOC entry 221 (class 1259 OID 24650)
+-- Name: status_feedback; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.status_feedback (
+    id_status_feedback integer NOT NULL,
+    status boolean NOT NULL,
+    descricao_feedback character varying(40) NOT NULL
+);
+
+
+ALTER TABLE public.status_feedback OWNER TO postgres;
+
+--
+-- TOC entry 220 (class 1259 OID 24649)
+-- Name: status_feedback_id_status_feedback_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.status_feedback_id_status_feedback_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.status_feedback_id_status_feedback_seq OWNER TO postgres;
+
+--
+-- TOC entry 3511 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: status_feedback_id_status_feedback_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.status_feedback_id_status_feedback_seq OWNED BY public.status_feedback.id_status_feedback;
+
+
+--
+-- TOC entry 217 (class 1259 OID 24636)
+-- Name: status_produto; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.status_produto (
+    id_status_produto integer NOT NULL,
+    disponibilidade boolean NOT NULL,
+    descricao_status_prod character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.status_produto OWNER TO postgres;
+
+--
+-- TOC entry 216 (class 1259 OID 24635)
+-- Name: status_produto_id_status_produto_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.status_produto_id_status_produto_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.status_produto_id_status_produto_seq OWNER TO postgres;
+
+--
+-- TOC entry 3512 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: status_produto_id_status_produto_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.status_produto_id_status_produto_seq OWNED BY public.status_produto.id_status_produto;
+
+
+--
+-- TOC entry 215 (class 1259 OID 24629)
+-- Name: status_usuario; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.status_usuario (
+    id_status_user integer NOT NULL,
+    status boolean NOT NULL,
+    descricao_status_user character varying(70) NOT NULL
+);
+
+
+ALTER TABLE public.status_usuario OWNER TO postgres;
+
+--
+-- TOC entry 214 (class 1259 OID 24628)
+-- Name: status_usuario_id_status_user_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.status_usuario_id_status_user_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.status_usuario_id_status_user_seq OWNER TO postgres;
+
+--
+-- TOC entry 3513 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: status_usuario_id_status_user_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.status_usuario_id_status_user_seq OWNED BY public.status_usuario.id_status_user;
+
+
+--
+-- TOC entry 233 (class 1259 OID 24756)
+-- Name: tipo_saida; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipo_saida (
+    id_tipo_saida integer NOT NULL,
+    qde_saida integer,
+    justificativa character varying(150),
+    data_saida date DEFAULT now(),
+    hora_saida time without time zone DEFAULT now(),
+    id_produto integer,
+    id_estoque integer,
+    id_usuario integer
+);
+
+
+ALTER TABLE public.tipo_saida OWNER TO postgres;
+
+--
+-- TOC entry 232 (class 1259 OID 24755)
+-- Name: tipo_saida_id_tipo_saida_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipo_saida_id_tipo_saida_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tipo_saida_id_tipo_saida_seq OWNER TO postgres;
+
+--
+-- TOC entry 3514 (class 0 OID 0)
+-- Dependencies: 232
+-- Name: tipo_saida_id_tipo_saida_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipo_saida_id_tipo_saida_seq OWNED BY public.tipo_saida.id_tipo_saida;
+
+
+--
+-- TOC entry 239 (class 1259 OID 24813)
+-- Name: tipo_transacao; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.tipo_transacao (
+    id_tipo_transacao integer NOT NULL,
+    id_troca_produto integer,
+    id_carteira integer
+);
+
+
+ALTER TABLE public.tipo_transacao OWNER TO postgres;
+
+--
+-- TOC entry 238 (class 1259 OID 24812)
+-- Name: tipo_transacao_id_tipo_transacao_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.tipo_transacao_id_tipo_transacao_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tipo_transacao_id_tipo_transacao_seq OWNER TO postgres;
+
+--
+-- TOC entry 3515 (class 0 OID 0)
+-- Dependencies: 238
+-- Name: tipo_transacao_id_tipo_transacao_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.tipo_transacao_id_tipo_transacao_seq OWNED BY public.tipo_transacao.id_tipo_transacao;
+
+
+--
+-- TOC entry 237 (class 1259 OID 24799)
+-- Name: troca_produto; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.troca_produto (
+    id_troca_produto integer NOT NULL,
+    qde_troca_produto integer NOT NULL,
+    data_troca_prod date DEFAULT now(),
+    hora_troca_prod time without time zone DEFAULT now(),
+    id_produto integer,
+    id_carteira integer
+);
+
+
+ALTER TABLE public.troca_produto OWNER TO postgres;
+
+--
+-- TOC entry 236 (class 1259 OID 24798)
+-- Name: troca_produto_id_troca_produto_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.troca_produto_id_troca_produto_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.troca_produto_id_troca_produto_seq OWNER TO postgres;
+
+--
+-- TOC entry 3516 (class 0 OID 0)
+-- Dependencies: 236
+-- Name: troca_produto_id_troca_produto_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.troca_produto_id_troca_produto_seq OWNED BY public.troca_produto.id_troca_produto;
+
+
+--
+-- TOC entry 225 (class 1259 OID 24671)
+-- Name: usuario; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.usuario (
+    id_usuario integer NOT NULL,
+    nome character varying(200) NOT NULL,
+    email character varying(150) NOT NULL,
+    senha character varying(20) NOT NULL,
+    imagem character varying,
+    apelido character varying(50),
+    id_perfil_usuario integer,
+    id_status_user integer
+);
+
+
+ALTER TABLE public.usuario OWNER TO postgres;
+
+--
+-- TOC entry 224 (class 1259 OID 24670)
+-- Name: usuario_id_usuario_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.usuario_id_usuario_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.usuario_id_usuario_seq OWNER TO postgres;
+
+--
+-- TOC entry 3517 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: usuario_id_usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.usuario_id_usuario_seq OWNED BY public.usuario.id_usuario;
+
+
+--
+-- TOC entry 3261 (class 2604 OID 24783)
+-- Name: analise id_analise; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.analise ALTER COLUMN id_analise SET DEFAULT nextval('public.analise_id_analise_seq'::regclass);
+
+
+--
+-- TOC entry 3249 (class 2604 OID 24707)
+-- Name: campanha id_campanha; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.campanha ALTER COLUMN id_campanha SET DEFAULT nextval('public.campanha_id_campanha_seq'::regclass);
+
+
+--
+-- TOC entry 3269 (class 2604 OID 24840)
+-- Name: carteira id_carteira; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carteira ALTER COLUMN id_carteira SET DEFAULT nextval('public.carteira_id_carteira_seq'::regclass);
+
+
+--
+-- TOC entry 3268 (class 2604 OID 24828)
+-- Name: central_transacao id_central_transacao; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.central_transacao ALTER COLUMN id_central_transacao SET DEFAULT nextval('public.central_transacao_id_central_transacao_seq'::regclass);
+
+
+--
+-- TOC entry 3252 (class 2604 OID 24721)
+-- Name: estoque id_estoque; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.estoque ALTER COLUMN id_estoque SET DEFAULT nextval('public.estoque_id_estoque_seq'::regclass);
+
+
+--
+-- TOC entry 3255 (class 2604 OID 24735)
+-- Name: feedback id_feedback; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.feedback ALTER COLUMN id_feedback SET DEFAULT nextval('public.feedback_id_feedback_seq'::regclass);
+
+
+--
+-- TOC entry 3245 (class 2604 OID 24646)
+-- Name: perfil_usuario id_perfil_usuario; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.perfil_usuario ALTER COLUMN id_perfil_usuario SET DEFAULT nextval('public.perfil_usuario_id_perfil_usuario_seq'::regclass);
+
+
+--
+-- TOC entry 3247 (class 2604 OID 24660)
+-- Name: produto id_produto; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.produto ALTER COLUMN id_produto SET DEFAULT nextval('public.produto_id_produto_seq'::regclass);
+
+
+--
+-- TOC entry 3246 (class 2604 OID 24653)
+-- Name: status_feedback id_status_feedback; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.status_feedback ALTER COLUMN id_status_feedback SET DEFAULT nextval('public.status_feedback_id_status_feedback_seq'::regclass);
+
+
+--
+-- TOC entry 3244 (class 2604 OID 24639)
+-- Name: status_produto id_status_produto; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.status_produto ALTER COLUMN id_status_produto SET DEFAULT nextval('public.status_produto_id_status_produto_seq'::regclass);
+
+
+--
+-- TOC entry 3243 (class 2604 OID 24632)
+-- Name: status_usuario id_status_user; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.status_usuario ALTER COLUMN id_status_user SET DEFAULT nextval('public.status_usuario_id_status_user_seq'::regclass);
+
+
+--
+-- TOC entry 3258 (class 2604 OID 24759)
+-- Name: tipo_saida id_tipo_saida; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_saida ALTER COLUMN id_tipo_saida SET DEFAULT nextval('public.tipo_saida_id_tipo_saida_seq'::regclass);
+
+
+--
+-- TOC entry 3267 (class 2604 OID 24816)
+-- Name: tipo_transacao id_tipo_transacao; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_transacao ALTER COLUMN id_tipo_transacao SET DEFAULT nextval('public.tipo_transacao_id_tipo_transacao_seq'::regclass);
+
+
+--
+-- TOC entry 3264 (class 2604 OID 24802)
+-- Name: troca_produto id_troca_produto; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.troca_produto ALTER COLUMN id_troca_produto SET DEFAULT nextval('public.troca_produto_id_troca_produto_seq'::regclass);
+
+
+--
+-- TOC entry 3248 (class 2604 OID 24674)
+-- Name: usuario id_usuario; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.usuario ALTER COLUMN id_usuario SET DEFAULT nextval('public.usuario_id_usuario_seq'::regclass);
+
+
+--
+-- TOC entry 3488 (class 0 OID 24780)
+-- Dependencies: 235
+-- Data for Name: analise; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3480 (class 0 OID 24704)
+-- Dependencies: 227
+-- Data for Name: campanha; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3496 (class 0 OID 24837)
+-- Dependencies: 243
+-- Data for Name: carteira; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3494 (class 0 OID 24825)
+-- Dependencies: 241
+-- Data for Name: central_transacao; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3482 (class 0 OID 24718)
+-- Dependencies: 229
+-- Data for Name: estoque; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3484 (class 0 OID 24732)
+-- Dependencies: 231
+-- Data for Name: feedback; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3472 (class 0 OID 24643)
+-- Dependencies: 219
+-- Data for Name: perfil_usuario; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3476 (class 0 OID 24657)
+-- Dependencies: 223
+-- Data for Name: produto; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3474 (class 0 OID 24650)
+-- Dependencies: 221
+-- Data for Name: status_feedback; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3470 (class 0 OID 24636)
+-- Dependencies: 217
+-- Data for Name: status_produto; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3468 (class 0 OID 24629)
+-- Dependencies: 215
+-- Data for Name: status_usuario; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3486 (class 0 OID 24756)
+-- Dependencies: 233
+-- Data for Name: tipo_saida; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3492 (class 0 OID 24813)
+-- Dependencies: 239
+-- Data for Name: tipo_transacao; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3490 (class 0 OID 24799)
+-- Dependencies: 237
+-- Data for Name: troca_produto; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3478 (class 0 OID 24671)
+-- Dependencies: 225
+-- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3518 (class 0 OID 0)
+-- Dependencies: 234
+-- Name: analise_id_analise_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.analise_id_analise_seq', 1, false);
+
+
+--
+-- TOC entry 3519 (class 0 OID 0)
+-- Dependencies: 226
+-- Name: campanha_id_campanha_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.campanha_id_campanha_seq', 1, false);
+
+
+--
+-- TOC entry 3520 (class 0 OID 0)
+-- Dependencies: 242
+-- Name: carteira_id_carteira_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.carteira_id_carteira_seq', 1, false);
+
+
+--
+-- TOC entry 3521 (class 0 OID 0)
+-- Dependencies: 240
+-- Name: central_transacao_id_central_transacao_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.central_transacao_id_central_transacao_seq', 1, false);
+
+
+--
+-- TOC entry 3522 (class 0 OID 0)
+-- Dependencies: 228
+-- Name: estoque_id_estoque_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.estoque_id_estoque_seq', 1, false);
+
+
+--
+-- TOC entry 3523 (class 0 OID 0)
+-- Dependencies: 230
+-- Name: feedback_id_feedback_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.feedback_id_feedback_seq', 1, false);
+
+
+--
+-- TOC entry 3524 (class 0 OID 0)
+-- Dependencies: 218
+-- Name: perfil_usuario_id_perfil_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.perfil_usuario_id_perfil_usuario_seq', 1, false);
+
+
+--
+-- TOC entry 3525 (class 0 OID 0)
+-- Dependencies: 222
+-- Name: produto_id_produto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.produto_id_produto_seq', 1, false);
+
+
+--
+-- TOC entry 3526 (class 0 OID 0)
+-- Dependencies: 220
+-- Name: status_feedback_id_status_feedback_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.status_feedback_id_status_feedback_seq', 1, false);
+
+
+--
+-- TOC entry 3527 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: status_produto_id_status_produto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.status_produto_id_status_produto_seq', 1, false);
+
+
+--
+-- TOC entry 3528 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: status_usuario_id_status_user_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.status_usuario_id_status_user_seq', 1, false);
+
+
+--
+-- TOC entry 3529 (class 0 OID 0)
+-- Dependencies: 232
+-- Name: tipo_saida_id_tipo_saida_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipo_saida_id_tipo_saida_seq', 1, false);
+
+
+--
+-- TOC entry 3530 (class 0 OID 0)
+-- Dependencies: 238
+-- Name: tipo_transacao_id_tipo_transacao_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.tipo_transacao_id_tipo_transacao_seq', 1, false);
+
+
+--
+-- TOC entry 3531 (class 0 OID 0)
+-- Dependencies: 236
+-- Name: troca_produto_id_troca_produto_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.troca_produto_id_troca_produto_seq', 1, false);
+
+
+--
+-- TOC entry 3532 (class 0 OID 0)
+-- Dependencies: 224
+-- Name: usuario_id_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.usuario_id_usuario_seq', 1, false);
+
+
+--
+-- TOC entry 3291 (class 2606 OID 24787)
+-- Name: analise analise_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.analise
+    ADD CONSTRAINT analise_pkey PRIMARY KEY (id_analise);
+
+
+--
+-- TOC entry 3283 (class 2606 OID 24711)
+-- Name: campanha campanha_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.campanha
+    ADD CONSTRAINT campanha_pkey PRIMARY KEY (id_campanha);
+
+
+--
+-- TOC entry 3299 (class 2606 OID 24842)
+-- Name: carteira carteira_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carteira
+    ADD CONSTRAINT carteira_pkey PRIMARY KEY (id_carteira);
+
+
+--
+-- TOC entry 3297 (class 2606 OID 24830)
+-- Name: central_transacao central_transacao_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.central_transacao
+    ADD CONSTRAINT central_transacao_pkey PRIMARY KEY (id_central_transacao);
+
+
+--
+-- TOC entry 3285 (class 2606 OID 24725)
+-- Name: estoque estoque_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.estoque
+    ADD CONSTRAINT estoque_pkey PRIMARY KEY (id_estoque);
+
+
+--
+-- TOC entry 3287 (class 2606 OID 24739)
+-- Name: feedback feedback_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.feedback
+    ADD CONSTRAINT feedback_pkey PRIMARY KEY (id_feedback);
+
+
+--
+-- TOC entry 3275 (class 2606 OID 24648)
+-- Name: perfil_usuario perfil_usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.perfil_usuario
+    ADD CONSTRAINT perfil_usuario_pkey PRIMARY KEY (id_perfil_usuario);
+
+
+--
+-- TOC entry 3279 (class 2606 OID 24664)
+-- Name: produto produto_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.produto
+    ADD CONSTRAINT produto_pkey PRIMARY KEY (id_produto);
+
+
+--
+-- TOC entry 3277 (class 2606 OID 24655)
+-- Name: status_feedback status_feedback_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.status_feedback
+    ADD CONSTRAINT status_feedback_pkey PRIMARY KEY (id_status_feedback);
+
+
+--
+-- TOC entry 3273 (class 2606 OID 24641)
+-- Name: status_produto status_produto_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.status_produto
+    ADD CONSTRAINT status_produto_pkey PRIMARY KEY (id_status_produto);
+
+
+--
+-- TOC entry 3271 (class 2606 OID 24634)
+-- Name: status_usuario status_usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.status_usuario
+    ADD CONSTRAINT status_usuario_pkey PRIMARY KEY (id_status_user);
+
+
+--
+-- TOC entry 3289 (class 2606 OID 24763)
+-- Name: tipo_saida tipo_saida_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_saida
+    ADD CONSTRAINT tipo_saida_pkey PRIMARY KEY (id_tipo_saida);
+
+
+--
+-- TOC entry 3295 (class 2606 OID 24818)
+-- Name: tipo_transacao tipo_transacao_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_transacao
+    ADD CONSTRAINT tipo_transacao_pkey PRIMARY KEY (id_tipo_transacao);
+
+
+--
+-- TOC entry 3293 (class 2606 OID 24806)
+-- Name: troca_produto troca_produto_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.troca_produto
+    ADD CONSTRAINT troca_produto_pkey PRIMARY KEY (id_troca_produto);
+
+
+--
+-- TOC entry 3281 (class 2606 OID 24678)
+-- Name: usuario usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.usuario
+    ADD CONSTRAINT usuario_pkey PRIMARY KEY (id_usuario);
+
+
+--
+-- TOC entry 3312 (class 2606 OID 24788)
+-- Name: analise analise_id_feedback_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.analise
+    ADD CONSTRAINT analise_id_feedback_fkey FOREIGN KEY (id_feedback) REFERENCES public.feedback(id_feedback);
+
+
+--
+-- TOC entry 3313 (class 2606 OID 24793)
+-- Name: analise analise_id_status_feedback_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.analise
+    ADD CONSTRAINT analise_id_status_feedback_fkey FOREIGN KEY (id_status_feedback) REFERENCES public.status_feedback(id_status_feedback);
+
+
+--
+-- TOC entry 3303 (class 2606 OID 24712)
+-- Name: campanha campanha_id_usuario_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.campanha
+    ADD CONSTRAINT campanha_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES public.usuario(id_usuario);
+
+
+--
+-- TOC entry 3320 (class 2606 OID 24853)
+-- Name: carteira carteira_id_analise_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carteira
+    ADD CONSTRAINT carteira_id_analise_fkey FOREIGN KEY (id_analise) REFERENCES public.analise(id_analise);
+
+
+--
+-- TOC entry 3321 (class 2606 OID 24848)
+-- Name: carteira carteira_id_campanha_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carteira
+    ADD CONSTRAINT carteira_id_campanha_fkey FOREIGN KEY (id_campanha) REFERENCES public.campanha(id_campanha);
+
+
+--
+-- TOC entry 3322 (class 2606 OID 24858)
+-- Name: carteira carteira_id_central_transacao_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carteira
+    ADD CONSTRAINT carteira_id_central_transacao_fkey FOREIGN KEY (id_central_transacao) REFERENCES public.central_transacao(id_central_transacao);
+
+
+--
+-- TOC entry 3323 (class 2606 OID 24863)
+-- Name: carteira carteira_id_status_feedback_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carteira
+    ADD CONSTRAINT carteira_id_status_feedback_fkey FOREIGN KEY (id_status_feedback) REFERENCES public.status_feedback(id_status_feedback);
+
+
+--
+-- TOC entry 3324 (class 2606 OID 24843)
+-- Name: carteira carteira_id_usuario_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.carteira
+    ADD CONSTRAINT carteira_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES public.usuario(id_usuario);
+
+
+--
+-- TOC entry 3319 (class 2606 OID 24831)
+-- Name: central_transacao central_transacao_id_tipo_transacao_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.central_transacao
+    ADD CONSTRAINT central_transacao_id_tipo_transacao_fkey FOREIGN KEY (id_tipo_transacao) REFERENCES public.tipo_transacao(id_tipo_transacao);
+
+
+--
+-- TOC entry 3305 (class 2606 OID 24726)
+-- Name: estoque estoque_id_produto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.estoque
+    ADD CONSTRAINT estoque_id_produto_fkey FOREIGN KEY (id_produto) REFERENCES public.produto(id_produto);
+
+
+--
+-- TOC entry 3306 (class 2606 OID 24750)
+-- Name: feedback feedback_id_campanha_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.feedback
+    ADD CONSTRAINT feedback_id_campanha_fkey FOREIGN KEY (id_campanha) REFERENCES public.campanha(id_campanha);
+
+
+--
+-- TOC entry 3307 (class 2606 OID 24740)
+-- Name: feedback feedback_id_status_feedback_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.feedback
+    ADD CONSTRAINT feedback_id_status_feedback_fkey FOREIGN KEY (id_status_feedback) REFERENCES public.status_feedback(id_status_feedback);
+
+
+--
+-- TOC entry 3308 (class 2606 OID 24745)
+-- Name: feedback feedback_id_usuario_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.feedback
+    ADD CONSTRAINT feedback_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES public.usuario(id_usuario);
+
+
+--
+-- TOC entry 3304 (class 2606 OID 24868)
+-- Name: campanha id_carteira; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.campanha
+    ADD CONSTRAINT id_carteira FOREIGN KEY (id_carteira) REFERENCES public.carteira(id_carteira);
+
+
+--
+-- TOC entry 3314 (class 2606 OID 24873)
+-- Name: analise id_carteira; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.analise
+    ADD CONSTRAINT id_carteira FOREIGN KEY (id_carteira) REFERENCES public.carteira(id_carteira);
+
+
+--
+-- TOC entry 3315 (class 2606 OID 24878)
+-- Name: troca_produto id_carteira; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.troca_produto
+    ADD CONSTRAINT id_carteira FOREIGN KEY (id_carteira) REFERENCES public.carteira(id_carteira);
+
+
+--
+-- TOC entry 3317 (class 2606 OID 24883)
+-- Name: tipo_transacao id_carteira; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_transacao
+    ADD CONSTRAINT id_carteira FOREIGN KEY (id_carteira) REFERENCES public.carteira(id_carteira);
+
+
+--
+-- TOC entry 3300 (class 2606 OID 24665)
+-- Name: produto produto_id_status_produto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.produto
+    ADD CONSTRAINT produto_id_status_produto_fkey FOREIGN KEY (id_status_produto) REFERENCES public.status_produto(id_status_produto);
+
+
+--
+-- TOC entry 3309 (class 2606 OID 24769)
+-- Name: tipo_saida tipo_saida_id_estoque_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_saida
+    ADD CONSTRAINT tipo_saida_id_estoque_fkey FOREIGN KEY (id_estoque) REFERENCES public.estoque(id_estoque);
+
+
+--
+-- TOC entry 3310 (class 2606 OID 24764)
+-- Name: tipo_saida tipo_saida_id_produto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_saida
+    ADD CONSTRAINT tipo_saida_id_produto_fkey FOREIGN KEY (id_produto) REFERENCES public.produto(id_produto);
+
+
+--
+-- TOC entry 3311 (class 2606 OID 24774)
+-- Name: tipo_saida tipo_saida_id_usuario_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_saida
+    ADD CONSTRAINT tipo_saida_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES public.usuario(id_usuario);
+
+
+--
+-- TOC entry 3318 (class 2606 OID 24819)
+-- Name: tipo_transacao tipo_transacao_id_troca_produto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.tipo_transacao
+    ADD CONSTRAINT tipo_transacao_id_troca_produto_fkey FOREIGN KEY (id_troca_produto) REFERENCES public.troca_produto(id_troca_produto);
+
+
+--
+-- TOC entry 3316 (class 2606 OID 24807)
+-- Name: troca_produto troca_produto_id_produto_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.troca_produto
+    ADD CONSTRAINT troca_produto_id_produto_fkey FOREIGN KEY (id_produto) REFERENCES public.produto(id_produto);
+
+
+--
+-- TOC entry 3301 (class 2606 OID 24679)
+-- Name: usuario usuario_id_perfil_usuario_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.usuario
+    ADD CONSTRAINT usuario_id_perfil_usuario_fkey FOREIGN KEY (id_perfil_usuario) REFERENCES public.perfil_usuario(id_perfil_usuario);
+
+
+--
+-- TOC entry 3302 (class 2606 OID 24684)
+-- Name: usuario usuario_id_status_user_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.usuario
+    ADD CONSTRAINT usuario_id_status_user_fkey FOREIGN KEY (id_status_user) REFERENCES public.status_usuario(id_status_user);
+
+
+-- Completed on 2023-10-19 11:37:59
+
+--
+-- PostgreSQL database dump complete
+--
+
